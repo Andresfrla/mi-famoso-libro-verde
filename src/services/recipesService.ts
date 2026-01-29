@@ -2,8 +2,33 @@
 // Recipes Service - CRUD Operations
 // =====================================================
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
 import { Recipe, RecipeFormData, RecipeFilters, ApiResponse, Category } from '../types';
+
+// Key for storing local favorites in AsyncStorage
+const LOCAL_FAVORITES_KEY = '@mi_libro_verde_favorites';
+
+// Helper functions for local storage favorites
+async function getLocalFavorites(): Promise<Set<string>> {
+  try {
+    const stored = await AsyncStorage.getItem(LOCAL_FAVORITES_KEY);
+    if (stored) {
+      return new Set(JSON.parse(stored));
+    }
+  } catch (error) {
+    console.error('Error reading local favorites:', error);
+  }
+  return new Set();
+}
+
+async function saveLocalFavorites(favorites: Set<string>): Promise<void> {
+  try {
+    await AsyncStorage.setItem(LOCAL_FAVORITES_KEY, JSON.stringify([...favorites]));
+  } catch (error) {
+    console.error('Error saving local favorites:', error);
+  }
+}
 
 // Demo data for when Supabase is not configured
 const DEMO_RECIPES: Recipe[] = [
@@ -335,8 +360,27 @@ export async function getFavorites(userId?: string): Promise<ApiResponse<Recipe[
     return { data: favorites, error: null };
   }
 
+  // If no user, get favorites from local storage
   if (!userId) {
-    return { data: [], error: null };
+    const localFavorites = await getLocalFavorites();
+    if (localFavorites.size === 0) {
+      return { data: [], error: null };
+    }
+
+    try {
+      const { data, error } = await supabase
+        .from('recipes')
+        .select('*')
+        .in('id', [...localFavorites]);
+
+      if (error) {
+        return { data: [], error: error.message };
+      }
+
+      return { data: data as Recipe[], error: null };
+    } catch (err) {
+      return { data: [], error: (err as Error).message };
+    }
   }
 
   try {
@@ -401,8 +445,10 @@ export async function getFavoriteIds(userId?: string): Promise<ApiResponse<Set<s
     return { data: new Set(demoFavorites), error: null };
   }
 
+  // If no user, use local storage
   if (!userId) {
-    return { data: new Set(), error: null };
+    const localFavorites = await getLocalFavorites();
+    return { data: localFavorites, error: null };
   }
 
   try {
@@ -439,8 +485,18 @@ export async function toggleFavorite(
     }
   }
 
+  // If no user, use local storage
   if (!userId) {
-    return { data: false, error: 'User not authenticated' };
+    const localFavorites = await getLocalFavorites();
+    if (localFavorites.has(recipeId)) {
+      localFavorites.delete(recipeId);
+      await saveLocalFavorites(localFavorites);
+      return { data: false, error: null };
+    } else {
+      localFavorites.add(recipeId);
+      await saveLocalFavorites(localFavorites);
+      return { data: true, error: null };
+    }
   }
 
   try {

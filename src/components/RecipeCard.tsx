@@ -8,6 +8,7 @@ import {
   Text,
   StyleSheet,
   Pressable,
+  TouchableOpacity,
   ImageBackground,
   useColorScheme,
 } from 'react-native';
@@ -39,62 +40,62 @@ export function RecipeCard({
   const firstTag = recipe.tags[0] || '';
 
   return (
-    <Pressable
-      style={({ pressed }) => [
-        styles.container,
-        pressed && styles.pressed,
-      ]}
-      onPress={onPress}
-    >
-      <View style={styles.imageContainer}>
-        <ImageBackground
-          source={{ uri: recipe.image_url || 'https://via.placeholder.com/300x300?text=Recipe' }}
-          style={styles.image}
-          imageStyle={styles.imageStyle}
-        >
-          <Pressable
-            style={[
-              styles.favoriteButton,
-              { backgroundColor: 'rgba(255, 255, 255, 0.9)' },
-            ]}
-            onPress={(e) => {
-              e.stopPropagation();
-              onFavoritePress();
-            }}
-            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
-          >
-            <Ionicons
-              name={isFavorite ? 'heart' : 'heart-outline'}
-              size={18}
-              color={isFavorite ? colors.primary : colors.textMuted}
-            />
-          </Pressable>
-        </ImageBackground>
-      </View>
+    <View style={styles.container}>
+      <Pressable
+        style={({ pressed }) => [
+          styles.pressableArea,
+          pressed && styles.pressed,
+        ]}
+        onPress={onPress}
+      >
+        <View style={styles.imageContainer}>
+          <ImageBackground
+            source={{ uri: recipe.image_url || 'https://via.placeholder.com/300x300?text=Recipe' }}
+            style={styles.image}
+            imageStyle={styles.imageStyle}
+          />
+        </View>
 
-      <View style={styles.content}>
-        <Text
-          style={[styles.title, { color: colors.text }]}
-          numberOfLines={2}
-        >
-          {title}
-        </Text>
-        <View style={styles.tagsContainer}>
-          <View style={[styles.tag, { backgroundColor: `${colors.primary}15` }]}>
-            <Text style={[styles.tagText, { color: colors.primary }]}>
-              {recipe.prep_time_minutes} {t('recipe.minutes')}
-            </Text>
-          </View>
-          {firstTag && (
-            <View style={[styles.tag, { backgroundColor: colors.surfaceSecondary }]}>
-              <Text style={[styles.tagText, { color: colors.textSecondary }]}>
-                {firstTag}
+        <View style={styles.content}>
+          <Text
+            style={[styles.title, { color: colors.text }]}
+            numberOfLines={2}
+          >
+            {title}
+          </Text>
+          <View style={styles.tagsContainer}>
+            <View style={[styles.tag, { backgroundColor: `${colors.primary}15` }]}>
+              <Text style={[styles.tagText, { color: colors.primary }]}>
+                {recipe.prep_time_minutes} {t('recipe.minutes')}
               </Text>
             </View>
-          )}
+            {firstTag && (
+              <View style={[styles.tag, { backgroundColor: colors.surfaceSecondary }]}>
+                <Text style={[styles.tagText, { color: colors.textSecondary }]}>
+                  {firstTag}
+                </Text>
+              </View>
+            )}
+          </View>
         </View>
-      </View>
-    </Pressable>
+      </Pressable>
+
+      {/* Heart button outside Pressable to handle touch independently */}
+      <TouchableOpacity
+        style={[
+          styles.favoriteButton,
+          { backgroundColor: 'rgba(255, 255, 255, 0.9)' },
+        ]}
+        onPress={onFavoritePress}
+        activeOpacity={0.7}
+      >
+        <Ionicons
+          name={isFavorite ? 'heart' : 'heart-outline'}
+          size={18}
+          color={isFavorite ? colors.primary : colors.textMuted}
+        />
+      </TouchableOpacity>
+    </View>
   );
 }
 
@@ -102,6 +103,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginBottom: Spacing.md,
+    position: 'relative',
+  },
+  pressableArea: {
+    flex: 1,
   },
   pressed: {
     opacity: 0.9,
@@ -118,25 +123,27 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   image: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-end',
+    ...StyleSheet.absoluteFillObject,
+    borderRadius: BorderRadius.xl,
   },
   imageStyle: {
     borderRadius: BorderRadius.xl,
   },
   favoriteButton: {
+    position: 'absolute',
+    top: Spacing.sm,
+    right: Spacing.sm,
     width: 32,
     height: 32,
     borderRadius: 16,
     justifyContent: 'center',
     alignItems: 'center',
-    margin: Spacing.sm,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.1,
     shadowRadius: 2,
     elevation: 2,
+    zIndex: 10,
   },
   content: {
     paddingHorizontal: Spacing.xs,

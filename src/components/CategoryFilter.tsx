@@ -11,9 +11,10 @@ import {
   Pressable,
   useColorScheme,
 } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { Category } from '../types';
-import { CATEGORIES, Colors, BorderRadius, Spacing, FontSizes, FontWeights } from '../lib/constants';
+import { CATEGORIES, Colors, Spacing, FontSizes, FontWeights } from '../lib/constants';
 
 interface CategoryFilterProps {
   selected: Category;
@@ -26,59 +27,87 @@ export function CategoryFilter({ selected, onSelect }: CategoryFilterProps) {
   const colors = Colors[colorScheme === 'dark' ? 'dark' : 'light'];
 
   return (
-    <ScrollView
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      contentContainerStyle={styles.container}
-    >
-      {CATEGORIES.map((category) => {
-        const isSelected = selected === category.value;
-        return (
-          <Pressable
-            key={category.value}
-            style={[
-              styles.pill,
-              isSelected
-                ? { backgroundColor: colors.primary }
-                : {
-                    backgroundColor: colors.surface,
-                    borderColor: colors.border,
-                    borderWidth: 1,
-                  },
-            ]}
-            onPress={() => onSelect(category.value)}
-          >
-            <Text
+    <View style={styles.wrapper}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.container}
+      >
+        {CATEGORIES.map((category) => {
+          const isSelected = selected === category.value;
+          const isFilterButton = category.value === 'all';
+
+          return (
+            <Pressable
+              key={category.value}
               style={[
-                styles.pillText,
+                isFilterButton ? styles.filterPill : styles.pill,
                 {
-                  color: isSelected ? '#1E293B' : colors.textSecondary,
-                  fontWeight: isSelected ? FontWeights.bold : FontWeights.medium,
+                  backgroundColor: isSelected ? colors.primary : colors.surface,
+                  borderColor: isSelected ? colors.primary : colors.border,
                 },
               ]}
+              onPress={() => onSelect(category.value)}
             >
-              {t(category.labelKey)}
-            </Text>
-          </Pressable>
-        );
-      })}
-    </ScrollView>
+              {isFilterButton ? (
+                <Ionicons
+                  name="options-outline"
+                  size={20}
+                  color={isSelected ? '#1E293B' : colors.textSecondary}
+                />
+              ) : (
+                <Text
+                  style={[
+                    styles.pillText,
+                    {
+                      color: isSelected ? '#1E293B' : colors.textSecondary,
+                      fontWeight: isSelected ? FontWeights.bold : FontWeights.medium,
+                    },
+                  ]}
+                >
+                  {t(category.labelKey)}
+                </Text>
+              )}
+            </Pressable>
+          );
+        })}
+      </ScrollView>
+    </View>
   );
 }
 
+const PILL_HEIGHT = 36;
+const WRAPPER_HEIGHT = PILL_HEIGHT + Spacing.md * 2;
+
 const styles = StyleSheet.create({
+  wrapper: {
+    height: WRAPPER_HEIGHT,
+  },
   container: {
+    flex: 1,
     paddingHorizontal: Spacing.md,
-    paddingVertical: Spacing.sm,
-    gap: Spacing.sm,
+    alignItems: 'center',
+  },
+  filterPill: {
+    width: PILL_HEIGHT,
+    height: PILL_HEIGHT,
+    borderRadius: PILL_HEIGHT / 2,
+    marginRight: Spacing.sm,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
   },
   pill: {
-    paddingHorizontal: Spacing.md,
-    paddingVertical: Spacing.sm,
-    borderRadius: BorderRadius.full,
+    height: PILL_HEIGHT,
+    paddingHorizontal: Spacing.lg,
+    borderRadius: PILL_HEIGHT / 2,
     marginRight: Spacing.sm,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
   },
   pillText: {
     fontSize: FontSizes.sm,
+    lineHeight: FontSizes.sm + 2,
   },
 });

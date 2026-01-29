@@ -167,6 +167,7 @@ export default function HomeScreen() {
           renderItem={renderRecipe}
           keyExtractor={(item) => item.id}
           numColumns={2}
+          extraData={favoriteIds}
           contentContainerStyle={styles.listContent}
           showsVerticalScrollIndicator={false}
           refreshControl={
