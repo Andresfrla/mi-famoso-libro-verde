@@ -5,3 +5,4 @@
 export { AuthProvider, useAuth } from './AuthContext';
 export { LanguageProvider, useLanguage } from './LanguageContext';
 export { MeasurementProvider, useMeasurementSystem } from './MeasurementContext';
+export { FavoritesProvider, useFavorites } from './FavoritesContext';

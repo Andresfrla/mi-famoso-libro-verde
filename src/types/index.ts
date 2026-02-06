@@ -26,6 +26,7 @@ export interface Recipe {
   category: Category;
   created_at: string;
   updated_at: string;
+  favorites_count?: number;
 }
 
 export interface Favorite {

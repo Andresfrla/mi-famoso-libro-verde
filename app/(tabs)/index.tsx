@@ -25,8 +25,8 @@ import {
   FAB,
   LanguageToggle,
 } from '@/src/components';
-import { getRecipes, getFavoriteIds, toggleFavorite } from '@/src/services';
-import { useAuth } from '@/src/contexts';
+import { getRecipesWithUserFirst } from '@/src/services';
+import { useAuth, useFavorites } from '@/src/contexts';
 import { Recipe, Category } from '@/src/types';
 import { Colors, Spacing, FontSizes, FontWeights } from '@/src/lib/constants';
 
@@ -37,16 +37,16 @@ export default function HomeScreen() {
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme === 'dark' ? 'dark' : 'light'];
   const { user } = useAuth();
+  const { isFavorite, toggleFavoriteGlobal } = useFavorites();
 
   const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const [favoriteIds, setFavoriteIds] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<Category>('all');
 
   const loadRecipes = useCallback(async () => {
-    const { data, error } = await getRecipes({
+    const { data, error } = await getRecipesWithUserFirst(user?.id, {
       category: selectedCategory,
       search: searchQuery || undefined,
     });
@@ -54,44 +54,24 @@ export default function HomeScreen() {
     if (data) {
       setRecipes(data);
     }
-  }, [selectedCategory, searchQuery]);
-
-  const loadFavorites = useCallback(async () => {
-    const { data } = await getFavoriteIds(user?.id);
-    if (data) {
-      setFavoriteIds(data);
-    }
-  }, [user?.id]);
-
-  const loadData = useCallback(async () => {
-    await Promise.all([loadRecipes(), loadFavorites()]);
-  }, [loadRecipes, loadFavorites]);
+  }, [user?.id, selectedCategory, searchQuery]);
 
   useEffect(() => {
     setLoading(true);
-    loadData().finally(() => setLoading(false));
-  }, [loadData]);
+    loadRecipes().finally(() => setLoading(false));
+  }, [loadRecipes]);
 
   const handleRefresh = useCallback(async () => {
     setRefreshing(true);
-    await loadData();
+    await loadRecipes();
     setRefreshing(false);
-  }, [loadData]);
+  }, [loadRecipes]);
 
   const handleFavoritePress = useCallback(
     async (recipeId: string) => {
-      const { data: isFav } = await toggleFavorite(recipeId, user?.id);
-      setFavoriteIds((prev) => {
-        const next = new Set(prev);
-        if (isFav) {
-          next.add(recipeId);
-        } else {
-          next.delete(recipeId);
-        }
-        return next;
-      });
+      await toggleFavoriteGlobal(recipeId);
     },
-    [user?.id]
+    [toggleFavoriteGlobal]
   );
 
   const handleRecipePress = useCallback(
@@ -110,13 +90,13 @@ export default function HomeScreen() {
       <View style={[styles.cardWrapper, index % 2 === 0 ? styles.cardLeft : styles.cardRight]}>
         <RecipeCard
           recipe={item}
-          isFavorite={favoriteIds.has(item.id)}
+          isFavorite={isFavorite(item.id)}
           onPress={() => handleRecipePress(item)}
           onFavoritePress={() => handleFavoritePress(item.id)}
         />
       </View>
     ),
-    [favoriteIds, handleRecipePress, handleFavoritePress]
+    [isFavorite, handleRecipePress, handleFavoritePress]
   );
 
   if (loading) {
@@ -167,7 +147,6 @@ export default function HomeScreen() {
           renderItem={renderRecipe}
           keyExtractor={(item) => item.id}
           numColumns={2}
-          extraData={favoriteIds}
           contentContainerStyle={styles.listContent}
           showsVerticalScrollIndicator={false}
           refreshControl={

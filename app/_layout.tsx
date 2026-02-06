@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/use-color-scheme';
-import { AuthProvider, LanguageProvider, MeasurementProvider } from '@/src/contexts';
+import { AuthProvider, LanguageProvider, MeasurementProvider, FavoritesProvider } from '@/src/contexts';
 import '@/src/i18n';
 import { Colors } from '@/src/lib/constants';
 
@@ -48,44 +48,46 @@ export default function RootLayout() {
 
   return (
     <AuthProvider>
-      <LanguageProvider>
-        <MeasurementProvider>
-          <ThemeProvider value={theme}>
-            <Stack>
-              <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-              <Stack.Screen
-                name="recipe/[id]"
-                options={{
-                  headerShown: false,
-                  presentation: 'card',
-                }}
-              />
-              <Stack.Screen
-                name="recipe/create"
-                options={{
-                  headerShown: false,
-                  presentation: 'modal',
-                }}
-              />
-              <Stack.Screen
-                name="recipe/edit/[id]"
-                options={{
-                  headerShown: false,
-                  presentation: 'modal',
-                }}
-              />
-              <Stack.Screen
-                name="auth"
-                options={{
-                  headerShown: false,
-                  presentation: 'modal',
-                }}
-              />
-            </Stack>
-            <StatusBar style="auto" />
-          </ThemeProvider>
-        </MeasurementProvider>
-      </LanguageProvider>
+      <FavoritesProvider>
+        <LanguageProvider>
+          <MeasurementProvider>
+            <ThemeProvider value={theme}>
+              <Stack>
+                <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+                <Stack.Screen
+                  name="recipe/[id]"
+                  options={{
+                    headerShown: false,
+                    presentation: 'card',
+                  }}
+                />
+                <Stack.Screen
+                  name="recipe/create"
+                  options={{
+                    headerShown: false,
+                    presentation: 'modal',
+                  }}
+                />
+                <Stack.Screen
+                  name="recipe/edit/[id]"
+                  options={{
+                    headerShown: false,
+                    presentation: 'modal',
+                  }}
+                />
+                <Stack.Screen
+                  name="auth"
+                  options={{
+                    headerShown: false,
+                    presentation: 'modal',
+                  }}
+                />
+              </Stack>
+              <StatusBar style="auto" />
+            </ThemeProvider>
+          </MeasurementProvider>
+        </LanguageProvider>
+      </FavoritesProvider>
     </AuthProvider>
   );
 }

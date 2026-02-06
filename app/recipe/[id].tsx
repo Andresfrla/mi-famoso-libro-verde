@@ -2,7 +2,7 @@
 // Recipe Detail Screen
 // =====================================================
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import {
   View,
   Text,
@@ -12,6 +12,10 @@ import {
   Pressable,
   ImageBackground,
   Alert,
+  Modal,
+  Animated,
+  PanResponder,
+  Dimensions,
 } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
@@ -19,12 +23,22 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 
 import { LoadingState } from '@/src/components';
-import { getRecipeById, toggleFavorite, isFavorite, deleteRecipe } from '@/src/services';
-import { useAuth, useLanguage } from '@/src/contexts';
+import { getRecipeById, deleteRecipe } from '@/src/services';
+import { useAuth, useLanguage, useFavorites } from '@/src/contexts';
 import { Recipe } from '@/src/types';
 import { Colors, Spacing, FontSizes, FontWeights, BorderRadius } from '@/src/lib/constants';
 
 type TabType = 'ingredients' | 'instructions';
+
+interface Timer {
+  id: string;
+  duration: number;
+  remaining: number;
+  isRunning: boolean;
+  label: string;
+}
+
+const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 export default function RecipeDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -35,12 +49,18 @@ export default function RecipeDetailScreen() {
   const colors = Colors[colorScheme === 'dark' ? 'dark' : 'light'];
   const { user } = useAuth();
   const { language, getLocalizedField } = useLanguage();
+  const { isFavorite, toggleFavoriteGlobal } = useFavorites();
 
   const [recipe, setRecipe] = useState<Recipe | null>(null);
   const [loading, setLoading] = useState(true);
-  const [favorite, setFavorite] = useState(false);
   const [activeTab, setActiveTab] = useState<TabType>('ingredients');
   const [checkedIngredients, setCheckedIngredients] = useState<Set<number>>(new Set());
+
+  // Cooking mode states
+  const [cookingModeVisible, setCookingModeVisible] = useState(false);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [timers, setTimers] = useState<Timer[]>([]);
+  const slideAnim = useRef(new Animated.Value(0)).current;
 
   const loadRecipe = useCallback(async () => {
     if (!id) return;
@@ -49,10 +69,7 @@ export default function RecipeDetailScreen() {
     if (data) {
       setRecipe(data);
     }
-
-    const { data: isFav } = await isFavorite(id, user?.id);
-    setFavorite(isFav || false);
-  }, [id, user?.id]);
+  }, [id]);
 
   useEffect(() => {
     setLoading(true);
@@ -65,9 +82,8 @@ export default function RecipeDetailScreen() {
 
   const handleFavoritePress = useCallback(async () => {
     if (!id) return;
-    const { data: isFav } = await toggleFavorite(id, user?.id);
-    setFavorite(isFav || false);
-  }, [id, user?.id]);
+    await toggleFavoriteGlobal(id);
+  }, [id, toggleFavoriteGlobal]);
 
   const handleEdit = useCallback(() => {
     if (!id) return;
@@ -108,6 +124,149 @@ export default function RecipeDetailScreen() {
       return next;
     });
   }, []);
+
+  // Extract time from step text
+  const extractTimeFromStep = useCallback((step: string): number | null => {
+    const patterns = [
+      /(\d+)\s*(?:minutos?|mins?|min)/i,
+      /(\d+)\s*(?:horas?|hrs?|h)/i,
+    ];
+
+    for (const pattern of patterns) {
+      const match = step.match(pattern);
+      if (match) {
+        const value = parseInt(match[1], 10);
+        if (pattern.toString().includes('hora')) {
+          return value * 60;
+        }
+        return value;
+      }
+    }
+    return null;
+  }, []);
+
+  // Timer functions
+  const startTimer = useCallback((duration: number, label: string) => {
+    const id = Date.now().toString();
+    const newTimer: Timer = {
+      id,
+      duration: duration * 60,
+      remaining: duration * 60,
+      isRunning: true,
+      label,
+    };
+    setTimers((prev) => [...prev, newTimer]);
+  }, []);
+
+  const toggleTimer = useCallback((timerId: string) => {
+    setTimers((prev) =>
+      prev.map((timer) =>
+        timer.id === timerId ? { ...timer, isRunning: !timer.isRunning } : timer
+      )
+    );
+  }, []);
+
+  const removeTimer = useCallback((timerId: string) => {
+    setTimers((prev) => prev.filter((timer) => timer.id !== timerId));
+  }, []);
+
+  // Update timers every second
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimers((prev) =>
+        prev.map((timer) => {
+          if (timer.isRunning && timer.remaining > 0) {
+            return { ...timer, remaining: timer.remaining - 1 };
+          }
+          return timer;
+        })
+      );
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Format time display
+  const formatTime = useCallback((seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  }, []);
+
+  // Cooking mode functions
+  const openCookingMode = useCallback(() => {
+    setCurrentStep(0);
+    setTimers([]);
+    setCookingModeVisible(true);
+  }, []);
+
+  const closeCookingMode = useCallback(() => {
+    setCookingModeVisible(false);
+    setTimers([]);
+  }, []);
+
+  const goToNextStep = useCallback(() => {
+    if (recipe && currentStep < (language === 'es' ? recipe.steps_es.length : recipe.steps_en.length) - 1) {
+      Animated.sequence([
+        Animated.timing(slideAnim, {
+          toValue: -SCREEN_WIDTH,
+          duration: 200,
+          useNativeDriver: true,
+        }),
+        Animated.timing(slideAnim, {
+          toValue: SCREEN_WIDTH,
+          duration: 0,
+          useNativeDriver: true,
+        }),
+        Animated.timing(slideAnim, {
+          toValue: 0,
+          duration: 200,
+          useNativeDriver: true,
+        }),
+      ]).start();
+      setCurrentStep((prev) => prev + 1);
+    }
+  }, [currentStep, recipe, language, slideAnim]);
+
+  const goToPreviousStep = useCallback(() => {
+    if (currentStep > 0) {
+      Animated.sequence([
+        Animated.timing(slideAnim, {
+          toValue: SCREEN_WIDTH,
+          duration: 200,
+          useNativeDriver: true,
+        }),
+        Animated.timing(slideAnim, {
+          toValue: -SCREEN_WIDTH,
+          duration: 0,
+          useNativeDriver: true,
+        }),
+        Animated.timing(slideAnim, {
+          toValue: 0,
+          duration: 200,
+          useNativeDriver: true,
+        }),
+      ]).start();
+      setCurrentStep((prev) => prev - 1);
+    }
+  }, [currentStep, slideAnim]);
+
+  // Pan responder for swipe gestures
+  const panResponder = useRef(
+    PanResponder.create({
+      onStartShouldSetPanResponder: () => true,
+      onMoveShouldSetPanResponder: (_, gestureState) => {
+        return Math.abs(gestureState.dx) > 20;
+      },
+      onPanResponderRelease: (_, gestureState) => {
+        if (gestureState.dx < -50) {
+          goToNextStep();
+        } else if (gestureState.dx > 50) {
+          goToPreviousStep();
+        }
+      },
+    })
+  ).current;
 
   if (loading || !recipe) {
     return <LoadingState />;
@@ -168,9 +327,9 @@ export default function RecipeDetailScreen() {
               onPress={handleFavoritePress}
             >
               <Ionicons
-                name={favorite ? 'heart' : 'heart-outline'}
+                name={isFavorite(id) ? 'heart' : 'heart-outline'}
                 size={24}
-                color={favorite ? colors.primary : colors.textMuted}
+                color={isFavorite(id) ? colors.primary : colors.textMuted}
               />
             </Pressable>
           </View>
@@ -327,11 +486,174 @@ export default function RecipeDetailScreen() {
 
       {/* Start Cooking Button */}
       <View style={[styles.footer, { paddingBottom: insets.bottom + Spacing.md }]}>
-        <Pressable style={[styles.startButton, { backgroundColor: colors.primary }]}>
+        <Pressable
+          style={[styles.startButton, { backgroundColor: colors.primary }]}
+          onPress={openCookingMode}
+        >
           <Ionicons name="play-circle" size={24} color="#1E293B" />
           <Text style={styles.startButtonText}>{t('recipe.startCooking')}</Text>
         </Pressable>
       </View>
+
+      {/* Cooking Mode Modal */}
+      <Modal
+        visible={cookingModeVisible}
+        animationType="slide"
+        presentationStyle="fullScreen"
+        onRequestClose={closeCookingMode}
+      >
+        <View style={[styles.cookingModeContainer, { backgroundColor: colors.background }]}>
+          {/* Header */}
+          <View style={[styles.cookingModeHeader, { paddingTop: insets.top, backgroundColor: colors.surface }]}>
+            <Pressable onPress={closeCookingMode} style={styles.cookingModeCloseButton}>
+              <Ionicons name="close" size={28} color={colors.text} />
+            </Pressable>
+            <Text style={[styles.cookingModeTitle, { color: colors.text }]}>
+              {recipe ? getLocalizedField(recipe as unknown as Record<string, unknown>, 'title') : ''}
+            </Text>
+            <Text style={[styles.stepCounter, { color: colors.primary }]}>
+              {language === 'es' ? 'Paso' : 'Step'} {currentStep + 1} {language === 'es' ? 'de' : 'of'} {language === 'es' ? recipe?.steps_es.length : recipe?.steps_en.length}
+            </Text>
+          </View>
+
+          {/* Progress Bar */}
+          <View style={styles.progressBarContainer}>
+            <View
+              style={[
+                styles.progressBar,
+                {
+                  backgroundColor: colors.primary,
+                  width: recipe
+                    ? `${((currentStep + 1) / (language === 'es' ? recipe.steps_es.length : recipe.steps_en.length)) * 100}%`
+                    : '0%',
+                },
+              ]}
+            />
+          </View>
+
+          {/* Step Content */}
+          <Animated.View
+            style={[
+              styles.stepContent,
+              { transform: [{ translateX: slideAnim }] },
+            ]}
+            {...panResponder.panHandlers}
+          >
+            <ScrollView
+              style={styles.stepScrollView}
+              contentContainerStyle={styles.stepScrollContent}
+              showsVerticalScrollIndicator={false}
+            >
+              <Text style={[styles.stepNumberLarge, { color: colors.primary }]}>
+                {currentStep + 1}
+              </Text>
+              <Text style={[styles.stepTextLarge, { color: colors.text }]}>
+                {recipe ? (language === 'es' ? recipe.steps_es[currentStep] : recipe.steps_en[currentStep]) : ''}
+              </Text>
+
+              {/* Timer Button */}
+              {recipe && (() => {
+                const currentStepText = language === 'es' ? recipe.steps_es[currentStep] : recipe.steps_en[currentStep];
+                const timeInMinutes = extractTimeFromStep(currentStepText);
+                if (timeInMinutes) {
+                  const existingTimer = timers.find(t => t.label === currentStepText.slice(0, 30));
+                  if (existingTimer) {
+                    return (
+                      <View style={[styles.activeTimerContainer, { backgroundColor: colors.surface }]}>
+                        <Ionicons name="timer" size={24} color={colors.primary} />
+                        <Text style={[styles.timerText, { color: colors.text }]}>
+                          {formatTime(existingTimer.remaining)}
+                        </Text>
+                        <Pressable
+                          onPress={() => toggleTimer(existingTimer.id)}
+                          style={styles.timerButton}
+                        >
+                          <Ionicons
+                            name={existingTimer.isRunning ? 'pause' : 'play'}
+                            size={20}
+                            color={colors.primary}
+                          />
+                        </Pressable>
+                        <Pressable
+                          onPress={() => removeTimer(existingTimer.id)}
+                          style={styles.timerButton}
+                        >
+                          <Ionicons name="close" size={20} color={colors.error} />
+                        </Pressable>
+                      </View>
+                    );
+                  }
+                  return (
+                    <Pressable
+                      style={[styles.addTimerButton, { backgroundColor: colors.primary }]}
+                      onPress={() => startTimer(timeInMinutes, currentStepText.slice(0, 30))}
+                    >
+                      <Ionicons name="timer-outline" size={20} color="#1E293B" />
+                      <Text style={styles.addTimerButtonText}>
+                        {language === 'es' ? 'Iniciar timer de' : 'Start timer for'} {timeInMinutes} {language === 'es' ? 'minutos' : 'minutes'}
+                      </Text>
+                    </Pressable>
+                  );
+                }
+                return null;
+              })()}
+            </ScrollView>
+          </Animated.View>
+
+          {/* Navigation */}
+          <View style={[styles.navigationContainer, { paddingBottom: insets.bottom + Spacing.md }]}>
+            <Pressable
+              style={[
+                styles.navButton,
+                { backgroundColor: colors.surface },
+                currentStep === 0 && styles.navButtonDisabled,
+              ]}
+              onPress={goToPreviousStep}
+              disabled={currentStep === 0}
+            >
+              <Ionicons name="chevron-back" size={32} color={currentStep === 0 ? colors.textMuted : colors.text} />
+              <Text style={[styles.navButtonText, { color: currentStep === 0 ? colors.textMuted : colors.text }]}>
+                {language === 'es' ? 'Anterior' : 'Previous'}
+              </Text>
+            </Pressable>
+
+            <View style={styles.dotsContainer}>
+              {recipe &&
+                (language === 'es' ? recipe.steps_es : recipe.steps_en).map((_, index) => (
+                  <View
+                    key={index}
+                    style={[
+                      styles.dot,
+                      {
+                        backgroundColor:
+                          index === currentStep
+                            ? colors.primary
+                            : index < currentStep
+                            ? colors.primary + '80'
+                            : colors.border,
+                      },
+                    ]}
+                  />
+                ))}
+            </View>
+
+            <Pressable
+              style={[
+                styles.navButton,
+                { backgroundColor: colors.surface },
+                currentStep === (language === 'es' ? recipe?.steps_es.length : recipe?.steps_en.length) - 1 && styles.navButtonDisabled,
+              ]}
+              onPress={goToNextStep}
+              disabled={currentStep === (language === 'es' ? recipe?.steps_es.length : recipe?.steps_en.length) - 1}
+            >
+              <Text style={[styles.navButtonText, { color: currentStep === (language === 'es' ? recipe?.steps_es.length : recipe?.steps_en.length) - 1 ? colors.textMuted : colors.text }]}>
+                {language === 'es' ? 'Siguiente' : 'Next'}
+              </Text>
+              <Ionicons name="chevron-forward" size={32} color={currentStep === (language === 'es' ? recipe?.steps_es.length : recipe?.steps_en.length) - 1 ? colors.textMuted : colors.text} />
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -551,5 +873,130 @@ const styles = StyleSheet.create({
     color: '#1E293B',
     fontSize: FontSizes.lg,
     fontWeight: FontWeights.bold,
+  },
+
+  // Cooking Mode Styles
+  cookingModeContainer: {
+    flex: 1,
+  },
+  cookingModeHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: Spacing.md,
+    paddingBottom: Spacing.md,
+    borderBottomWidth: 1,
+    borderBottomColor: 'transparent',
+  },
+  cookingModeCloseButton: {
+    padding: Spacing.sm,
+  },
+  cookingModeTitle: {
+    fontSize: FontSizes.md,
+    fontWeight: FontWeights.bold,
+    flex: 1,
+    textAlign: 'center',
+    marginHorizontal: Spacing.md,
+  },
+  stepCounter: {
+    fontSize: FontSizes.sm,
+    fontWeight: FontWeights.bold,
+    minWidth: 80,
+    textAlign: 'right',
+  },
+  progressBarContainer: {
+    height: 4,
+    backgroundColor: 'rgba(0,0,0,0.1)',
+  },
+  progressBar: {
+    height: '100%',
+  },
+  stepContent: {
+    flex: 1,
+  },
+  stepScrollView: {
+    flex: 1,
+  },
+  stepScrollContent: {
+    padding: Spacing.xl,
+    alignItems: 'center',
+    minHeight: '100%',
+  },
+  stepNumberLarge: {
+    fontSize: 120,
+    fontWeight: FontWeights.bold,
+    opacity: 0.3,
+    marginBottom: Spacing.lg,
+  },
+  stepTextLarge: {
+    fontSize: FontSizes.xxl,
+    lineHeight: 40,
+    textAlign: 'center',
+    fontWeight: FontWeights.medium,
+    marginBottom: Spacing.xl,
+  },
+  activeTimerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: Spacing.md,
+    borderRadius: BorderRadius.lg,
+    gap: Spacing.md,
+    marginTop: Spacing.lg,
+  },
+  timerText: {
+    fontSize: FontSizes.xl,
+    fontWeight: FontWeights.bold,
+    fontVariant: ['tabular-nums'],
+  },
+  timerButton: {
+    padding: Spacing.sm,
+  },
+  addTimerButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: Spacing.lg,
+    paddingVertical: Spacing.md,
+    borderRadius: BorderRadius.full,
+    gap: Spacing.sm,
+    marginTop: Spacing.lg,
+  },
+  addTimerButtonText: {
+    color: '#1E293B',
+    fontSize: FontSizes.md,
+    fontWeight: FontWeights.bold,
+  },
+  navigationContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: Spacing.md,
+    paddingTop: Spacing.md,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(0,0,0,0.1)',
+  },
+  navButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: Spacing.md,
+    paddingVertical: Spacing.sm,
+    borderRadius: BorderRadius.full,
+    minWidth: 100,
+    justifyContent: 'center',
+  },
+  navButtonDisabled: {
+    opacity: 0.5,
+  },
+  navButtonText: {
+    fontSize: FontSizes.md,
+    fontWeight: FontWeights.semibold,
+  },
+  dotsContainer: {
+    flexDirection: 'row',
+    gap: Spacing.xs,
+  },
+  dot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
   },
 });

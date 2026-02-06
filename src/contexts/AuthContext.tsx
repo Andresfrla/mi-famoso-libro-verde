@@ -71,6 +71,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const { error } = await supabase.auth.signUp({
       email,
       password,
+      options: {
+        emailRedirectTo: 'milibroverde://auth/callback',
+      },
     });
 
     return { error: error?.message ?? null };
@@ -83,6 +86,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     const { error } = await supabase.auth.signInWithOtp({
       email,
+      options: {
+        emailRedirectTo: 'milibroverde://auth/callback',
+      },
     });
 
     return { error: error?.message ?? null };

@@ -23,6 +23,7 @@ interface RecipeCardProps {
   isFavorite: boolean;
   onPress: () => void;
   onFavoritePress: () => void;
+  showFavoriteCount?: boolean;
 }
 
 export function RecipeCard({
@@ -30,6 +31,7 @@ export function RecipeCard({
   isFavorite,
   onPress,
   onFavoritePress,
+  showFavoriteCount = false,
 }: RecipeCardProps) {
   const { t } = useTranslation();
   const { getLocalizedField } = useLanguage();
@@ -53,7 +55,17 @@ export function RecipeCard({
             source={{ uri: recipe.image_url || 'https://via.placeholder.com/300x300?text=Recipe' }}
             style={styles.image}
             imageStyle={styles.imageStyle}
-          />
+          >
+            {/* Favorite count badge */}
+            {showFavoriteCount && (
+              <View style={styles.favoriteCountContainer}>
+                <Ionicons name="heart" size={12} color="#fff" />
+                <Text style={styles.favoriteCountText}>
+                  {recipe.favorites_count || 0}
+                </Text>
+              </View>
+            )}
+          </ImageBackground>
         </View>
 
         <View style={styles.content}>
@@ -170,5 +182,22 @@ const styles = StyleSheet.create({
     fontWeight: FontWeights.bold,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
+  },
+  favoriteCountContainer: {
+    position: 'absolute',
+    bottom: 8,
+    left: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 12,
+    gap: 4,
+  },
+  favoriteCountText: {
+    fontSize: FontSizes.xs,
+    fontWeight: FontWeights.bold,
+    color: '#fff',
   },
 });

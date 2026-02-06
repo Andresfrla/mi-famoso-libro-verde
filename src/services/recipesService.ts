@@ -219,6 +219,168 @@ export async function getRecipes(filters?: RecipeFilters): Promise<ApiResponse<R
 }
 
 /**
+ * Get recipes with favorites count, ordered by popularity
+ */
+export async function getRecipesWithFavoritesCount(
+  filters?: RecipeFilters
+): Promise<ApiResponse<Recipe[]>> {
+  if (!isSupabaseConfigured()) {
+    // Demo mode - add random favorites count and sort
+    let filtered = [...DEMO_RECIPES].map((r) => ({
+      ...r,
+      favorites_count: Math.floor(Math.random() * 50),
+    }));
+
+    if (filters?.category && filters.category !== 'all') {
+      filtered = filtered.filter((r) => r.category === filters.category);
+    }
+
+    if (filters?.search) {
+      const searchLower = filters.search.toLowerCase();
+      filtered = filtered.filter(
+        (r) =>
+          r.title_es.toLowerCase().includes(searchLower) ||
+          r.title_en.toLowerCase().includes(searchLower) ||
+          r.tags.some((tag) => tag.toLowerCase().includes(searchLower))
+      );
+    }
+
+    if (filters?.difficulty) {
+      filtered = filtered.filter((r) => r.difficulty === filters.difficulty);
+    }
+
+    // Sort by favorites_count descending
+    filtered.sort((a, b) => (b.favorites_count || 0) - (a.favorites_count || 0));
+
+    return { data: filtered, error: null };
+  }
+
+  try {
+    // Use favorites_count column directly (updated by triggers)
+    let query = supabase
+      .from('recipes')
+      .select('*')
+      .order('favorites_count', { ascending: false });
+
+    if (filters?.category && filters.category !== 'all') {
+      query = query.eq('category', filters.category);
+    }
+
+    if (filters?.search) {
+      query = query.or(
+        `title_es.ilike.%${filters.search}%,title_en.ilike.%${filters.search}%`
+      );
+    }
+
+    if (filters?.difficulty) {
+      query = query.eq('difficulty', filters.difficulty);
+    }
+
+    const { data, error } = await query;
+
+    if (error) {
+      return { data: null, error: error.message };
+    }
+
+    return { data: data as Recipe[], error: null };
+  } catch (err) {
+    return { data: null, error: (err as Error).message };
+  }
+}
+
+/**
+ * Get recipes with user's recipes first
+ */
+export async function getRecipesWithUserFirst(
+  userId?: string,
+  filters?: RecipeFilters
+): Promise<ApiResponse<Recipe[]>> {
+  if (!isSupabaseConfigured()) {
+    // Demo mode
+    let filtered = [...DEMO_RECIPES];
+
+    if (filters?.category && filters.category !== 'all') {
+      filtered = filtered.filter((r) => r.category === filters.category);
+    }
+
+    if (filters?.search) {
+      const searchLower = filters.search.toLowerCase();
+      filtered = filtered.filter(
+        (r) =>
+          r.title_es.toLowerCase().includes(searchLower) ||
+          r.title_en.toLowerCase().includes(searchLower) ||
+          r.tags.some((tag) => tag.toLowerCase().includes(searchLower))
+      );
+    }
+
+    if (filters?.difficulty) {
+      filtered = filtered.filter((r) => r.difficulty === filters.difficulty);
+    }
+
+    // Sort: user's recipes first, then by created_at
+    if (userId) {
+      filtered.sort((a, b) => {
+        const aIsUser = a.user_id === userId ? 1 : 0;
+        const bIsUser = b.user_id === userId ? 1 : 0;
+        if (aIsUser !== bIsUser) {
+          return bIsUser - aIsUser;
+        }
+        return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+      });
+    }
+
+    return { data: filtered, error: null };
+  }
+
+  try {
+    let query = supabase
+      .from('recipes')
+      .select('*');
+
+    if (filters?.category && filters.category !== 'all') {
+      query = query.eq('category', filters.category);
+    }
+
+    if (filters?.search) {
+      query = query.or(
+        `title_es.ilike.%${filters.search}%,title_en.ilike.%${filters.search}%`
+      );
+    }
+
+    if (filters?.difficulty) {
+      query = query.eq('difficulty', filters.difficulty);
+    }
+
+    const { data, error } = await query;
+
+    if (error) {
+      return { data: null, error: error.message };
+    }
+
+    // Sort: user's recipes first, then by created_at
+    let recipes = data as Recipe[];
+    if (userId) {
+      recipes = recipes.sort((a, b) => {
+        const aIsUser = a.user_id === userId ? 1 : 0;
+        const bIsUser = b.user_id === userId ? 1 : 0;
+        if (aIsUser !== bIsUser) {
+          return bIsUser - aIsUser;
+        }
+        return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+      });
+    } else {
+      recipes = recipes.sort((a, b) => 
+        new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+      );
+    }
+
+    return { data: recipes, error: null };
+  } catch (err) {
+    return { data: null, error: (err as Error).message };
+  }
+}
+
+/**
  * Get a single recipe by ID
  */
 export async function getRecipeById(id: string): Promise<ApiResponse<Recipe>> {

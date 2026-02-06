@@ -22,8 +22,8 @@ import {
   EmptyState,
   LoadingState,
 } from '@/src/components';
-import { getRecipes, getFavoriteIds, toggleFavorite } from '@/src/services';
-import { useAuth } from '@/src/contexts';
+import { getRecipesWithFavoritesCount } from '@/src/services';
+import { useFavorites } from '@/src/contexts';
 import { Recipe, Difficulty } from '@/src/types';
 import { Colors, Spacing, FontSizes, FontWeights, BorderRadius, DIFFICULTIES } from '@/src/lib/constants';
 
@@ -33,17 +33,16 @@ export default function ExploreScreen() {
   const insets = useSafeAreaInsets();
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme === 'dark' ? 'dark' : 'light'];
-  const { user } = useAuth();
+  const { isFavorite, toggleFavoriteGlobal } = useFavorites();
 
   const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const [favoriteIds, setFavoriteIds] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty | null>(null);
 
   const loadRecipes = useCallback(async () => {
-    const { data } = await getRecipes({
+    const { data } = await getRecipesWithFavoritesCount({
       difficulty: selectedDifficulty || undefined,
       search: searchQuery || undefined,
     });
@@ -53,42 +52,37 @@ export default function ExploreScreen() {
     }
   }, [selectedDifficulty, searchQuery]);
 
-  const loadFavorites = useCallback(async () => {
-    const { data } = await getFavoriteIds(user?.id);
-    if (data) {
-      setFavoriteIds(data);
-    }
-  }, [user?.id]);
-
-  const loadData = useCallback(async () => {
-    await Promise.all([loadRecipes(), loadFavorites()]);
-  }, [loadRecipes, loadFavorites]);
-
   useEffect(() => {
     setLoading(true);
-    loadData().finally(() => setLoading(false));
-  }, [loadData]);
+    loadRecipes().finally(() => setLoading(false));
+  }, [loadRecipes]);
 
   const handleRefresh = useCallback(async () => {
     setRefreshing(true);
-    await loadData();
+    await loadRecipes();
     setRefreshing(false);
-  }, [loadData]);
+  }, [loadRecipes]);
 
   const handleFavoritePress = useCallback(
     async (recipeId: string) => {
-      const { data: isFav } = await toggleFavorite(recipeId, user?.id);
-      setFavoriteIds((prev) => {
-        const next = new Set(prev);
-        if (isFav) {
-          next.add(recipeId);
-        } else {
-          next.delete(recipeId);
-        }
-        return next;
-      });
+      const wasFavorite = isFavorite(recipeId);
+      await toggleFavoriteGlobal(recipeId);
+      
+      // Update favorites_count locally for immediate feedback
+      setRecipes((prev) => 
+        prev.map((recipe) => {
+          if (recipe.id === recipeId) {
+            const currentCount = recipe.favorites_count || 0;
+            return {
+              ...recipe,
+              favorites_count: wasFavorite ? Math.max(0, currentCount - 1) : currentCount + 1,
+            };
+          }
+          return recipe;
+        })
+      );
     },
-    [user?.id]
+    [isFavorite, toggleFavoriteGlobal]
   );
 
   const handleRecipePress = useCallback(
@@ -103,13 +97,14 @@ export default function ExploreScreen() {
       <View style={[styles.cardWrapper, index % 2 === 0 ? styles.cardLeft : styles.cardRight]}>
         <RecipeCard
           recipe={item}
-          isFavorite={favoriteIds.has(item.id)}
+          isFavorite={isFavorite(item.id)}
           onPress={() => handleRecipePress(item)}
           onFavoritePress={() => handleFavoritePress(item.id)}
+          showFavoriteCount={true}
         />
       </View>
     ),
-    [favoriteIds, handleRecipePress, handleFavoritePress]
+    [isFavorite, handleRecipePress, handleFavoritePress]
   );
 
   if (loading) {
