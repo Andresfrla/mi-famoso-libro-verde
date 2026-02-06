@@ -1,5 +1,5 @@
 // =====================================================
-// Loading State Component
+// Loading State Component with Lottie Animation
 // =====================================================
 
 import React from 'react';
@@ -7,9 +7,9 @@ import {
   View,
   Text,
   StyleSheet,
-  ActivityIndicator,
   useColorScheme,
 } from 'react-native';
+import LottieView from 'lottie-react-native';
 import { useTranslation } from 'react-i18next';
 import { Colors, Spacing, FontSizes } from '../lib/constants';
 
@@ -31,7 +31,12 @@ export function LoadingState({ message, fullScreen = true }: LoadingStateProps) 
         { backgroundColor: fullScreen ? colors.background : 'transparent' },
       ]}
     >
-      <ActivityIndicator size="large" color={colors.primary} />
+      <LottieView
+        source={require('../../assets/animations/loader.json')}
+        autoPlay
+        loop
+        style={styles.lottie}
+      />
       <Text style={[styles.message, { color: colors.textSecondary }]}>
         {message || t('common.loading')}
       </Text>
@@ -47,6 +52,10 @@ const styles = StyleSheet.create({
   },
   fullScreen: {
     flex: 1,
+  },
+  lottie: {
+    width: 200,
+    height: 200,
   },
   message: {
     marginTop: Spacing.md,
