@@ -28,10 +28,12 @@ export function CategoryFilter({ selected, onSelect }: CategoryFilterProps) {
 
   return (
     <View style={styles.wrapper}>
-      <ScrollView
+        <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.container}
+        decelerationRate="fast"
+        snapToInterval={PILL_HEIGHT + Spacing.sm}
       >
         {CATEGORIES.map((category) => {
           const isSelected = selected === category.value;
@@ -84,9 +86,9 @@ const styles = StyleSheet.create({
     height: WRAPPER_HEIGHT,
   },
   container: {
-    flex: 1,
     paddingHorizontal: Spacing.md,
     alignItems: 'center',
+    gap: Spacing.sm,
   },
   filterPill: {
     width: PILL_HEIGHT,

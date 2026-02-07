@@ -39,18 +39,28 @@ export default function ExploreScreen() {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [debouncedSearchQuery, setDebouncedSearchQuery] = useState('');
   const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty | null>(null);
+
+  // Debounce search query to avoid loading on every keystroke
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearchQuery(searchQuery);
+    }, 700);
+
+    return () => clearTimeout(timer);
+  }, [searchQuery]);
 
   const loadRecipes = useCallback(async () => {
     const { data } = await getRecipesWithFavoritesCount({
       difficulty: selectedDifficulty || undefined,
-      search: searchQuery || undefined,
+      search: debouncedSearchQuery || undefined,
     });
 
     if (data) {
       setRecipes(data);
     }
-  }, [selectedDifficulty, searchQuery]);
+  }, [selectedDifficulty, debouncedSearchQuery]);
 
   useEffect(() => {
     setLoading(true);

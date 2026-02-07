@@ -15,6 +15,8 @@ interface AuthContextType {
   signUp: (email: string, password: string) => Promise<{ error: string | null }>;
   signInWithMagicLink: (email: string) => Promise<{ error: string | null }>;
   signOut: () => Promise<void>;
+  updatePassword: (newPassword: string) => Promise<{ error: string | null }>;
+  deleteAccount: () => Promise<{ error: string | null }>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -99,6 +101,28 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     await supabase.auth.signOut();
   }, [isConfigured]);
 
+  const updatePassword = useCallback(async (newPassword: string) => {
+    if (!isConfigured) {
+      return { error: 'Supabase is not configured' };
+    }
+
+    const { error } = await supabase.auth.updateUser({
+      password: newPassword,
+    });
+
+    return { error: error?.message ?? null };
+  }, [isConfigured]);
+
+  const deleteAccount = useCallback(async () => {
+    if (!isConfigured) {
+      return { error: 'Supabase is not configured' };
+    }
+
+    const { error } = await supabase.rpc('delete_user');
+
+    return { error: error?.message ?? null };
+  }, [isConfigured]);
+
   const value: AuthContextType = {
     user,
     session,
@@ -108,6 +132,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     signUp,
     signInWithMagicLink,
     signOut,
+    updatePassword,
+    deleteAccount,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

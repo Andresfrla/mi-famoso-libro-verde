@@ -295,7 +295,7 @@ export default function RecipeDetailScreen() {
               style={[styles.headerButton, { backgroundColor: 'rgba(255,255,255,0.9)' }]}
               onPress={handleBack}
             >
-              <Ionicons name="chevron-back" size={24} color={colors.text} />
+              <Ionicons name="chevron-back" size={24} color="#11181C" />
             </Pressable>
             <Text style={styles.headerTitle}>
               {t('recipe.title')}
@@ -304,7 +304,7 @@ export default function RecipeDetailScreen() {
               style={[styles.headerButton, { backgroundColor: 'rgba(255,255,255,0.9)' }]}
               onPress={handleEdit}
             >
-              <Ionicons name="globe-outline" size={24} color={colors.text} />
+              <Ionicons name="globe-outline" size={24} color="#11181C" />
             </Pressable>
           </View>
 

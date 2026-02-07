@@ -43,18 +43,28 @@ export default function HomeScreen() {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [debouncedSearchQuery, setDebouncedSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<Category>('all');
+
+  // Debounce search query to avoid loading on every keystroke
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearchQuery(searchQuery);
+    }, 700);
+
+    return () => clearTimeout(timer);
+  }, [searchQuery]);
 
   const loadRecipes = useCallback(async () => {
     const { data, error } = await getRecipesWithUserFirst(user?.id, {
       category: selectedCategory,
-      search: searchQuery || undefined,
+      search: debouncedSearchQuery || undefined,
     });
 
     if (data) {
       setRecipes(data);
     }
-  }, [user?.id, selectedCategory, searchQuery]);
+  }, [user?.id, selectedCategory, debouncedSearchQuery]);
 
   useEffect(() => {
     setLoading(true);
