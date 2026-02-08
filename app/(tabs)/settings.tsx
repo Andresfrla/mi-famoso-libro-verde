@@ -2,7 +2,7 @@
 // Settings Screen
 // =====================================================
 
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import {
   View,
   Text,
@@ -11,8 +11,6 @@ import {
   useColorScheme,
   Pressable,
   Alert,
-  Modal,
-  TextInput,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
@@ -30,14 +28,9 @@ export default function SettingsScreen() {
   const insets = useSafeAreaInsets();
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme === 'dark' ? 'dark' : 'light'];
-  const { user, signOut, isConfigured, updatePassword, deleteAccount } = useAuth();
+  const { user, signOut, isConfigured } = useAuth();
   const { language, setLanguage } = useLanguage();
   const { measurementSystem, setMeasurementSystem } = useMeasurementSystem();
-
-  const [showPasswordModal, setShowPasswordModal] = useState(false);
-  const [currentPassword, setCurrentPassword] = useState('');
-  const [newPassword, setNewPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleLanguageSelect = useCallback(
     async (lng: Language) => {
@@ -74,50 +67,13 @@ export default function SettingsScreen() {
     router.push('/auth');
   }, [router]);
 
-  const handleChangePassword = useCallback(async () => {
-    if (newPassword !== confirmPassword) {
-      Alert.alert(t('common.error'), t('auth.passwordMismatch'));
-      return;
+  const handleProfileSettings = useCallback(() => {
+    if (!user && isConfigured) {
+      handleLogin();
+    } else if (user) {
+      router.push('/profile');
     }
-
-    if (newPassword.length < 6) {
-      Alert.alert(t('common.error'), t('auth.passwordRequired'));
-      return;
-    }
-
-    const { error } = await updatePassword(newPassword);
-    if (error) {
-      Alert.alert(t('common.error'), t('settings.passwordChangeError'));
-    } else {
-      Alert.alert(t('common.success'), t('settings.passwordChanged'));
-      setShowPasswordModal(false);
-      setCurrentPassword('');
-      setNewPassword('');
-      setConfirmPassword('');
-    }
-  }, [newPassword, confirmPassword, updatePassword, t]);
-
-  const handleDeleteAccount = useCallback(() => {
-    Alert.alert(
-      t('settings.deleteAccount'),
-      t('settings.deleteAccountConfirm'),
-      [
-        { text: t('common.cancel'), style: 'cancel' },
-        {
-          text: t('common.delete'),
-          style: 'destructive',
-          onPress: async () => {
-            const { error } = await deleteAccount();
-            if (error) {
-              Alert.alert(t('common.error'), t('settings.accountDeleteError'));
-            } else {
-              Alert.alert(t('common.success'), t('settings.accountDeleted'));
-            }
-          },
-        },
-      ]
-    );
-  }, [t, deleteAccount]);
+  }, [user, isConfigured, router, handleLogin]);
 
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
@@ -142,38 +98,11 @@ export default function SettingsScreen() {
           {t('settings.account')}
         </Text>
         <View style={styles.section}>
-          {user && (
-            <View style={[styles.emailContainer, { backgroundColor: colors.surface }]}>
-              <Ionicons name="mail-outline" size={20} color={colors.textMuted} />
-              <Text style={[styles.emailText, { color: colors.text }]}>
-                {user.email}
-              </Text>
-            </View>
-          )}
           <SettingsItem
             icon="person-outline"
             label={t('settings.profileSettings')}
-            onPress={() => {
-              if (!user && isConfigured) {
-                handleLogin();
-              }
-            }}
+            onPress={handleProfileSettings}
           />
-          {user && (
-            <>
-              <SettingsItem
-                icon="lock-closed-outline"
-                label={t('settings.changePassword')}
-                onPress={() => setShowPasswordModal(true)}
-              />
-              <SettingsItem
-                icon="trash-outline"
-                label={t('settings.deleteAccount')}
-                onPress={handleDeleteAccount}
-                destructive
-              />
-            </>
-          )}
         </View>
 
         {/* Language Section */}
@@ -276,12 +205,12 @@ export default function SettingsScreen() {
           <SettingsItem
             icon="information-circle-outline"
             label={t('settings.aboutApp')}
-            onPress={() => {}}
+            onPress={() => router.push('/acerca')}
           />
           <SettingsItem
             icon="document-text-outline"
             label={t('settings.privacyPolicy')}
-            onPress={() => {}}
+            onPress={() => router.push('/privacidad')}
           />
         </View>
 
@@ -311,52 +240,6 @@ export default function SettingsScreen() {
           {t('settings.version')} 2.4.1 (102)
         </Text>
       </ScrollView>
-
-      {/* Change Password Modal */}
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={showPasswordModal}
-        onRequestClose={() => setShowPasswordModal(false)}
-      >
-        <View style={styles.modalOverlay}>
-          <View style={[styles.modalContent, { backgroundColor: colors.background }]}>
-            <View style={styles.modalHeader}>
-              <Text style={[styles.modalTitle, { color: colors.text }]}>
-                {t('settings.changePassword')}
-              </Text>
-              <Pressable onPress={() => setShowPasswordModal(false)}>
-                <Ionicons name="close" size={24} color={colors.text} />
-              </Pressable>
-            </View>
-
-            <TextInput
-              style={[styles.input, { backgroundColor: colors.surface, color: colors.text }]}
-              placeholder={t('settings.newPassword')}
-              placeholderTextColor={colors.textMuted}
-              secureTextEntry
-              value={newPassword}
-              onChangeText={setNewPassword}
-            />
-
-            <TextInput
-              style={[styles.input, { backgroundColor: colors.surface, color: colors.text }]}
-              placeholder={t('settings.confirmNewPassword')}
-              placeholderTextColor={colors.textMuted}
-              secureTextEntry
-              value={confirmPassword}
-              onChangeText={setConfirmPassword}
-            />
-
-            <Pressable
-              style={[styles.saveButton, { backgroundColor: colors.primary }]}
-              onPress={handleChangePassword}
-            >
-              <Text style={styles.saveButtonText}>{t('common.save')}</Text>
-            </Pressable>
-          </View>
-        </View>
-      </Modal>
     </View>
   );
 }
@@ -458,55 +341,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: FontSizes.sm,
     marginTop: Spacing.lg,
-  },
-  emailContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: Spacing.md,
-    borderRadius: BorderRadius.lg,
-    marginBottom: Spacing.sm,
-    gap: Spacing.sm,
-  },
-  emailText: {
-    fontSize: FontSizes.md,
-    fontWeight: FontWeights.medium,
-  },
-  modalOverlay: {
-    flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    justifyContent: 'flex-end',
-  },
-  modalContent: {
-    borderTopLeftRadius: BorderRadius.xl,
-    borderTopRightRadius: BorderRadius.xl,
-    padding: Spacing.lg,
-    paddingBottom: Spacing.xl * 2,
-  },
-  modalHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: Spacing.lg,
-  },
-  modalTitle: {
-    fontSize: FontSizes.xl,
-    fontWeight: FontWeights.bold,
-  },
-  input: {
-    padding: Spacing.md,
-    borderRadius: BorderRadius.lg,
-    marginBottom: Spacing.md,
-    fontSize: FontSizes.md,
-  },
-  saveButton: {
-    padding: Spacing.md,
-    borderRadius: BorderRadius.lg,
-    alignItems: 'center',
-    marginTop: Spacing.md,
-  },
-  saveButtonText: {
-    fontSize: FontSizes.lg,
-    fontWeight: FontWeights.semibold,
-    color: '#1E293B',
   },
 });

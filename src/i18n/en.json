@@ -128,7 +128,11 @@
     "privacyPolicy": "Privacy Policy",
     "version": "Version",
     "logout": "Logout",
-    "logoutConfirm": "Are you sure you want to logout?"
+    "logoutConfirm": "Are you sure you want to logout?",
+    "contactSupport": "Support",
+    "haveQuestions": "Do you have any questions or issues?",
+    "contactUs": "Contact Us",
+    "contactDescription": "If you have any questions, suggestions, or encounter any issues with the application, feel free to contact us."
   },
   "auth": {
     "login": "Login",
@@ -152,6 +156,31 @@
     "orContinueWith": "Or continue with",
     "magicLink": "Send Magic Link",
     "magicLinkSent": "Check your email for the login link!"
+  },
+  "about": {
+    "dedicationTitle": "Dedicated to Grandma Clarita",
+    "dedicationText": "The development of this application is a tribute to Grandma Clarita from her grandson who loves her very much, a full stack developer who also handles mobile technology like Expo. The base of this application is built using Expo and React Native as the framework.",
+    "aboutTitle": "About This Application",
+    "description1": "This application is a digital modernization of Grandma Clarita's famous 'Green Book,' which contained the family's most cherished and traditional recipes.",
+    "description2": "Clarita would lend her precious book to her daughters Jeannette, María Clara, Mónica, Pilar, and Helga, who learned and enjoyed these delicious recipes. The last version in PDF format was distributed as copies to various family members, and now this application brings those same recipes into the digital age.",
+    "description3": "Developed with modern technologies like Expo and React Native, this application allows the entire family to access, share, and preserve Grandma Clarita's recipes easily and accessibly from any mobile device. Additionally, users can upload their own recipes and share them with others, and in the Explore section you will find users' favorite recipes."
+  },
+  "privacy": {
+    "lastUpdated": "Last updated",
+    "introTitle": "Introduction",
+    "introText": "This privacy policy describes how we collect, use, and protect your personal information when you use our family recipes application.",
+    "infoTitle": "Information We Collect",
+    "infoText": "We may collect the following information: email address (for authentication), recipes you upload to the application, and usage preferences such as language and measurement units.",
+    "useTitle": "How We Use Your Information",
+    "useText": "We use your information to: provide access to application features, allow you to save and share recipes, improve user experience, and send notifications about important updates.",
+    "shareTitle": "Sharing Information",
+    "shareText": "We do not sell or share your personal information with third parties. Recipes you share publicly will be visible to other users of the application.",
+    "securityTitle": "Security",
+    "securityText": "We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.",
+    "rightsTitle": "Your Rights",
+    "rightsText": "You have the right to access, correct, or delete your personal information. You can do this from your account settings or by contacting us directly.",
+    "contactTitle": "Contact",
+    "contactText": "If you have questions about this privacy policy, you can contact us through the application settings section."
   },
   "errors": {
     "networkError": "Network error. Please check your connection.",

@@ -1,0 +1,743 @@
+{
+  "recipes": [
+    {
+      "title_es": "Arroz a la Piña",
+      "title_en": "Pineapple Rice",
+      "description_es": "Arroz preparado con jugo de piña natural que le da un sabor dulce y aromático",
+      "description_en": "Rice prepared with natural pineapple juice giving it a sweet and aromatic flavor",
+      "ingredients_es": [
+        "1 lb arroz",
+        "1 piña pequeña",
+        "1 cubo Maggi",
+        "Sal",
+        "4 cdas aceite",
+        "Cebolla",
+        "1 cdita tintura de panela"
+      ],
+      "ingredients_en": [
+        "1 lb rice",
+        "1 small pineapple",
+        "1 Maggi cube",
+        "Salt",
+        "4 tbsp oil",
+        "Onion",
+        "1 tsp panela coloring"
+      ],
+      "steps_es": [
+        "Hacer un jugo con media piña hasta dar las cuatro tazas de jugo",
+        "Sofreír el arroz común y corriente, agregándole todos los demás ingredientes",
+        "En cambio de agua se le echan las cuatro tazas de jugo",
+        "Dejar secar y al servirlo se le rocea perejil picado"
+      ],
+      "steps_en": [
+        "Make juice with half a pineapple until you get four cups of juice",
+        "Sauté the rice normally, adding all other ingredients",
+        "Instead of water, add the four cups of juice",
+        "Let it dry and when serving sprinkle with chopped parsley"
+      ],
+      "category": "lunch",
+      "difficulty": "easy",
+      "servings": 4,
+      "prep_time_minutes": 30,
+      "tags": ["arroz", "piña", "tropical"]
+    },
+    {
+      "title_es": "Arroz a la Reina",
+      "title_en": "Queen's Rice",
+      "description_es": "Elegante arroz en corona con salsa bechamel de champiñones y langostinos",
+      "description_en": "Elegant crown-shaped rice with mushroom bechamel sauce and prawns",
+      "ingredients_es": [
+        "1½ lb arroz",
+        "2 tarros champiñones",
+        "1 lb langostinos o camarón reina",
+        "1 frasco pequeño de salsa de tomate",
+        "1 cda salsa perrins",
+        "1 cdita tintura de panela",
+        "1 copa brandy",
+        "1 cubo Maggi",
+        "½ lb jamón",
+        "¼ lb tocineta",
+        "2 oz mantequilla",
+        "Salsa bechamel"
+      ],
+      "ingredients_en": [
+        "1½ lb rice",
+        "2 cans mushrooms",
+        "1 lb prawns or queen shrimp",
+        "1 small jar tomato sauce",
+        "1 tbsp worcestershire sauce",
+        "1 tsp panela coloring",
+        "1 cup brandy",
+        "1 Maggi cube",
+        "½ lb ham",
+        "¼ lb bacon",
+        "2 oz butter",
+        "Bechamel sauce"
+      ],
+      "steps_es": [
+        "Se suda el arroz en la grasa de la tocineta la que se frita picada más el cubo Maggi, mantequilla, la tintura de panela y salsa perrins",
+        "Cuando seque, se forma una corona",
+        "En otro recipiente se prepara la salsa bechamel, con mantequilla, caldo Maggi y harina de trigo, dejándola de color rubio",
+        "Agregar brandy, champiñones picados previamente fritos en mantequilla y el jamón",
+        "En otro recipiente se cocinan los langostinos (previamente desvenados y lavados) en salsa de tomate, crema de leche, jugo Maggi y mantequilla",
+        "Para servir se pone el arroz en una bandeja de plata ojalá redonda y por el rededor se cubre con salsa de champiñones y en el centro se ponen los langostinos con su salsa",
+        "Se adorna con perejil"
+      ],
+      "steps_en": [
+        "Sauté the rice in the bacon fat which is fried chopped plus the Maggi cube, butter, panela coloring and worcestershire sauce",
+        "When dry, form a crown shape",
+        "In another container prepare the bechamel sauce with butter, Maggi broth and wheat flour, leaving it blond in color",
+        "Add brandy, mushrooms previously chopped and fried in butter, and the ham",
+        "In another container cook the prawns (previously deveined and washed) in tomato sauce, heavy cream, Maggi juice and butter",
+        "To serve, place the rice on a round silver tray and around it cover with mushroom sauce and in the center place the prawns with their sauce",
+        "Garnish with parsley"
+      ],
+      "category": "dinner",
+      "difficulty": "hard",
+      "servings": 6,
+      "prep_time_minutes": 60,
+      "tags": ["arroz", "langostinos", "champiñones", "especial"]
+    },
+    {
+      "title_es": "Arroz Almendrado",
+      "title_en": "Almond Rice",
+      "description_es": "Arroz dorado con pollo deshilachado y almendras tostadas",
+      "description_en": "Golden rice with shredded chicken and toasted almonds",
+      "ingredients_es": [
+        "2 lb arroz",
+        "2 pechugas",
+        "½ lb almendras",
+        "½ lb mantequilla de buena calidad",
+        "2 cubos caldo Maggi",
+        "Ajo triturado",
+        "2 cdas salsa inglesa",
+        "Cebollas cabezona y larga",
+        "Sal"
+      ],
+      "ingredients_en": [
+        "2 lb rice",
+        "2 chicken breasts",
+        "½ lb almonds",
+        "½ lb good quality butter",
+        "2 Maggi broth cubes",
+        "Crushed garlic",
+        "2 tbsp worcestershire sauce",
+        "Onions (white and green)",
+        "Salt"
+      ],
+      "steps_es": [
+        "Se pone a freír la mantequilla, cuando derrita se agrega el arroz dejando que frite hasta que quede color moreno",
+        "Cuando esté carmelita se le ponen las dos pastas de Maggi y 6 tazas de caldo de pollo que se ha puesto a cocinar con cebolla cabezona (2), cebolla larga y el ajo machacado",
+        "Cuando esté seco se tapa y se le baja el fuego igual que cualquier arroz común",
+        "Mientras tanto se deshilacha el pollo",
+        "Se ponen las almendras en agua caliente para pelarlas, se pelan y se parten o se dividen en dos",
+        "Se fritan poniéndole sal y pimienta al gusto",
+        "Se sirve el arroz en una bandeja grande y se rocea con el pollo y luego las almendras"
+      ],
+      "steps_en": [
+        "Heat the butter, when melted add the rice letting it fry until golden brown",
+        "When caramelized add the two Maggi pastes and 6 cups of chicken broth that has been cooking with white onions (2), green onions and crushed garlic",
+        "When dry, cover and lower the heat like any common rice",
+        "Meanwhile, shred the chicken",
+        "Put the almonds in hot water to peel them, peel and split them in two",
+        "Fry them adding salt and pepper to taste",
+        "Serve the rice on a large tray and sprinkle with chicken and then the almonds"
+      ],
+      "category": "lunch",
+      "difficulty": "medium",
+      "servings": 8,
+      "prep_time_minutes": 45,
+      "tags": ["arroz", "pollo", "almendras", "navidad"]
+    },
+    {
+      "title_es": "Arroz con Azafrán y Garbanzos",
+      "title_en": "Saffron Rice with Chickpeas",
+      "description_es": "Arroz aromático con azafrán, garbanzos y alverjas",
+      "description_en": "Aromatic rice with saffron, chickpeas and peas",
+      "ingredients_es": [
+        "2 tazas arroz",
+        "1 taza alverjas verdes cocidas",
+        "4 cdas mantequilla",
+        "1 cebolla cabezona rallada",
+        "4 tazas agua",
+        "1 cubo caldo Maggi",
+        "½ cdita azafrán",
+        "1 lata garbanzos"
+      ],
+      "ingredients_en": [
+        "2 cups rice",
+        "1 cup green peas cooked",
+        "4 tbsp butter",
+        "1 white onion grated",
+        "4 cups water",
+        "1 Maggi broth cube",
+        "½ tsp saffron",
+        "1 can chickpeas"
+      ],
+      "steps_es": [
+        "Derrita la mantequilla en la olla de hacer el arroz",
+        "Añada la cebolla y fríala hasta que se ablande",
+        "Agregue el arroz y déjelo freír por un minuto",
+        "Luego agréguele el agua, el cubo Maggi y el azafrán",
+        "Déjelo secar y tápelo",
+        "Déjelo 20 minutos a fuego lento",
+        "Cuando esté listo se le agregan los garbanzos y las alverjas"
+      ],
+      "steps_en": [
+        "Melt the butter in the rice pot",
+        "Add the onion and fry until softened",
+        "Add the rice and let it fry for a minute",
+        "Then add the water, Maggi cube and saffron",
+        "Let it dry and cover",
+        "Leave it for 20 minutes on low heat",
+        "When ready, add the chickpeas and peas"
+      ],
+      "category": "lunch",
+      "difficulty": "easy",
+      "servings": 4,
+      "prep_time_minutes": 35,
+      "tags": ["arroz", "azafrán", "garbanzos", "vegetariano"]
+    },
+    {
+      "title_es": "Arroz con Plátano y Tocineta",
+      "title_en": "Rice with Plantain and Bacon",
+      "description_es": "Arroz tradicional con plátano maduro frito y tocineta crujiente",
+      "description_en": "Traditional rice with fried ripe plantain and crispy bacon",
+      "ingredients_es": [
+        "1 lb arroz",
+        "½ cebolla cabezona picada",
+        "1 diente ajo",
+        "1 cubo Maggi",
+        "1 cdita tintura de panela",
+        "1 plátano maduro picadito y frito",
+        "½ lb tocineta picada y frita",
+        "1 taza aceite",
+        "5 clavos de olor"
+      ],
+      "ingredients_en": [
+        "1 lb rice",
+        "½ white onion chopped",
+        "1 garlic clove",
+        "1 Maggi cube",
+        "1 tsp panela coloring",
+        "1 ripe plantain chopped and fried",
+        "½ lb bacon chopped and fried",
+        "1 cup oil",
+        "5 cloves"
+      ],
+      "steps_es": [
+        "Se frita la cebolla, el ajo y el arroz",
+        "Luego se le ponen cuatro tazas de agua, el cubo Maggi, cucharadita y media de sal, los clavos y la tintura de panela",
+        "Se pone a secar como cualquier arroz",
+        "Luego se frita la tocineta",
+        "En la grasa y un poquito más de aceite se frita el plátano",
+        "Luego se revuelve el arroz con el plátano y la tocineta"
+      ],
+      "steps_en": [
+        "Fry the onion, garlic and rice",
+        "Then add four cups of water, Maggi cube, one and a half teaspoons of salt, cloves and panela coloring",
+        "Let it dry like any rice",
+        "Then fry the bacon",
+        "In the fat and a little more oil, fry the plantain",
+        "Then mix the rice with the plantain and bacon"
+      ],
+      "category": "lunch",
+      "difficulty": "easy",
+      "servings": 4,
+      "prep_time_minutes": 35,
+        "tags": ["arroz", "plátano", "tocineta", "tradicional"]
+    },
+    {
+      "title_es": "Croquetas de Arroz",
+      "title_en": "Rice Croquettes",
+      "description_es": "Deliciosas croquetas crujientes de arroz, perfectas para aprovechar sobras",
+      "description_en": "Delicious crispy rice croquettes, perfect for using leftovers",
+      "ingredients_es": [
+        "4 tazas arroz cocido y molido",
+        "2 huevos",
+        "½ taza queso campesino",
+        "Aceite",
+        "Sal y pimienta al gusto"
+      ],
+      "ingredients_en": [
+        "4 cups cooked and ground rice",
+        "2 eggs",
+        "½ cup fresh cheese (queso campesino)",
+        "Oil",
+        "Salt and pepper to taste"
+      ],
+      "steps_es": [
+        "Se revuelve bien todo",
+        "Se hacen los pastelitos o croquetas",
+        "Se fritan en aceite caliente"
+      ],
+      "steps_en": [
+        "Mix everything well",
+        "Form the small patties or croquettes",
+        "Fry in hot oil"
+      ],
+      "category": "snack",
+      "difficulty": "easy",
+      "servings": 4,
+      "prep_time_minutes": 20,
+      "tags": ["arroz", "croquetas", "aperitivo"]
+    },
+    {
+      "title_es": "Paella",
+      "title_en": "Paella",
+      "description_es": "Paella española tradicional con mariscos, pollo y cerdo",
+      "description_en": "Traditional Spanish paella with seafood, chicken and pork",
+      "ingredients_es": [
+        "2 perniles de pollo cortados en pedazos",
+        "½ lb carne de cerdo",
+        "½ lb pulpo",
+        "½ lb calamar",
+        "1 lb almejas",
+        "1 lb camarones",
+        "1 lb pescado",
+        "2 lb alverjas verdes",
+        "3 cebollas grandes ralladas",
+        "2 pimentones cortados en julianas",
+        "1 cabeza de ajo",
+        "Aceite",
+        "Jerez Tío Pepe",
+        "2 lb arroz",
+        "8 tazas agua"
+      ],
+      "ingredients_en": [
+        "2 chicken thighs cut into pieces",
+        "½ lb pork meat",
+        "½ lb octopus",
+        "½ lb squid",
+        "1 lb clams",
+        "1 lb shrimp",
+        "1 lb fish",
+        "2 lb green peas",
+        "3 large onions grated",
+        "2 bell peppers cut into strips",
+        "1 head of garlic",
+        "Oil",
+        "Sherry wine (Tío Pepe)",
+        "2 lb rice",
+        "8 cups water"
+      ],
+      "steps_es": [
+        "Se pone en la paellera con aceite el pollo y la carne de cerdo con pimienta y sal y se deja cocinar hasta que las carnes estén bien cocidas",
+        "Luego se le echa la cebolla, el ajo machacado y el pimentón en julianas y se deja freír otro rato",
+        "Después se le agregan las almejas, al rato el pulpo y el calamar (previamente cocinados en la olla de presión por 15 minutos)",
+        "Después de que ya esté bien cocinado se le echa el arroz y se deja freír un buen rato",
+        "Luego se le va agregando el agua (8 tazas). Se prueba y se le pone más sal si necesita",
+        "Se revuelve permanentemente, cuando ya esté secando se le pone el pescado y los camarones",
+        "Se deja secar sin dejar de revolver de vez en cuando",
+        "Cuando esté seco se tapa y se deja unos 20 minutos a fuego lento",
+        "Cuando ya esté listo se le rocía la copa de jerez"
+      ],
+      "steps_en": [
+        "Put chicken and pork in the paella pan with oil, salt and pepper, cook until meats are well done",
+        "Then add onion, crushed garlic and bell pepper strips and let it fry for a while",
+        "Then add the clams, later the octopus and squid (previously cooked in pressure cooker for 15 minutes)",
+        "After everything is well cooked, add the rice and let it fry for a good while",
+        "Then add the water (8 cups). Taste and add more salt if needed",
+        "Stir constantly, when it's drying add the fish and shrimp",
+        "Let it dry without stopping to stir occasionally",
+        "When dry, cover and leave for 20 minutes on low heat",
+        "When ready, sprinkle with a cup of sherry"
+      ],
+      "category": "dinner",
+      "difficulty": "hard",
+      "servings": 10,
+      "prep_time_minutes": 90,
+      "tags": ["paella", "mariscos", "español", "especial"]
+    },
+    {
+      "title_es": "Cazuela de Pollo",
+      "title_en": "Chicken Casserole",
+      "description_es": "Cazuela de pollo con papas, tallarines y verduras gratinadas al horno",
+      "description_en": "Chicken casserole with potatoes, noodles and vegetables baked au gratin",
+      "ingredients_es": [
+        "1 lb papas",
+        "3 pechugas",
+        "½ lb tallarines",
+        "1 taza verduras",
+        "3 tomates",
+        "2 huevos duros",
+        "1 lb queso parmesano",
+        "2 paquetes crema de champiñones",
+        "1 frasco crema de leche"
+      ],
+      "ingredients_en": [
+        "1 lb potatoes",
+        "3 chicken breasts",
+        "½ lb noodles",
+        "1 cup vegetables",
+        "3 tomatoes",
+        "2 hard-boiled eggs",
+        "1 lb parmesan cheese",
+        "2 packages mushroom soup",
+        "1 jar heavy cream"
+      ],
+      "steps_es": [
+        "Se fritan unas tajadas de papa gruesas",
+        "Se deshilacha el pollo previamente adobado y sudado",
+        "Se preparan los tallarines",
+        "Se cocinan las verduras",
+        "Se pone una capa de papa, otra de crema de leche, una capa de verduras, la capa de pasta y la de pollo",
+        "Encima una tajada de tomate, una rebanada de huevo duro y encima queso parmesano",
+        "Se le agrega crema de champiñones, crema de leche y se mete al horno"
+      ],
+      "steps_en": [
+        "Fry thick potato slices",
+        "Shred the chicken previously seasoned and sautéed",
+        "Prepare the noodles",
+        "Cook the vegetables",
+        "Layer potatoes, cream, vegetables, pasta and chicken",
+        "Top with tomato slice, hard-boiled egg slice and parmesan cheese",
+        "Add mushroom soup, heavy cream and bake in the oven"
+      ],
+      "category": "dinner",
+      "difficulty": "medium",
+      "servings": 6,
+      "prep_time_minutes": 60,
+      "tags": ["pollo", "cazuela", "horno", "pasta"]
+    },
+    {
+      "title_es": "Colombinas de Pollo",
+      "title_en": "Chicken Wings (Colombinas)",
+      "description_es": "Alitas de pollo crujientes con salsa barbacoa y miel",
+      "description_en": "Crispy chicken wings with barbecue sauce and honey",
+      "ingredients_es": [
+        "20 alitas de pollo",
+        "½ taza harina de trigo",
+        "Aceite",
+        "4 cdas miel",
+        "2 cdas salsa soya",
+        "6 cdas salsa barbacoa",
+        "Apio para acompañar"
+      ],
+      "ingredients_en": [
+        "20 chicken wings",
+        "½ cup wheat flour",
+        "Oil",
+        "4 tbsp honey",
+        "2 tbsp soy sauce",
+        "6 tbsp barbecue sauce",
+        "Celery for serving"
+      ],
+      "steps_es": [
+        "Se espolvorean las colombinas con harina, sal y pimienta",
+        "Freírlas en aceite bien caliente hasta que doren",
+        "Se sacan sobre papel absorbente y se ponen en una refractaria",
+        "Se revuelve la miel con la salsa soya y la salsa barbacoa",
+        "Se untan las colombinas por todos los lados con esta mezcla",
+        "Justo antes de servir, hornear durante 10 minutos a 350°F",
+        "Acompañar con bastoncitos de apio"
+      ],
+      "steps_en": [
+        "Dust the wings with flour, salt and pepper",
+        "Fry in very hot oil until golden",
+        "Remove onto paper towels and place in a baking dish",
+        "Mix honey with soy sauce and barbecue sauce",
+        "Coat the wings all over with this mixture",
+        "Just before serving, bake for 10 minutes at 350°F",
+        "Serve with celery sticks"
+      ],
+      "category": "dinner",
+      "difficulty": "medium",
+      "servings": 5,
+      "prep_time_minutes": 40,
+      "tags": ["pollo", "alitas", "barbacoa", "aperitivo"]
+    },
+    {
+      "title_es": "Corona de Arroz con Pollo",
+      "title_en": "Crown of Rice with Chicken",
+      "description_es": "Arroz en forma de corona con pollo al curry, champiñones y manzana",
+      "description_en": "Rice shaped as a crown with curry chicken, mushrooms and apple",
+      "ingredients_es": [
+        "½ lb arroz",
+        "2 pechugas",
+        "1 cda mantequilla",
+        "½ lb champiñones",
+        "2 cdas cebolla cabezona rallada",
+        "3 cdas harina de trigo",
+        "1 cubo caldo Maggi",
+        "Sal",
+        "1½ cdita polvo curry",
+        "1 taza manzanas picadas",
+        "¼ taza perejil picado",
+        "¾ taza leche",
+        "1 taza agua"
+      ],
+      "ingredients_en": [
+        "½ lb rice",
+        "2 chicken breasts",
+        "1 tbsp butter",
+        "½ lb mushrooms",
+        "2 tbsp grated white onion",
+        "3 tbsp wheat flour",
+        "1 Maggi broth cube",
+        "Salt",
+        "1½ tsp curry powder",
+        "1 cup chopped apples",
+        "¼ cup chopped parsley",
+        "¾ cup milk",
+        "1 cup water"
+      ],
+      "steps_es": [
+        "Cocine de la manera corriente el arroz blanco",
+        "Cortar el pollo en cuadritos pequeños",
+        "En una sartén grande con la mantequilla, sofría el pollo, los champiñones y la cebolla, hasta que el pollo esté ligeramente dorado (10 minutos más o menos)",
+        "Incorpore y revuelva la harina, el cubo Maggi, la sal y el polvo curry",
+        "Luego agréguele la manzana, el perejil, la leche y el agua",
+        "Cocine todo a fuego lento revolviéndolo constantemente durante tres minutos o hasta que los trocitos de manzana estén tiernos pero firmes",
+        "Sírvalo en una corona de arroz"
+      ],
+      "steps_en": [
+        "Cook the white rice in the usual way",
+        "Cut the chicken into small cubes",
+        "In a large skillet with butter, sauté the chicken, mushrooms and onion until the chicken is lightly golden (about 10 minutes)",
+        "Add and stir in the flour, Maggi cube, salt and curry powder",
+        "Then add the apple, parsley, milk and water",
+        "Cook everything on low heat stirring constantly for three minutes or until the apple pieces are tender but firm",
+        "Serve over a crown of rice"
+      ],
+      "category": "dinner",
+      "difficulty": "medium",
+      "servings": 4,
+      "prep_time_minutes": 45,
+        "tags": ["arroz", "pollo", "curry", "champiñones", "especial"]
+    },
+    {
+      "title_es": "Pastel de Pollo",
+      "title_en": "Chicken Pie",
+      "description_es": "Pastel de pollo con hojaldre y quesillo, horneado hasta dorar",
+      "description_en": "Chicken pie with puff pastry and fresh cheese, baked until golden",
+      "ingredients_es": [
+        "2 pechugas desmenuzadas",
+        "1½ taza papa en cuadritos cocida",
+        "1 cda mostaza",
+        "Sal y pimienta al gusto",
+        "½ taza salsa de tomate",
+        "1 cda alcaparras",
+        "½ quesillo huilense",
+        "1 lb hojaldre"
+      ],
+      "ingredients_en": [
+        "2 shredded chicken breasts",
+        "1½ cups cooked potatoes diced",
+        "1 tbsp mustard",
+        "Salt and pepper to taste",
+        "½ cup tomato sauce",
+        "1 tbsp capers",
+        "½ fresh cheese (quesillo huilense)",
+        "1 lb puff pastry"
+      ],
+      "steps_es": [
+        "Se revuelven todos los ingredientes menos el queso y el hojaldre",
+        "Forrar un molde con el hojaldre y chuzar con un tenedor",
+        "Se le pone una capa de queso, luego se le echa la mezcla de pollo, otra de quesillo y otra de hojaldre",
+        "Se barniza con huevo batido",
+        "Se hornea a 400°F por 40 minutos"
+      ],
+      "steps_en": [
+        "Mix all ingredients except cheese and puff pastry",
+        "Line a mold with puff pastry and prick with a fork",
+        "Add a layer of cheese, then the chicken mixture, another of cheese and another of puff pastry",
+        "Brush with beaten egg",
+        "Bake at 400°F for 40 minutes"
+      ],
+      "category": "dinner",
+      "difficulty": "medium",
+      "servings": 6,
+      "prep_time_minutes": 60,
+      "tags": ["pollo", "pastel", "hojaldre", "horno"]
+    },
+    {
+      "title_es": "Pastel de Pollo y Cerdo con Champiñones",
+      "title_en": "Chicken and Pork Pie with Mushrooms",
+      "description_es": "Pastel de carnes mixtas con salsa de champiñones",
+      "description_en": "Mixed meat pie with mushroom sauce",
+      "ingredients_es": [
+        "1 taza crema de leche",
+        "1 lb carne de cerdo cocida",
+        "2 pechugas de pollo cocidas",
+        "Tocineta",
+        "1 cda salsa inglesa",
+        "½ taza miga de pan",
+        "2 cdas mostaza",
+        "4 huevos",
+        "Sal y pimienta al gusto"
+      ],
+      "ingredients_en": [
+        "1 cup heavy cream",
+        "1 lb cooked pork meat",
+        "2 cooked chicken breasts",
+        "Bacon",
+        "1 tbsp worcestershire sauce",
+        "½ cup breadcrumbs",
+        "2 tbsp mustard",
+        "4 eggs",
+        "Salt and pepper to taste"
+      ],
+      "steps_es": [
+        "Se mezclan las carnes finamente picadas o molidas y la tocineta picada",
+        "Se agregan los huevos batidos como para perico, la crema de leche, la miga de pan, la mostaza, la salsa inglesa, sal y pimienta",
+        "Se revuelve todo muy bien y se lleva al horno por 30 minutos",
+        "Luego se cubre con una salsa de champiñones"
+      ],
+      "steps_en": [
+        "Mix finely chopped or ground meats and chopped bacon",
+        "Add scrambled eggs, heavy cream, breadcrumbs, mustard, worcestershire sauce, salt and pepper",
+        "Mix everything well and bake for 30 minutes",
+        "Then cover with mushroom sauce"
+      ],
+      "category": "dinner",
+      "difficulty": "medium",
+      "servings": 8,
+      "prep_time_minutes": 50,
+      "tags": ["pollo", "cerdo", "pastel", "champiñones"]
+    },
+    {
+      "title_es": "Pato a la Naranja",
+      "title_en": "Duck à l'Orange",
+      "description_es": "Pato tierno en salsa demiglasse y salsa de naranja",
+      "description_en": "Tender duck in demiglasse and orange sauce",
+      "ingredients_es": [
+        "1 pato congelado por 8 días"
+      ],
+      "ingredients_en": [
+        "1 duck frozen for 8 days"
+      ],
+      "steps_es": [
+        "Se descongela el pato y se adoba un día antes de cocinar",
+        "Se pone a cocer en un caldo con bouquet garni y sal",
+        "Cuando esté tierno se pone a conservar en salsa demiglasse y salsa de naranja"
+      ],
+      "steps_en": [
+        "Thaw the duck and marinate one day before cooking",
+        "Cook in broth with bouquet garni and salt",
+        "When tender, preserve in demiglasse sauce and orange sauce"
+      ],
+      "category": "dinner",
+      "difficulty": "hard",
+      "servings": 4,
+      "prep_time_minutes": 120,
+      "tags": ["pato", "naranja", "frances", "especial"]
+    },
+    {
+      "title_es": "Pavo o Gallina Rellena",
+      "title_en": "Stuffed Turkey or Hen",
+      "description_es": "Pavo deshuesado relleno de paté de carnes con frutas y especias",
+      "description_en": "Boneless turkey stuffed with meat pâté with fruits and spices",
+      "ingredients_es": [
+        "1 gallina o pavo deshuesado",
+        "1 taza vino",
+        "4 lb carne de ternera molida",
+        "4 lb carne de cerdo molida",
+        "1 frasco mediano de encurtido en mostaza",
+        "1 taza crema de leche",
+        "1 taza uvas pasas",
+        "2 tazas de miga de galleta de soda",
+        "½ frasco salsa Maggi",
+        "2 cdas pimienta",
+        "½ lb ciruelas pasas",
+        "6 huevos",
+        "1 pimentón rojo picado",
+        "2 cdas sal al gusto",
+        "1 caja gelatina sin sabor"
+      ],
+      "ingredients_en": [
+        "1 boned hen or turkey",
+        "1 cup wine",
+        "4 lb ground veal",
+        "4 lb ground pork",
+        "1 medium jar mustard pickles",
+        "1 cup heavy cream",
+        "1 cup raisins",
+        "2 cups soda cracker crumbs",
+        "½ jar Maggi sauce",
+        "2 tbsp pepper",
+        "½ lb prunes",
+        "6 eggs",
+        "1 red bell pepper chopped",
+        "2 tbsp salt to taste",
+        "1 box unflavored gelatin"
+      ],
+      "steps_es": [
+        "Se mezclan las dos carnes, se les añade el vino, la crema, los condimentos, los huevos crudos, la miga y por último se le añaden los encurtidos de mostaza con los demás ingredientes, unas ciruelas pasas y el pimentón",
+        "Este paté debe quedar bien suave",
+        "Por último, se le agrega la gelatina sin sabor",
+        "Se rellena el pavo previamente deshuesado y se cose muy bien con hilo y aguja",
+        "Se le amarran las alas cruzadas y las patas",
+        "Se pone en un lienzo y se amarra nuevamente con piola",
+        "Se pone en una olla con los huesos, otra taza de vino, un tallo de apio, tomillo, laurel, sal y agua que lo cubra",
+        "Se saca de la olla después de 3 o 4 horas de cocción y se deja enfriar",
+        "Para saber si está bien cocido, las alas tienen que estar tiernas",
+        "Luego se barniza el pavo con mantequilla y tintura de panela y se pone al horno por un cuarto de hora",
+        "Se deja en la nevera de un día para otro"
+      ],
+      "steps_en": [
+        "Mix both meats, add wine, cream, seasonings, raw eggs, crumbs and finally add mustard pickles with other ingredients, some prunes and bell pepper",
+        "This pâté should be very soft",
+        "Finally, add unflavored gelatin",
+        "Stuff the previously boned turkey and sew very well with thread and needle",
+        "Tie the wings crossed and the legs",
+        "Wrap in cloth and tie again with string",
+        "Put in a pot with bones, another cup of wine, a celery stalk, thyme, bay leaf, salt and water to cover",
+        "Remove from pot after 3-4 hours of cooking and let cool",
+        "To know if it's well cooked, the wings must be tender",
+        "Then brush the turkey with butter and panela coloring and bake for 15 minutes",
+        "Refrigerate overnight"
+      ],
+      "category": "dinner",
+      "difficulty": "hard",
+      "servings": 12,
+      "prep_time_minutes": 300,
+      "tags": ["pavo", "relleno", "navidad", "especial"]
+    },
+    {
+      "title_es": "Pechugas a la Italiana",
+      "title_en": "Italian Style Chicken Breasts",
+      "description_es": "Pechugas finas con salvia y queso gratinado",
+      "description_en": "Thin chicken breasts with sage and melted cheese",
+      "ingredients_es": [
+        "2 pechugas deshuesadas",
+        "1 cda mantequilla",
+        "1 cda salvia",
+        "¼ taza vino",
+        "2 cdas queso rallado",
+        "Perejil picado, sal y pimienta"
+      ],
+      "ingredients_en": [
+        "2 boneless chicken breasts",
+        "1 tbsp butter",
+        "1 tbsp sage",
+        "¼ cup wine",
+        "2 tbsp grated cheese",
+        "Chopped parsley, salt and pepper"
+      ],
+      "steps_es": [
+        "Parta las pechugas por mitades, colóquelas en papel encerado, aplánelas hasta que queden bien delgadas",
+        "Sazone con sal y pimienta y espolvoree con salvia",
+        "Frite en mantequilla hasta que doren ligeramente por ambos lados a fuego medio",
+        "Verter el vino encima",
+        "Salpicarlas con el queso y ponerlas en el horno precalentado por unos minutos",
+        "Decórelas con perejil picadito y rodajas de limón",
+        "Se acompaña con papa al vapor y ensalada mixta"
+      ],
+      "steps_en": [
+        "Cut breasts in half, place on wax paper, flatten until very thin",
+        "Season with salt and pepper and sprinkle with sage",
+        "Fry in butter until lightly golden on both sides over medium heat",
+        "Pour wine over them",
+        "Sprinkle with cheese and put in preheated oven for a few minutes",
+        "Garnish with chopped parsley and lemon slices",
+        "Serve with steamed potatoes and mixed salad"
+      ],
+      "category": "dinner",
+      "difficulty": "medium",
+      "servings": 2,
+      "prep_time_minutes": 30,
+      "tags": ["pollo", "pechuga", "italiano", "salvia"]
+    }
+  ]
+}

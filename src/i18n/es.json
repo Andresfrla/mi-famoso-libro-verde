@@ -128,7 +128,11 @@
     "privacyPolicy": "Política de Privacidad",
     "version": "Versión",
     "logout": "Cerrar Sesión",
-    "logoutConfirm": "¿Estás seguro de que deseas cerrar sesión?"
+    "logoutConfirm": "¿Estás seguro de que deseas cerrar sesión?",
+    "contactSupport": "Soporte",
+    "haveQuestions": "¿Tienes alguna duda o algún problema?",
+    "contactUs": "Contáctanos",
+    "contactDescription": "Si tienes alguna pregunta, sugerencia o encuentras algún problema con la aplicación, no dudes en escribirnos."
   },
   "auth": {
     "login": "Iniciar Sesión",
@@ -152,6 +156,31 @@
     "orContinueWith": "O continúa con",
     "magicLink": "Enviar Enlace Mágico",
     "magicLinkSent": "¡Revisa tu correo para el enlace de inicio de sesión!"
+  },
+  "about": {
+    "dedicationTitle": "Dedicado a la Abuelita Clarita",
+    "dedicationText": "El desarrollo de esta aplicación es un homenaje a la abuelita Clarita por parte de su nieto que la quiere mucho, un desarrollador full stack que maneja también tecnología móviles como Expo. La base de esta aplicación es utilizando Expo y React Native como framework.",
+    "aboutTitle": "Sobre esta Aplicación",
+    "description1": "Esta aplicación es una modernización digital del famoso 'Libro Verde' de la abuelita Clarita, que contenía las recetas más queridas y tradicionales de la familia.",
+    "description2": "Clarita prestaba su preciado libro a sus hijas Jeannette, María Clara, Mónica, Pilar y Helga, quienes aprendieron y disfrutaron de estas deliciosas recetas. La última versión en formato PDF se entregó como copia a varios familiares, y ahora esta aplicación lleva esas mismas recetas a la era digital.",
+    "description3": "Desarrollada con tecnologías modernas como Expo y React Native, esta aplicación permite a toda la familia acceder, compartir y preservar las recetas de la abuelita Clarita de manera fácil y accesible desde cualquier dispositivo móvil. Además, los usuarios pueden subir sus propias recetas y compartirlas con otros, y en la sección Explorar aparecerán las recetas favoritas de los usuarios."
+  },
+  "privacy": {
+    "lastUpdated": "Última actualización",
+    "introTitle": "Introducción",
+    "introText": "Esta política de privacidad describe cómo recopilamos, usamos y protegemos su información personal cuando utiliza nuestra aplicación de recetas familiares.",
+    "infoTitle": "Información que Recopilamos",
+    "infoText": "Podemos recopilar la siguiente información: dirección de correo electrónico (para autenticación), recetas que suba a la aplicación, y preferencias de uso como idioma y unidades de medida.",
+    "useTitle": "Cómo Usamos su Información",
+    "useText": "Utilizamos su información para: proporcionar acceso a las funciones de la aplicación, permitirle guardar y compartir recetas, mejorar la experiencia del usuario, y enviar notificaciones sobre actualizaciones importantes.",
+    "shareTitle": "Compartir Información",
+    "shareText": "No vendemos ni compartimos su información personal con terceros. Las recetas que comparta públicamente serán visibles para otros usuarios de la aplicación.",
+    "securityTitle": "Seguridad",
+    "securityText": "Implementamos medidas de seguridad apropiadas para proteger su información personal contra acceso no autorizado, alteración, divulgación o destrucción.",
+    "rightsTitle": "Sus Derechos",
+    "rightsText": "Usted tiene derecho a acceder, corregir o eliminar su información personal. Puede hacerlo desde la configuración de su cuenta o contactándonos directamente.",
+    "contactTitle": "Contacto",
+    "contactText": "Si tiene preguntas sobre esta política de privacidad, puede contactarnos a través de la sección de configuración de la aplicación."
   },
   "errors": {
     "networkError": "Error de red. Por favor verifica tu conexión.",

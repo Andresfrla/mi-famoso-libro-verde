@@ -82,6 +82,27 @@ export default function RootLayout() {
                     presentation: 'modal',
                   }}
                 />
+                <Stack.Screen
+                  name="acerca"
+                  options={{
+                    headerShown: true,
+                    presentation: 'card',
+                  }}
+                />
+                <Stack.Screen
+                  name="profile"
+                  options={{
+                    headerShown: true,
+                    presentation: 'card',
+                  }}
+                />
+                <Stack.Screen
+                  name="privacidad"
+                  options={{
+                    headerShown: true,
+                    presentation: 'card',
+                  }}
+                />
               </Stack>
               <StatusBar style="auto" />
             </ThemeProvider>
