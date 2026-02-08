@@ -73,6 +73,37 @@ export default function AboutScreen() {
           </Text>
         </View>
 
+        {/* El Libro Verde de Mamita */}
+        <View style={[styles.descriptionCard, { backgroundColor: colors.surface }]}>
+          <View style={styles.descriptionHeader}>
+            <Ionicons name="leaf" size={24} color="#22C55E" />
+            <Text style={[styles.descriptionTitle, { color: colors.text }]}>
+              El Libro Verde de Mamita
+            </Text>
+          </View>
+          <Text style={[styles.descriptionText, { color: colors.text }]}>
+            ¡Dicen que en la vida hay que plantar un árbol, tener un hijo y escribir un libro!
+          </Text>
+          <Text style={[styles.descriptionText, { color: colors.text }]}>
+            Pues, creo que esta máxima, Mamita la ha cumplido a "rajatabla" y con honores!
+          </Text>
+          <Text style={[styles.descriptionText, { color: colors.text }]}>
+            Cuantas veces hemos sido testigos todas nosotras y demás miembros de la familia, de las discusiones por "Donde Está Mi Libro Verde, Quien Me Lo Cogió", entonces había que buscarlo en varias casas para ver dónde aparecía y afortunadamente siempre lo hacía.
+          </Text>
+          <Text style={[styles.descriptionText, { color: colors.text }]}>
+            En el año 2003, supongo que temerosa de que alguna le diese "captura" para siempre y nos quedáramos sin él las demás, Mamita tuvo la brillante idea de regalarnos una copia a cada una de nosotras, para que lo tuviésemos y surely - aunque nunca lo ha dicho- para que no la enloqueciéramos todas, todos los días pidiéndole sus deliciosas recetas.
+          </Text>
+          <Text style={[styles.descriptionText, { color: colors.text }]}>
+            Y como siempre, se puso manos a la obra y pasó al computador, todas las recetas que ella misma había ido escribiendo de su puño y letra durante toda su vida.
+          </Text>
+          <Text style={[styles.descriptionText, { color: colors.text }]}>
+            Como hoy, Dios nos ha dado la dicha de estar aquí reunidos otra vez, entre "fogones y manteles", me pareció una fantástica oportunidad para que todos los que hemos disfrutado de estas comidas, durante todos estos años, tuviesen al igual que nosotras, este tan preciado libro de recetas.
+          </Text>
+          <Text style={[styles.descriptionText, { color: colors.text }]}>
+            ¡EL FAMOSO LIBRO VERDE DE MAMITA, YA LO TIENEN!!!
+          </Text>
+        </View>
+
         {/* Versión */}
         <Text style={[styles.version, { color: colors.textMuted }]}>
           {t('settings.version')} 2.4.1 (102)

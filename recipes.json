@@ -7579,6 +7579,2009 @@
       "servings": 8,
       "prep_time_minutes": 60,
       "tags": ["mousse", "chocolate", "postre"]
+    },
+    {
+      "title_es": "Pancakes de Naranja",
+      "title_en": "Orange Pancakes",
+      "description_es": "Deliciosos pancakes esponjosos rellenos con una suave salsa de naranja",
+      "description_en": "Fluffy pancakes filled with a smooth orange sauce",
+      "ingredients_es": [
+        "1 taza agua helada",
+        "1 taza leche",
+        "4 huevos",
+        "2 tazas harina de trigo",
+        "2 cdas mantequilla derretida",
+        "1 pizca sal",
+        "¼ lb mantequilla derretida",
+        "5 cdas azúcar",
+        "1 taza jugo de naranja",
+        "1 cda ralladura de cáscara de naranja",
+        "1 cda triple-sec"
+      ],
+      "ingredients_en": [
+        "1 cup cold water",
+        "1 cup milk",
+        "4 eggs",
+        "2 cups wheat flour",
+        "2 tbsp melted butter",
+        "1 pinch salt",
+        "¼ lb melted butter",
+        "5 tbsp sugar",
+        "1 cup orange juice",
+        "1 tbsp orange zest",
+        "1 tbsp triple-sec"
+      ],
+      "steps_es": [
+        "Para los pancakes, se echan a la licuadora los 6 primeros ingredientes (agua, leche, huevos, harina, mantequilla y sal)",
+        "Se deja la mezcla un buen rato en la nevera",
+        "Luego se hacen los pancakes en un sartén caliente",
+        "Para la salsa, se revuelven la mantequilla derretida, el azúcar, el jugo de naranja, la ralladura de cáscara de naranja y el triple-sec",
+        "Se sirve la salsa como relleno para los pancakes"
+      ],
+      "steps_en": [
+        "For the pancakes, put the first 6 ingredients (water, milk, eggs, flour, butter and salt) in the blender",
+        "Leave the mixture in the refrigerator for a good while",
+        "Then make the pancakes on a hot skillet",
+        "For the sauce, mix the melted butter, sugar, orange juice, orange zest and triple-sec",
+        "Serve the sauce as filling for the pancakes"
+      ],
+      "category": "breakfast",
+      "difficulty": "medium",
+      "servings": 4,
+      "prep_time_minutes": 25,
+      "tags": ["pancakes", "naranja", "desayuno", "postre"]
+    },
+    {
+      "title_es": "Pie de Limón",
+      "title_en": "Lemon Pie",
+      "description_es": "Refrescante pastel de limón con base de galletas y cobertura de merengue",
+      "description_en": "Refreshing lemon pie with biscuit base and meringue topping",
+      "ingredients_es": [
+        "1 bolsa requesón",
+        "1 paquete gelatina de limón",
+        "2 sobres gelatina sin sabor",
+        "1 frasco crema de leche",
+        "6 claras de huevo",
+        "1 taza azúcar",
+        "½ copa jugo de limón",
+        "1 paquete limoncitos o ponqué ramo",
+        "Leche o vino"
+      ],
+      "ingredients_en": [
+        "1 bag ricotta cheese",
+        "1 package lemon gelatin",
+        "2 envelopes unflavored gelatin",
+        "1 jar heavy cream",
+        "6 egg whites",
+        "1 cup sugar",
+        "½ cup lemon juice",
+        "1 package lemon biscuits or sponge cake",
+        "Milk or wine"
+      ],
+      "steps_es": [
+        "Se trituran las galletas con un rodillo poniéndolas en una Bolsa plástico agregándole poco a poco vino o leche hasta formar una masa manejable",
+        "Se cubre un molde refractario con esta pasta presionando bien",
+        "Aparte se crema el queso con el azúcar agregando crema de leche, requesón y el jugo de limón",
+        "Las claras se baten a punto de nieve con azúcar",
+        "Se disuelven las gelatinas en un pocillo de agua caliente y luego en un pocillo de agua fría y se llevan a la licuadora",
+        "Se revuelve todo junto con la ralladura de los limones, incorporando todo muy bien",
+        "Se echa en el molde hecho con la pasta de galletas",
+        "Se lleva a la nevera hasta que cuaje",
+        "Se adorna con claras de huevo batidas a punto de nieve con azúcar y ralladura de limón"
+      ],
+      "steps_en": [
+        "Crush the biscuits with a rolling pin putting them in a plastic bag, adding little by little wine or milk until forming a manageable dough",
+        "Cover a baking dish with this dough pressing well",
+        "Separately, cream the cheese with the sugar adding heavy cream, ricotta and lemon juice",
+        "Beat the egg whites to stiff peaks with sugar",
+        "Dissolve the gelatins in a small cup of hot water and then in a small cup of cold water and blend",
+        "Mix everything together with lemon zest, incorporating well",
+        "Pour into the mold made with the biscuit dough",
+        "Refrigerate until set",
+        "Garnish with beaten egg whites to stiff peaks with sugar and lemon zest"
+      ],
+      "category": "dessert",
+      "difficulty": "medium",
+      "servings": 8,
+      "prep_time_minutes": 45,
+      "tags": ["limón", "pie", "postre", "merengue"]
+    },
+    {
+      "title_es": "Pie de Limón Versión 2",
+      "title_en": "Lemon Pie Version 2",
+      "description_es": "Pastel de limón con base crocante y relleno cremoso, cubierta de merengue dorado",
+      "description_en": "Lemon pie with crispy crust and creamy filling, topped with golden meringue",
+      "ingredients_es": [
+        "¼ taza agua hirviendo",
+        "½ lb mantequilla",
+        "1½ tazas harina de trigo",
+        "½ cdita polvo Royal",
+        "½ cdita sal",
+        "1 taza agua",
+        "½ taza azúcar",
+        "1 cdita ralladura de cáscara de limón",
+        "7 cdas maicena",
+        "½ taza leche",
+        "2 yemas de huevo batidas",
+        "1 cda mantequilla",
+        "7 cdas jugo de limón",
+        "½ cdita sal"
+      ],
+      "ingredients_en": [
+        "¼ cup boiling water",
+        "½ lb butter",
+        "1½ cups wheat flour",
+        "½ tsp baking powder",
+        "½ tsp salt",
+        "1 cup water",
+        "½ cup sugar",
+        "1 tsp lemon zest",
+        "7 tbsp cornstarch",
+        "½ cup milk",
+        "2 beaten egg yolks",
+        "1 tbsp butter",
+        "7 tbsp lemon juice",
+        "½ tsp salt"
+      ],
+      "steps_es": [
+        "Para la pasta se mezclan la mantequilla con el agua hirviendo, se dejan enfriar",
+        "Seunen aparte la harina cernida con el polvo Royal y la sal",
+        "Luego con un tenedor seunen todos los ingredientes de la masa",
+        "Se pone a enfriar en la nevera en una bolsa plástica por media hora",
+        "Luego se mezcla y se amasa y se pone en una refractaria para pie, engrasada y se pica con un tenedor para que no se levante",
+        "Se mete al horno a 350°F por unos 15 a 20 minutos",
+        "Para el relleno: en una olla se pone a hervir el agua con la ralladura de limón y el azúcar",
+        "Cuando hierva, se le pone la maicena disuelta en la leche",
+        "Tan pronto espese, se le ponen las yemas batidas, la mantequilla y el jugo de limón, todo esto sin dejar de batir",
+        "Se le pone el relleno a la pasta anterior",
+        "Se baten las claras a punto de nieve con azúcar y se ponen encima",
+        "Se hornea un poquito a fuego fuerte para que dore el merengue"
+      ],
+      "steps_en": [
+        "For the dough, mix butter with boiling water, let it cool",
+        "Separately combine sifted flour with baking powder and salt",
+        "Then mix all dough ingredients with a fork",
+        "Refrigerate in a plastic bag for half an hour",
+        "Then mix and knead and place in a greased pie dish, pricking with a fork so it doesn't rise",
+        "Bake at 350°F for 15 to 20 minutes",
+        "For the filling: in a pot, boil water with lemon zest and sugar",
+        "When it boils, add the cornstarch dissolved in milk",
+        "As soon as it thickens, add the beaten yolks, butter and lemon juice, stirring constantly",
+        "Pour the filling into the crust",
+        "Beat egg whites to stiff peaks with sugar and spread on top",
+        "Bake briefly on high heat to brown the meringue"
+      ],
+      "category": "dessert",
+      "difficulty": "hard",
+      "servings": 8,
+      "prep_time_minutes": 60,
+      "tags": ["limón", "pie", "postre", "merengue"]
+    },
+    {
+      "title_es": "Postre Alexandra",
+      "title_en": "Alexandra Dessert",
+      "description_es": "Elegante postre de pudin de caramelo con crema batida y nueces de Brasil",
+      "description_en": "Elegant caramel pudding dessert with whipped cream and Brazil nuts",
+      "ingredients_es": [
+        "1½ taza leche",
+        "½ taza crema de leche",
+        "1 paquete pudin de caramelo",
+        "½ taza nueces del Brasil picadas finamente",
+        "6 tajadas de ponqué remojadas en vino"
+      ],
+      "ingredients_en": [
+        "1½ cups milk",
+        "½ cup heavy cream",
+        "1 package caramel pudding",
+        "½ cup Brazil nuts finely chopped",
+        "6 slices sponge cake soaked in wine"
+      ],
+      "steps_es": [
+        "Preparar el pudin según las instrucciones que trae el paquete",
+        "Una vez listo, dejarlo enfriar batiendo de vez en cuando para evitar la formación de nata",
+        "Batir la crema de leche un poco",
+        "Cuando el pudín esté completamente frío, incorporar la crema de leche removiendo fuertemente",
+        "Rectificar el azúcar y añadir la mitad de las nueces",
+        "Enmantequillar un molde y colocar el ponqué en el fondo",
+        "Verter encima el batido",
+        "Poner en la nevera hasta el momento de servir",
+        "Desmoldarlo en una bandeja y adornarlo con crema chantilly y más nueces"
+      ],
+      "steps_en": [
+        "Prepare the pudding according to package instructions",
+        "Once ready, let it cool, beating occasionally to prevent skin from forming",
+        "Beat the heavy cream lightly",
+        "When the pudding is completely cold, incorporate the heavy cream, stirring vigorously",
+        "Adjust sugar and add half the Brazil nuts",
+        "Grease a mold and place the sponge cake at the bottom",
+        "Pour the mixture on top",
+        "Refrigerate until ready to serve",
+        "Unmold on a tray and garnish with whipped cream and more nuts"
+      ],
+      "category": "dessert",
+      "difficulty": "medium",
+      "servings": 6,
+      "prep_time_minutes": 30,
+      "tags": ["postre", "pudin", "caramelo", "nueces"]
+    },
+    {
+      "title_es": "Postre de Banano",
+      "title_en": "Banana Dessert",
+      "description_es": "Capas de crema de banano con crocante de maní y brandy",
+      "description_en": "Creamy banana dessert layers with peanut crunch and brandy",
+      "ingredients_es": [
+        "3 frascos crema de leche",
+        "6 cdas azúcar",
+        "2 paquetes crocante de maní (Emilita)",
+        "2 cdas brandy",
+        "12 bananos"
+      ],
+      "ingredients_en": [
+        "3 jars heavy cream",
+        "6 tbsp sugar",
+        "2 packages peanut crunch (Emilita)",
+        "2 tbsp brandy",
+        "12 bananas"
+      ],
+      "steps_es": [
+        "Se bate la crema como para chantilly",
+        "Se le agrega el azúcar y el brandy",
+        "Se tritura un paquete y medio del crocante de maní y se le agrega revolviendo bien",
+        "En una refractaria grande se pone una capa de crema y una de banano en rodajitas",
+        "Se alternan las capas hasta que termine la crema",
+        "Se le agrega el resto del crocante por encima"
+      ],
+      "steps_en": [
+        "Beat the cream as for whipped cream",
+        "Add the sugar and brandy",
+        "Crush one and a half packages of peanut crunch and add, stirring well",
+        "In a large baking dish, place a layer of cream and a layer of banana slices",
+        "Alternate layers until the cream is finished",
+        "Add the remaining peanut crunch on top"
+      ],
+      "category": "dessert",
+      "difficulty": "easy",
+      "servings": 8,
+      "prep_time_minutes": 20,
+      "tags": ["banano", "postre", "crema", "mani"]
+    },
+    {
+      "title_es": "Postre de Café",
+      "title_en": "Coffee Dessert",
+      "description_es": "Postre congelado de crema con licor de café y merengues",
+      "description_en": "Frozen cream dessert with coffee liqueur and meringues",
+      "ingredients_es": [
+        "1 frasco crema de leche grande",
+        "½ taza azúcar",
+        "½ taza licor de café",
+        "3 paquetes merengues pequeños",
+        "Nueces"
+      ],
+      "ingredients_en": [
+        "1 large jar heavy cream",
+        "½ cup sugar",
+        "½ cup coffee liqueur",
+        "3 packages small meringues",
+        "Walnuts"
+      ],
+      "steps_es": [
+        "Se bate la crema hasta que empiezan a espesar",
+        "Se le pone el azúcar y poco a poco el licor de café",
+        "En el fondo del molde se pone una parte del merengue medio triturado y encima nueces",
+        "Se añade la mitad de la crema",
+        "Luego más merengues triturados y el resto de la crema",
+        "Se decora con merengues y nueces enteros",
+        "Se pone en el congelador de un día para otro"
+      ],
+      "steps_en": [
+        "Beat the cream until it starts to thicken",
+        "Add the sugar and gradually the coffee liqueur",
+        "At the bottom of the mold, place some crushed meringue and walnuts on top",
+        "Add half the cream",
+        "Then more crushed meringue and the rest of the cream",
+        "Decorate with whole meringues and walnuts",
+        "Freeze overnight"
+      ],
+      "category": "dessert",
+      "difficulty": "easy",
+      "servings": 8,
+      "prep_time_minutes": 25,
+      "tags": ["café", "postre", "congelado", "merengue"]
+    },
+    {
+      "title_es": "Postre de Coco",
+      "title_en": "Coconut Dessert",
+      "description_es": "Postre de coco con merengue de curuba y uvas pasas",
+      "description_en": "Coconut dessert with curuba meringue and raisins",
+      "ingredients_es": [
+        "1 paquete coco",
+        "1 tarro leche condensada",
+        "8 huevos",
+        "6 curubas",
+        "1 cda uvas pasas"
+      ],
+      "ingredients_en": [
+        "1 package coconut",
+        "1 can condensed milk",
+        "8 eggs",
+        "6 curuba fruits",
+        "1 tbsp raisins"
+      ],
+      "steps_es": [
+        "El coco, la leche condensada, un poquito de leche y las 6 yemas de huevo se revuelven bien",
+        "Sin dejar de batir, poner al fuego hasta que espese",
+        "Se pone en una bandeja y se deja enfriar",
+        "Se hace un jugo de curuba",
+        "Las claras se baten a punto de nieve con azúcar pulverizado",
+        "Se mezcla el jugo de curuba con las claras sin que se aclare",
+        "Este merengue se le pone por encima al postre",
+        "Se le espolvorean uvas pasas"
+      ],
+      "steps_en": [
+        "Mix coconut, condensed milk, a little milk and 6 egg yolks well",
+        "Without stopping to stir, put on the fire until it thickens",
+        "Place on a tray and let cool",
+        "Make juice from curuba fruits",
+        "Beat egg whites to stiff peaks with powdered sugar",
+        "Mix curuba juice with the egg whites without beating them flat",
+        "Spread this meringue on top of the dessert",
+        "Sprinkle with raisins"
+      ],
+      "category": "dessert",
+      "difficulty": "medium",
+      "servings": 8,
+      "prep_time_minutes": 35,
+      "tags": ["coco", "postre", "merengue", "curuba"]
+    },
+    {
+      "title_es": "Postre de Coco con Deditos",
+      "title_en": "Coconut Dessert with Ladyfingers",
+      "description_es": "Postre en capas de galletas deditos con dulce de coco y merengue",
+      "description_en": "Layered dessert with ladyfinger biscuits, coconut sweet and meringue",
+      "ingredients_es": [
+        "1 lata galletas deditos",
+        "1 lb azúcar",
+        "1 paquete coco rallado",
+        "1 chocolatín sin rellenar",
+        "4 huevos",
+        "1 taza uvas pasas",
+        "1 taza leche",
+        "2 astillas de canela"
+      ],
+      "ingredients_en": [
+        "1 can ladyfinger biscuits",
+        "1 lb sugar",
+        "1 package shredded coconut",
+        "1 plain chocolate bar",
+        "4 eggs",
+        "1 cup raisins",
+        "1 cup milk",
+        "2 cinnamon sticks"
+      ],
+      "steps_es": [
+        "Se pone en la olla de presión el coco, 1 taza de agua, una taza de leche, media libra de azúcar y la canela",
+        "Se deja hervir de 10 a 15 minutos",
+        "Se destapa la olla y se ponen las uvas pasas y se deja soltar el hervor nuevamente",
+        "Se engrasa un molde o refractaria",
+        "Se pone una capa de deditos, cubriéndola con el dulce de coco",
+        "Otra capa de deditos y más dulce de coco terminando con deditos",
+        "Se cubre con claras batidas a punto de nieve con azúcar",
+        "Los copos se cubren con ralladura de chocolate"
+      ],
+      "steps_en": [
+        "Put coconut, 1 cup water, 1 cup milk, half pound sugar and cinnamon sticks in pressure cooker",
+        "Let boil for 10 to 15 minutes",
+        "Uncover and add raisins, let it come to a boil again",
+        "Grease a mold or baking dish",
+        "Place a layer of ladyfingers, covering with coconut sweet",
+        "Another layer of ladyfingers and more coconut sweet, finishing with ladyfingers",
+        "Cover with beaten egg whites to stiff peaks with sugar",
+        "Spread with chocolate shavings"
+      ],
+      "category": "dessert",
+      "difficulty": "medium",
+      "servings": 10,
+      "prep_time_minutes": 40,
+      "tags": ["coco", "postre", "galletas", "chocolate"]
+    },
+    {
+      "title_es": "Postre de Limón",
+      "title_en": "Lemon Dessert",
+      "description_es": "Postre frío de limón con base de galletas María",
+      "description_en": "Cold lemon dessert with Maria biscuits base",
+      "ingredients_es": [
+        "1 lata leche condensada grande",
+        "1 lata crema de leche",
+        "½ taza jugo de limón",
+        "2 paquetes galletas María",
+        "Margarina derretida"
+      ],
+      "ingredients_en": [
+        "1 large can condensed milk",
+        "1 can heavy cream",
+        "½ cup lemon juice",
+        "2 packages Maria biscuits",
+        "Melted margarine"
+      ],
+      "steps_es": [
+        "Triturar las galletas y mezclarlas con margarina derretida",
+        "Poner esta mezcla en el fondo del molde",
+        "En la licuadora mixer los tarros de leche condensada y de crema, más el jugo de limón",
+        "Se echa esta mezcla encima de las galletas",
+        "Se le espolvorea ralladura de limón",
+        "Se mete a la nevera hasta que cuaje"
+      ],
+      "steps_en": [
+        "Crush the biscuits and mix with melted margarine",
+        "Place this mixture at the bottom of the mold",
+        "Blend the condensed milk, heavy cream and lemon juice",
+        "Pour this mixture over the biscuits",
+        "Sprinkle with lemon zest",
+        "Refrigerate until set"
+      ],
+      "category": "dessert",
+      "difficulty": "easy",
+      "servings": 8,
+      "prep_time_minutes": 20,
+      "tags": ["limón", "postre", "frío", "galletas"]
+    },
+    {
+      "title_es": "Postre de Mango",
+      "title_en": "Mango Dessert",
+      "description_es": "Postre de mangos melados con capas de crema, merengue y coco rallado",
+      "description_en": "Dessert with caramelized mangoes layered with cream, meringue and shredded coconut",
+      "ingredients_es": [
+        "12 mangos",
+        "1 frasco crema de leche",
+        "1 lb azúcar",
+        "4 huevos",
+        "1 coco rallado",
+        "2 limones"
+      ],
+      "ingredients_en": [
+        "12 mangoes",
+        "1 jar heavy cream",
+        "1 lb sugar",
+        "4 eggs",
+        "1 shredded coconut",
+        "2 lemons"
+      ],
+      "steps_es": [
+        "Se pelan y se cortan los mangos en tajadas",
+        "Se ponen a melar con el azúcar y una taza de agua",
+        "Se deja hervir hasta que los mangos se caramelicen",
+        "En una refractaria se pone una capa de mangos",
+        "Una capa de crema de leche batida con jugo de limón",
+        "Otra capa de claras a punto de nieve con dos cucharadas de azúcar",
+        "Por último el coco rallado",
+        "Se adorna con una flor de mango y hojas de rosas"
+      ],
+      "steps_en": [
+        "Peel and slice the mangoes",
+        "Cook with sugar and one cup of water until caramelized",
+        "In a baking dish, place a layer of mangoes",
+        "A layer of heavy cream mixed with lemon juice",
+        "Another layer of egg whites beaten to stiff peaks with two tablespoons of sugar",
+        "Finally, shredded coconut",
+        "Garnish with a mango flower and rose leaves"
+      ],
+      "category": "dessert",
+      "difficulty": "medium",
+      "servings": 10,
+      "prep_time_minutes": 45,
+      "tags": ["mango", "postre", "coco", "merengue"]
+    },
+    {
+      "title_es": "Postre de Naranja",
+      "title_en": "Orange Dessert",
+      "description_es": "Postre de leche cortada con pulpa de naranja y merengue",
+      "description_en": "Cut milk dessert with orange pulp and meringue",
+      "ingredients_es": [
+        "2 frascos leche",
+        "2 naranjas",
+        "½ lb azúcar",
+        "2 huevos",
+        "Canela en polvo",
+        "Pasas"
+      ],
+      "ingredients_en": [
+        "2 jars milk",
+        "2 oranges",
+        "½ lb sugar",
+        "2 eggs",
+        "Ground cinnamon",
+        "Raisins"
+      ],
+      "steps_es": [
+        "Se pone la leche con la pulpa de la naranja hasta que se corte",
+        "Después se pone a hervir y se le pone el azúcar",
+        "Se deja espesar",
+        "Se baten dos claras a punto de nieve",
+        "Se les va incorporando la mezcla de yolks lentamente",
+        "Se deja hervir y se da la vuelta",
+        "Se pasa a una bandeja y se le ponen pasas y canela en polvo"
+      ],
+      "steps_en": [
+        "Put milk with orange pulp until it curdles",
+        "Then bring to a boil and add sugar",
+        "Let it thicken",
+        "Beat two egg whites to stiff peaks",
+        "Gradually incorporate the yolk mixture",
+        "Let it boil and turn over",
+        "Transfer to a tray and add raisins and ground cinnamon"
+      ],
+      "category": "dessert",
+      "difficulty": "medium",
+      "servings": 6,
+      "prep_time_minutes": 30,
+      "tags": ["naranja", "postre", "leche", "merengue"]
+    },
+    {
+      "title_es": "Postre de Natas",
+      "title_en": "Cream Dessert",
+      "description_es": "Postre cremoso de natas con vino de Oporto y vainilla",
+      "description_en": "Creamy cream dessert with Port wine and vanilla",
+      "ingredients_es": [
+        "2 tazas azúcar",
+        "2 tazas natas",
+        "1 taza agua",
+        "1 astilla de canela",
+        "1 copa vino Oporto dulce",
+        "1 poquito de vainilla",
+        "1 huevo"
+      ],
+      "ingredients_en": [
+        "2 cups sugar",
+        "2 cups heavy cream",
+        "1 cup water",
+        "1 cinnamon stick",
+        "1 cup sweet Port wine",
+        "A little vanilla",
+        "1 egg"
+      ],
+      "steps_es": [
+        "Se hace el almíbar a punto de hoja con la canela",
+        "Se le ponen las dos tazas de natas y se revuelve con cuidado",
+        "Se bate el huevo con un poco de leche y se revuelve todo",
+        "Se deja hervir un poco hasta que coja textura de melado",
+        "Se deja reposar",
+        "Se le pone el vino y la vainilla"
+      ],
+      "steps_en": [
+        "Make syrup to soft ball stage with cinnamon",
+        "Add the two cups of cream and stir carefully",
+        "Beat the egg with a little milk and mix everything",
+        "Let it boil briefly until it reaches syrup consistency",
+        "Let it rest",
+        "Add the wine and vanilla"
+      ],
+      "category": "dessert",
+      "difficulty": "medium",
+      "servings": 6,
+      "prep_time_minutes": 25,
+      "tags": ["natas", "postre", "vino", "crema"]
+    },
+    {
+      "title_es": "Postre de Natas sin Natas",
+      "title_en": "Cream Dessert without Cream",
+      "description_es": "Postre similar a natas usando leche y huevos",
+      "description_en": "Cream-like dessert using milk and eggs",
+      "ingredients_es": [
+        "1 litro leche",
+        "2 astillas de canela",
+        "6 huevos",
+        "1 tarro leche condensada",
+        "1 taza uvas pasas"
+      ],
+      "ingredients_en": [
+        "1 liter milk",
+        "2 cinnamon sticks",
+        "6 eggs",
+        "1 can condensed milk",
+        "1 cup raisins"
+      ],
+      "steps_es": [
+        "Ponga la leche y la canela a fuego alto",
+        "Cuando hierva, agregue la leche condensada y la mitad de las uvas pasas",
+        "Bata los huevos y sin que la leche deje de hervir, agréguelos lentamente",
+        "Coloque la mezcla en una refractaria",
+        "Esparza por encima las uvas pasas restantes"
+      ],
+      "steps_en": [
+        "Put milk and cinnamon sticks on high heat",
+        "When it boils, add condensed milk and half the raisins",
+        "Beat the eggs and without stopping the boiling, add them slowly",
+        "Pour the mixture into a baking dish",
+        "Sprinkle the remaining raisins on top"
+      ],
+      "category": "dessert",
+      "difficulty": "medium",
+      "servings": 8,
+      "prep_time_minutes": 20,
+      "tags": ["postre", "leche", "huevos", "canela"]
+    },
+    {
+      "title_es": "Postre de Peras",
+      "title_en": "Pear Dessert",
+      "description_es": "Postre en capas de peras cocidas con crema y miel con merengue",
+      "description_en": "Layered dessert with cooked pears, cream and honey meringue",
+      "ingredients_es": [
+        "2 vasos leche",
+        "2 cdas maicena",
+        "3 huevos (yemas)",
+        "1 tarro leche condensada grande",
+        "6 peras",
+        "1 copa vino dulce",
+        "½ lb azúcar",
+        "Ralladura de cáscara de limón"
+      ],
+      "ingredients_en": [
+        "2 cups milk",
+        "2 tbsp cornstarch",
+        "3 eggs (yolks)",
+        "1 large can condensed milk",
+        "6 pears",
+        "1 cup sweet wine",
+        "½ lb sugar",
+        "Lemon zest"
+      ],
+      "steps_es": [
+        "Se cocinan las peras con el azúcar en la olla de presión por tres minutos",
+        "Se escurren en un cedazo",
+        "La leche, la maicena, las yemas y la leche condensada se ponen en la licuadora y se baten",
+        "Se pone en una olla y se hace la crema batiendo hasta que hierva",
+        "Se incorpora el vino dulce",
+        "En un molde se pone un tendido de peras, otro de crema y otro de peras sucesivamente",
+        "Se hace miel con azúcar hasta que haga bolita",
+        "Se baten las claras a punto de nieve y se incorpora la miel",
+        "Se pone por encima y se rallra limón"
+      ],
+      "steps_en": [
+        "Cook the pears with sugar in pressure cooker for three minutes",
+        "Drain in a sieve",
+        "Blend milk, cornstarch, yolks and condensed milk",
+        "Pour in a pot and make cream, beating until it boils",
+        "Incorporate the sweet wine",
+        "In a mold, layer pears, cream and pears alternately",
+        "Make honey with sugar until it forms a ball",
+        "Beat egg whites to stiff peaks and incorporate the honey",
+        "Spread on top and add lemon zest"
+      ],
+      "category": "dessert",
+      "difficulty": "hard",
+      "servings": 8,
+      "prep_time_minutes": 50,
+      "tags": ["peras", "postre", "miel", "merengue"]
+    },
+    {
+      "title_es": "Postre de Piña",
+      "title_en": "Pineapple Dessert",
+      "description_es": "Postre de piña con crema y merengue horneado",
+      "description_en": "Baked pineapple dessert with cream and meringue",
+      "ingredients_es": [
+        "1 piña",
+        "1 taza azúcar",
+        "1 tarro leche condensada",
+        "3 huevos",
+        "Pasas (opcional)"
+      ],
+      "ingredients_en": [
+        "1 pineapple",
+        "1 cup sugar",
+        "1 can condensed milk",
+        "3 eggs",
+        "Raisins (optional)"
+      ],
+      "steps_es": [
+        "Se parte la piña en pedacitos y se pone a conservar en azúcar",
+        "Cuando esté, se le saca el jugo a la piña y se pone en un molde",
+        "Se le echa leche condensada revuelta con tres yemas de huevo",
+        "Se mete al horno",
+        "Cuando esté sequito, se sacan y se le echan las claras batidas con azúcar",
+        "Se mete al horno hasta que dore",
+        "Si se quiere, se le ponen pasas"
+      ],
+      "steps_en": [
+        "Cut pineapple into pieces and preserve in sugar",
+        "When ready, extract the juice and put in a mold",
+        "Add condensed milk mixed with three egg yolks",
+        "Bake",
+        "When dry, remove and add beaten egg whites with sugar",
+        "Bake again until golden",
+        "Optional: add raisins"
+      ],
+      "category": "dessert",
+      "difficulty": "medium",
+      "servings": 8,
+      "prep_time_minutes": 40,
+      "tags": ["piña", "postre", "merengue", "horneado"]
+    },
+    {
+      "title_es": "Pudin de Manzana",
+      "title_en": "Apple Pudding",
+      "description_es": "Pudin esponjoso de manzanas con pasas y canela en microondas",
+      "description_en": "Fluffy apple pudding with raisins and cinnamon, microwave prepared",
+      "ingredients_es": [
+        "½ taza Compañ sin borde",
+        "2 tazas leche",
+        "½ taza azúcar",
+        "3 cdas uvas pasas borrachitas",
+        "1 cda esencia de vainilla",
+        "1 cda canela en polvo",
+        "3 huevos",
+        "3 manzanas"
+      ],
+      "ingredients_en": [
+        "½ cup bread without crust",
+        "2 cups milk",
+        "½ cup sugar",
+        "3 tbsp soaked raisins",
+        "1 tbsp vanilla extract",
+        "1 tbsp ground cinnamon",
+        "3 eggs",
+        "3 apples"
+      ],
+      "steps_es": [
+        "En una refractaria de microondas colocar una taza de azúcar y agregar despacito cuatro cucharadas de agua",
+        "Colocar en el microondas 7 minutos hasta que se espese bien",
+        "Dejar enfriar",
+        "Mezclar bien todos los ingredientes restantes",
+        "Revolver con el caramelo del microondas",
+        "Poner por encima tajadas de manzana peladas",
+        "Meter al microondas 16 minutos"
+      ],
+      "steps_en": [
+        "In a microwave-safe dish, place one cup of sugar and slowly add four tablespoons of water",
+        "Microwave for 7 minutes until thickened",
+        "Let cool",
+        "Mix all remaining ingredients well",
+        "Stir with the microwave caramel",
+        "Top with peeled apple slices",
+        "Microwave for 16 minutes"
+      ],
+      "category": "dessert",
+      "difficulty": "easy",
+      "servings": 6,
+      "prep_time_minutes": 30,
+      "tags": ["manzana", "pudin", "microondas", "pasas"]
+    },
+    {
+      "title_es": "Pudin de Vainilla y Albaricoque",
+      "title_en": "Vanilla and Apricot Pudding",
+      "description_es": "Pudin de vainilla preparado con jugo de albaricoque",
+      "description_en": "Vanilla pudding made with apricot juice",
+      "ingredients_es": [
+        "1 paquete pudin de vainilla",
+        "1½ taza jugo de albaricoque",
+        "1 frasco crema de leche"
+      ],
+      "ingredients_en": [
+        "1 package vanilla pudding",
+        "1½ cups apricot juice",
+        "1 jar heavy cream"
+      ],
+      "steps_es": [
+        "Preparar el pudin de vainilla usando el jugo de albaricoque en lugar de agua",
+        "Verter en una refractaria",
+        "Cuando esté frío, agregar la crema de leche",
+        "Mezclar muy suavemente",
+        "Meter a la nevera hasta servir"
+      ],
+      "steps_en": [
+        "Prepare vanilla pudding using apricot juice instead of water",
+        "Pour into a baking dish",
+        "When cold, add the heavy cream",
+        "Mix very gently",
+        "Refrigerate until serving"
+      ],
+      "category": "dessert",
+      "difficulty": "easy",
+      "servings": 4,
+      "prep_time_minutes": 15,
+      "tags": ["pudin", "vainilla", "albaricoque", "postre"]
+    },
+    {
+      "title_es": "Strudell de Manzana",
+      "title_en": "Apple Strudel",
+      "description_es": "Strudel de manzanas con pasas y vino, envuelto en hojaldre",
+      "description_en": "Apple strudel with raisins and wine, wrapped in puff pastry",
+      "ingredients_es": [
+        "5 manzanas",
+        "¼ lb uvas pasas",
+        "1 copa vino",
+        "2 cditas panela quemada",
+        "1 lb azúcar",
+        "1 lb hojaldre"
+      ],
+      "ingredients_en": [
+        "5 apples",
+        "¼ lb raisins",
+        "1 cup wine",
+        "2 tsp burnt panela",
+        "1 lb sugar",
+        "1 lb puff pastry"
+      ],
+      "steps_es": [
+        "Se revuelven las manzanas con las pasas, el vino, la panela quemada y el azúcar",
+        "Se añade un poquito de agua y se pone a melar",
+        "Se extiende el hojaldre y se coloca el relleno",
+        "Se enrolla como un brazo de reina",
+        "Se mete al horno hasta dorar"
+      ],
+      "steps_en": [
+        "Mix apples with raisins, wine, burnt panela and sugar",
+        "Add a little water and let it caramelize",
+        "Roll out the puff pastry and add the filling",
+        "Roll like a jelly roll",
+        "Bake until golden"
+      ],
+      "category": "dessert",
+      "difficulty": "medium",
+      "servings": 8,
+      "prep_time_minutes": 45,
+      "tags": ["manzana", "strudel", "hojaldre", "horno"]
+    },
+    {
+      "title_es": "Ajillo para Pan",
+      "title_en": "Garlic Spread for Bread",
+      "description_es": "Salsa de aceite con ajo, orégano y parmesano para pan",
+      "description_en": "Oil sauce with garlic, oregano and parmesan for bread",
+      "ingredients_es": [
+        "1 taza aceite",
+        "1 cdita orégano",
+        "1 cdita ajo",
+        "1 cda queso parmesano"
+      ],
+      "ingredients_en": [
+        "1 cup oil",
+        "1 tsp oregano",
+        "1 tsp garlic",
+        "1 tbsp parmesan cheese"
+      ],
+      "steps_es": [
+        "Se licuan todos los ingredientes",
+        "Se unta la mezcla al pan",
+        "Se pone en el horno a tostar hasta quedar dorado"
+      ],
+      "steps_en": [
+        "Blend all ingredients together",
+        "Spread the mixture on bread",
+        "Bake in the oven until golden"
+      ],
+      "category": "sauce",
+      "difficulty": "easy",
+      "servings": 6,
+      "prep_time_minutes": 10,
+      "tags": ["ajo", "pan", "salsa", "orégano"]
+    },
+    {
+      "title_es": "Salsa Bechamel y Mornay",
+      "title_en": "Bechamel and Mornay Sauce",
+      "description_es": "Salsa blanca clásica y su variación Mornay con queso",
+      "description_en": "Classic white sauce and its Mornay variation with cheese",
+      "ingredients_es": [
+        "2 cdas mantequilla",
+        "2 cdas harina de trigo",
+        "1 taza leche",
+        "Sal",
+        "Pimienta",
+        "Nuez moscada",
+        "½ taza queso parmesano rallado (para Mornay)",
+        "1 cdita mostaza (para Mornay)",
+        "1 cda salsa worcestershire (para Mornay)"
+      ],
+      "ingredients_en": [
+        "2 tbsp butter",
+        "2 tbsp wheat flour",
+        "1 cup milk",
+        "Salt",
+        "Pepper",
+        "Nutmeg",
+        "½ cup grated parmesan cheese (for Mornay)",
+        "1 tsp mustard (for Mornay)",
+        "1 tbsp worcestershire sauce (for Mornay)"
+      ],
+      "steps_es": [
+        "Para la bechamel: poner la mantequilla en un sartén",
+        "Echar la harina y revolver bien hasta que se despegue",
+        "Agregar la leche poco a poco sin dejar de revolver",
+        "Sazonar con sal, pimienta y nuez moscada al gusto",
+        "Para la salsa Mornay: agregar el queso parmesano a la bechamel caliente",
+        "Revolver en el fuego hasta que el queso se derrita",
+        "Agregar mostaza y salsa worcestershire al gusto"
+      ],
+      "steps_en": [
+        "For bechamel: put butter in a skillet",
+        "Add flour and stir well until it separates",
+        "Add milk gradually while stirring constantly",
+        "Season with salt, pepper and nutmeg to taste",
+        "For Mornay sauce: add parmesan cheese to hot bechamel",
+        "Stir over heat until cheese melts",
+        "Add mustard and worcestershire sauce to taste"
+      ],
+      "category": "sauce",
+      "difficulty": "easy",
+      "servings": 4,
+      "prep_time_minutes": 15,
+      "tags": ["salsa", "bechamel", "mornay", "queso"]
+    },
+    {
+      "title_es": "Salsa de Naranja",
+      "title_en": "Orange Sauce",
+      "description_es": "Salsa agridulce de naranja con mantequilla y triple-sec",
+      "description_en": "Sweet and sour orange sauce with butter and triple-sec",
+      "ingredients_es": [
+        "1 lb azúcar",
+        "2 oz mantequilla",
+        "12 naranjas",
+        "Corteza de naranja en julianas",
+        "1 copa triple-sec o brandy",
+        "1½ vaso de agua o caldo"
+      ],
+      "ingredients_en": [
+        "1 lb sugar",
+        "2 oz butter",
+        "12 oranges",
+        "Orange zest julienne",
+        "1 cup triple-sec or brandy",
+        "1½ cups water or broth"
+      ],
+      "steps_es": [
+        "Se lleva la mantequilla al fuego",
+        "Se le adiciona el azúcar y se deja fundir a color rubio oscuro",
+        "Luego se le agrega un poco de caldo para que no se acaramele",
+        "Se pone el jugo de las naranjas y las julianas de cáscara",
+        "Se agrega el brandy o triple-sec",
+        "Se deja cocinar hasta integrar bien"
+      ],
+      "steps_en": [
+        "Melt butter in a pan",
+        "Add sugar and let it melt to dark golden color",
+        "Add a little broth to prevent caramelization",
+        "Add orange juice and julienne orange zest",
+        "Add brandy or triple-sec",
+        "Cook until well combined"
+      ],
+      "category": "sauce",
+      "difficulty": "easy",
+      "servings": 8,
+      "prep_time_minutes": 20,
+      "tags": ["naranja", "salsa", "dulce", "brandy"]
+    },
+    {
+      "title_es": "Salsa Demiglasse",
+      "title_en": "Demiglace Sauce",
+      "description_es": "Salsa oscura concentrada para carnes y pato",
+      "description_en": "Concentrated dark sauce for meat and duck",
+      "ingredients_es": [
+        "½ lb mantequilla",
+        "1 cda harina de trigo",
+        "1 cubo caldo Maggi",
+        "Agua o caldo"
+      ],
+      "ingredients_en": [
+        "½ lb butter",
+        "1 tbsp wheat flour",
+        "1 Maggi broth cube",
+        "Water or broth"
+      ],
+      "steps_es": [
+        "Se dora la harina en mantequilla",
+        "Se adelgaza con caldo agregando poco a poco",
+        "Se incorpora el cubo de Maggi",
+        "Se cocina hasta obtener una salsa espesa",
+        "Para pato a la naranja: combinar con salsa de naranja",
+        "Dejar conservar el pato por 10 minutos después de dorar las presas en mantequilla"
+      ],
+      "steps_en": [
+        "Brown the flour in butter",
+        "Thin with broth, adding gradually",
+        "Incorporate the Maggi cube",
+        "Cook until thickened",
+        "For duck à l'orange: combine with orange sauce",
+        "Let the duck simmer for 10 minutes after browning in butter"
+      ],
+      "category": "sauce",
+      "difficulty": "medium",
+      "servings": 6,
+      "prep_time_minutes": 25,
+      "tags": ["salsa", "demiglasse", "carne", "pato"]
+    },
+    {
+      "title_es": "Cazuela Exquisita",
+      "title_en": "Exquisite Fish Casserole",
+      "description_es": "Cazuela de filete de róbalo con verduras y sopa marinera",
+      "description_en": "Sea bass filet casserole with vegetables and seafood soup",
+      "ingredients_es": [
+        "1 lb filete de róbalo cortado en cuadros",
+        "1 sobre sopa marinera",
+        "3 tazas agua",
+        "2 cdas aceite",
+        "2 tazas verduras mixtas (zanahoria, alverja, habichuela)",
+        "1 coliflor pequeña cortada en ramitos",
+        "1 pimentón pequeño cortado en tiras",
+        "2 cdas cebolla cabezona rallada",
+        "Jugo de limón",
+        "Perejil",
+        "Crema de leche (opcional)"
+      ],
+      "ingredients_en": [
+        "1 lb sea bass filet cut in squares",
+        "1 package seafood soup mix",
+        "3 cups water",
+        "2 tbsp oil",
+        "2 cups mixed vegetables (carrot, peas, green beans)",
+        "1 small cauliflower cut in florets",
+        "1 small bell pepper cut in strips",
+        "2 tbsp grated white onion",
+        "Lemon juice",
+        "Parsley",
+        "Heavy cream (optional)"
+      ],
+      "steps_es": [
+        "En un sartén a fuego medio, calentar el aceite",
+        "Freír la cebolla, el pimentón y las verduras hasta que estén tiernas, reservar",
+        "Aparte disolver la sopa marinera en el agua",
+        "Llevar al fuego y dejar hervir revolviendo con cuchara de madera",
+        "Incorporar el pescado y las verduras",
+        "Continuar la cocción hasta que el pescado esté listo",
+        "Servir con limón, perejil picadito y crema de leche si desea"
+      ],
+      "steps_en": [
+        "In a skillet over medium heat, warm the oil",
+        "Fry onion, bell pepper and vegetables until tender, set aside",
+        "Dissolve the seafood soup mix in water",
+        "Bring to a boil, stirring with a wooden spoon",
+        "Add fish and vegetables",
+        "Continue cooking until fish is done",
+        "Serve with lemon, chopped parsley and heavy cream if desired"
+      ],
+      "category": "dinner",
+      "difficulty": "medium",
+      "servings": 4,
+      "prep_time_minutes": 35,
+      "tags": ["pescado", "cazuela", "verduras", "mariscos"]
+    },
+    {
+      "title_es": "Sopa de Alverja",
+      "title_en": "Pea Soup",
+      "description_es": "Sopa espesa de alverja seca con carne de cerdo y papas",
+      "description_en": "Thick soup of dried peas with pork meat and potatoes",
+      "ingredients_es": [
+        "1 lb alverja seca verde",
+        "1½ lb carne de cerdo",
+        "1 lb papas criollas",
+        "1 lb papa pastusa",
+        "1 cubo Maggi",
+        "Cilantro",
+        "Agua"
+      ],
+      "ingredients_en": [
+        "1 lb dried green peas",
+        "1½ lb pork meat",
+        "1 lb creole potatoes",
+        "1 lb pastusa potatoes",
+        "1 Maggi cube",
+        "Cilantro",
+        "Water"
+      ],
+      "steps_es": [
+        "El día anterior, dejar la alverja en agua para remojar",
+        "Poner la alverja con agua en la olla y agregar el cerdo picado",
+        "Cuando la alverja esté blanda, picar las papas y agregarlas",
+        "Añadir el cubo de Maggi",
+        "Cuando todo esté cocido, agregar una ramita de cilantro",
+        "Servir con arroz y aguacate"
+      ],
+      "steps_en": [
+        "The day before, soak the peas in water",
+        "Put peas with water in a pot and add chopped pork",
+        "When peas are tender, chop potatoes and add them",
+        "Add the Maggi cube",
+        "When everything is cooked, add a sprig of cilantro",
+        "Serve with rice and avocado"
+      ],
+      "category": "lunch",
+      "difficulty": "easy",
+      "servings": 6,
+      "prep_time_minutes": 60,
+      "tags": ["sopa", "alverja", "cerdo", "papa"]
+    },
+    {
+      "title_es": "Sopa de Cebolla",
+      "title_en": "Onion Soup",
+      "description_es": "Sopa clásica de cebolla con queso gratinado",
+      "description_en": "Classic onion soup with melted cheese",
+      "ingredients_es": [
+        "2 cebollas cabezonas tajadas",
+        "1 diente ajo",
+        "½ taza mantequilla",
+        "½ cda tabasco",
+        "1 copa vino o brandy",
+        "Nuez moscada",
+        "4 tostadas",
+        "½ taza queso gruyere rallado",
+        "6 tazas caldo de carne",
+        "Sal y pimienta"
+      ],
+      "ingredients_en": [
+        "2 white onions sliced",
+        "1 garlic clove",
+        "½ cup butter",
+        "½ tbsp tabasco",
+        "1 cup wine or brandy",
+        "Nutmeg",
+        "4 toast slices",
+        "½ cup grated gruyere cheese",
+        "6 cups beef broth",
+        "Salt and pepper"
+      ],
+      "steps_es": [
+        "Se corta la cebolla y el ajo en rodajas finas",
+        "Se fríen en la mantequilla hasta que queden bien dorados",
+        "Se le agrega el tabasco, la pimienta y la nuez moscada",
+        "Se le agrega el caldo y el vino",
+        "Se deja hervir un rato",
+        "Se sirve poniendo la tostada encima y rociándola con el queso",
+        "Se puede gratinar en el horno"
+      ],
+      "steps_en": [
+        "Cut onion and garlic into thin slices",
+        "Fry in butter until well browned",
+        "Add tabasco, pepper and nutmeg",
+        "Add broth and wine",
+        "Let boil briefly",
+        "Serve by placing toast on top and sprinkling with cheese",
+        "Can be baked until cheese melts"
+      ],
+      "category": "lunch",
+      "difficulty": "easy",
+      "servings": 4,
+      "prep_time_minutes": 30,
+      "tags": ["sopa", "cebolla", "queso", "gratinado"]
+    },
+    {
+      "title_es": "Souflé de Arroz",
+      "title_en": "Rice Soufflé",
+      "description_es": "Soufflé ligero de arroz con queso campesino y huevo",
+      "description_en": "Light rice soufflé with fresh cheese and egg",
+      "ingredients_es": [
+        "1 lb arroz cocido",
+        "1 cda mantequilla",
+        "Sal y pimienta",
+        "3 cdas harina de trigo",
+        "¾ taza leche",
+        "½ lb queso campesino",
+        "4 huevos"
+      ],
+      "ingredients_en": [
+        "1 lb cooked rice",
+        "1 tbsp butter",
+        "Salt and pepper",
+        "3 tbsp wheat flour",
+        "¾ cup milk",
+        "½ lb fresh cheese",
+        "4 eggs"
+      ],
+      "steps_es": [
+        "Se hace una salsa bechamel con la mantequilla, harina y leche",
+        "Se le incorporan las yemas a la bechamel",
+        "Se mezclan el arroz con la salsa",
+        "Se добавляют las claras batidas a punto de nieve",
+        "Se incorpora el queso campesino rallado",
+        "Se mete al horno a 350°F por 20 minutos",
+        "Servir inmediatamente"
+      ],
+      "steps_en": [
+        "Make bechamel sauce with butter, flour and milk",
+        "Incorporate egg yolks into the bechamel",
+        "Mix the rice with the sauce",
+        "Fold in beaten egg whites",
+        "Add grated fresh cheese",
+        "Bake at 350°F for 20 minutes",
+        "Serve immediately"
+      ],
+      "category": "dinner",
+      "difficulty": "medium",
+      "servings": 6,
+      "prep_time_minutes": 35,
+      "tags": ["souffle", "arroz", "queso", "huevo"]
+    },
+    {
+      "title_es": "Souflé de Atún",
+      "title_en": "Tuna Soufflé",
+      "description_es": "Soufflé de atún con pimentón, cebolla y miga de pan",
+      "description_en": "Tuna soufflé with bell pepper, onion and breadcrumbs",
+      "ingredients_es": [
+        "5 latas atún",
+        "1 frasco alcaparras",
+        "4 pimentones rojos",
+        "4 cebollas cabezonas",
+        "2 tazas miga de pan",
+        "1 taza leche",
+        "¼ lb mantequilla",
+        "10 cdas salsa de tomate",
+        "4 huevos"
+      ],
+      "ingredients_en": [
+        "5 cans tuna",
+        "1 jar capers",
+        "4 red bell peppers",
+        "4 white onions",
+        "2 cups breadcrumbs",
+        "1 cup milk",
+        "¼ lb butter",
+        "10 tbsp tomato sauce",
+        "4 eggs"
+      ],
+      "steps_es": [
+        "Se fríe en mantequilla el pimentón y la cebolla picados",
+        "Se dren el atún y se deshilacha",
+        "Se mezclan todos los ingredientes con las claras batidas a punto de nieve",
+        "Se vierte en una souflera o molde enmantequillado",
+        "Se puede hacer al baño de maría o al horno a 350°F",
+        "Hornear hasta que dore y sube"
+      ],
+      "steps_en": [
+        "Fry chopped bell pepper and onion in butter",
+        "Drain and flake the tuna",
+        "Mix all ingredients with beaten egg whites",
+        "Pour into a soufflé dish or buttered mold",
+        "Can be made in bain-marie or in oven at 350°F",
+        "Bake until golden and risen"
+      ],
+      "category": "dinner",
+      "difficulty": "medium",
+      "servings": 8,
+      "prep_time_minutes": 45,
+      "tags": ["souffle", "atun", "pescado", "mariscos"]
+    },
+    {
+      "title_es": "Souflé de Espinaca",
+      "title_en": "Spinach Soufflé",
+      "description_es": "Soufflé cremoso de espinacas con queso crema, queso suizo y jamón",
+      "description_en": "Creamy spinach soufflé with cream cheese, Swiss cheese and ham",
+      "ingredients_es": [
+        "1 cda mantequilla",
+        "1½ lb espinacas",
+        "3 cajas queso crema de 8 onzas",
+        "½ taza crema de leche",
+        "1 cda mostaza",
+        "½ cdita sal",
+        "¼ cdita orégano",
+        "4 huevos",
+        "8 oz queso suizo rallado",
+        "8 oz jamón picadito",
+        "2 cdas perejil picado"
+      ],
+      "ingredients_en": [
+        "1 tbsp butter",
+        "1½ lb spinach",
+        "3 packages cream cheese 8 oz each",
+        "½ cup heavy cream",
+        "1 tbsp mustard",
+        "½ tsp salt",
+        "¼ tsp oregano",
+        "4 eggs",
+        "8 oz grated Swiss cheese",
+        "8 oz chopped ham",
+        "2 tbsp chopped parsley"
+      ],
+      "steps_es": [
+        "Precalentar el horno a 350°F",
+        "Engrasar un molde de fondo removible",
+        "Saltear las espinacas en mantequilla a fuego lento hasta que se marchiten",
+        "Exprimir las espinacas para quitar el líquido y cortar finamente",
+        "Batir el queso crema, crema de leche, mostaza, sal y orégano hasta obtener una crema suave",
+        "Incorporar el queso suizo, jamón, perejil y espinacas",
+        "Verter en el molde y hornear por una hora y cuarto",
+        "Refrigerar por tres horas antes de servir"
+      ],
+      "steps_en": [
+        "Preheat oven to 350°F",
+        "Grease a springform pan",
+        "Sauté spinach in butter over low heat until wilted",
+        "Squeeze out liquid and chop finely",
+        "Beat cream cheese, heavy cream, mustard, salt and oregano until smooth",
+        "Fold in Swiss cheese, ham, parsley and spinach",
+        "Pour into mold and bake for 1 hour 15 minutes",
+        "Refrigerate for 3 hours before serving"
+      ],
+      "category": "dinner",
+      "difficulty": "medium",
+      "servings": 8,
+      "prep_time_minutes": 50,
+      "tags": ["souffle", "espinaca", "queso", "jamón"]
+    },
+    {
+      "title_es": "Souflé de Verduras",
+      "title_en": "Vegetable Soufflé",
+      "description_es": "Soufflé ligero de verduras con salsa bechamel y limón",
+      "description_en": "Light vegetable soufflé with bechamel sauce and lemon",
+      "ingredients_es": [
+        "1 taza verduras cocidas",
+        "1 taza salsa bechamel",
+        "1 cda jugo de limón",
+        "2 cdas cebolla cabezona rallada",
+        "Sal y pimienta al gusto",
+        "½ cdita salsa inglesa",
+        "4 huevos"
+      ],
+      "ingredients_en": [
+        "1 cup cooked vegetables",
+        "1 cup bechamel sauce",
+        "1 tbsp lemon juice",
+        "2 tbsp grated white onion",
+        "Salt and pepper to taste",
+        "½ tsp worcestershire sauce",
+        "4 eggs"
+      ],
+      "steps_es": [
+        "Se mezclan las verduras con la salsa bechamel",
+        "Se добавляют el jugo de limón, cebolla, sal, pimienta y salsa inglesa",
+        "Se incorporan los huevos batidos",
+        "Se deja enfriar la mezcla un rato",
+        "Se vierte en una refractaria engrasada",
+        "Se mete al horno a 350°F por una hora",
+        "Servir caliente"
+      ],
+      "steps_en": [
+        "Mix vegetables with bechamel sauce",
+        "Add lemon juice, onion, salt, pepper and worcestershire sauce",
+        "Incorporate beaten eggs",
+        "Let the mixture cool for a while",
+        "Pour into a greased baking dish",
+        "Bake at 350°F for one hour",
+        "Serve hot"
+      ],
+      "category": "dinner",
+      "difficulty": "easy",
+      "servings": 4,
+      "prep_time_minutes": 40,
+      "tags": ["souffle", "verduras", "vegetariano", "ligero"]
+    },
+    {
+      "title_es": "Terrina de Atún con Espárragos",
+      "title_en": "Tuna and Asparagus Terrine",
+      "description_es": "Terrina fría de atún con crema de espárragos y gelatina",
+      "description_en": "Cold tuna terrine with asparagus cream and gelatin",
+      "ingredients_es": [
+        "1 sobre crema de espárragos",
+        "2 tazas agua",
+        "1 taza leche",
+        "2 cdas aceite",
+        "3 cdas cebolla cabezona rallada",
+        "1 diente ajo triturado",
+        "3 cdas pimentón finamente picado",
+        "1 frasco pequeño de espárragos cortados en trozos",
+        "2 latas atún escurrido y desmenuzado",
+        "2 sobres gelatina sin sabor",
+        "Agua caliente para disolver la gelatina"
+      ],
+      "ingredients_en": [
+        "1 package asparagus cream soup",
+        "2 cups water",
+        "1 cup milk",
+        "2 tbsp oil",
+        "3 tbsp grated white onion",
+        "1 garlic clove minced",
+        "3 tbsp finely chopped bell pepper",
+        "1 small jar asparagus cut in pieces",
+        "2 cans tuna drained and flaked",
+        "2 envelopes unflavored gelatin",
+        "Hot water to dissolve gelatin"
+      ],
+      "steps_es": [
+        "Preparar la crema de espárragos según las instrucciones del paquete con agua y leche",
+        "Aparte calentar el aceite y sofreír la cebolla, ajo y pimentón",
+        "Agregar el sofrito a la mitad de la crema",
+        "Incorporar los espárragos, el atún y la gelatina disuelta en agua caliente",
+        "Verter en un molde engrasado con aceite de oliva",
+        "Llevar al refrigerador hasta que cuaje",
+        "Desmoldar y cortar en tajadas",
+        "Calentar la crema restante y cubrir las tajadas para servir"
+      ],
+      "steps_en": [
+        "Prepare asparagus cream soup according to package instructions with water and milk",
+        "Heat oil and sauté onion, garlic and bell pepper separately",
+        "Add sautéed vegetables to half the cream",
+        "Incorporate asparagus, tuna and dissolved gelatin",
+        "Pour into a mold greased with olive oil",
+        "Refrigerate until set",
+        "Unmold and cut into slices",
+        "Heat remaining cream and pour over slices to serve"
+      ],
+      "category": "dinner",
+      "difficulty": "medium",
+      "servings": 8,
+      "prep_time_minutes": 45,
+      "tags": ["terrina", "atun", "esparragos", "frio"]
+    },
+    {
+      "title_es": "Pan de Bananas",
+      "title_en": "Banana Bread",
+      "description_es": "Pan dulce de bananas con pasas, limón y panela quemada",
+      "description_en": "Sweet banana bread with raisins, lemon and burnt panela",
+      "ingredients_es": [
+        "2 tazas harina de trigo",
+        "3 cditas polvo royal",
+        "½ taza azúcar",
+        "1 cda mantequilla",
+        "1 cdita cáscara de limón",
+        "2 huevos",
+        "1 taza banano bien maduro macerado",
+        "1 cdita panela quemada",
+        "½ cdita sal",
+        "½ taza uvas pasas"
+      ],
+      "ingredients_en": [
+        "2 cups wheat flour",
+        "3 tsp baking powder",
+        "½ cup sugar",
+        "1 tbsp butter",
+        "1 tsp lemon zest",
+        "2 eggs",
+        "1 cup well-ripened mashed banana",
+        "1 tsp burnt panela",
+        "½ tsp salt",
+        "½ cup raisins"
+      ],
+      "steps_es": [
+        "Cernir la harina con el polvo royal, azúcar, sal, ralladura de limón y uvas pasas",
+        "En otra vasija batir la mantequilla derretida con los huevos y las bananas bien majadas",
+        "Agregar la harina y todo lo demás, revolver bien",
+        "Agregar la panela quemada",
+        "Se pone en un molde de pan bien engrasado",
+        "Se hornea por una hora a 350°F"
+      ],
+      "steps_en": [
+        "Sift flour with baking powder, sugar, salt, lemon zest and raisins",
+        "In another bowl, beat melted butter with eggs and mashed bananas",
+        "Add flour and everything else, mix well",
+        "Add burnt panela",
+        "Pour into a well-greased bread mold",
+        "Bake for one hour at 350°F"
+      ],
+      "category": "breakfast",
+      "difficulty": "easy",
+      "servings": 8,
+      "prep_time_minutes": 70,
+      "tags": ["pan", "banana", "pasas", "desayuno"]
+    },
+    {
+      "title_es": "Pan de Zuccini",
+      "title_en": "Zucchini Bread",
+      "description_es": "Pan húmedo de zucchini con especias y vainilla",
+      "description_en": "Moist zucchini bread with spices and vanilla",
+      "ingredients_es": [
+        "3 huevos",
+        "2 tazas azúcar",
+        "1 taza aceite",
+        "2 taza zucchini rallado",
+        "2 cdas vainilla",
+        "3 tazas harina de trigo",
+        "Canela",
+        "Clavos",
+        "Nuez moscada",
+        "1 cdita sal",
+        "½ cdita polvo royal"
+      ],
+      "ingredients_en": [
+        "3 eggs",
+        "2 cups sugar",
+        "1 cup oil",
+        "2 cups grated zucchini",
+        "2 tbsp vanilla",
+        "3 cups wheat flour",
+        "Cinnamon",
+        "Cloves",
+        "Nutmeg",
+        "1 tsp salt",
+        "½ tsp baking powder"
+      ],
+      "steps_es": [
+        "Se batien los huevos con el azúcar y el aceite",
+        "Se добавляют el zucchini rallado y la vainilla",
+        "Se incorpora la harina cernida con las especias, sal y polvo royal",
+        "Se bate todo hasta integrar bien",
+        "Se mete al horno a 350°F por una hora",
+        "Verificar con cuchillo que salga limpio"
+      ],
+      "steps_en": [
+        "Beat eggs with sugar and oil",
+        "Add grated zucchini and vanilla",
+        "Fold in sifted flour with spices, salt and baking powder",
+        "Beat until well combined",
+        "Bake at 350°F for one hour",
+        "Check with knife that it comes out clean"
+      ],
+      "category": "breakfast",
+      "difficulty": "easy",
+      "servings": 10,
+      "prep_time_minutes": 75,
+      "tags": ["pan", "zucchini", "especias", "vegetariano"]
+    },
+    {
+      "title_es": "Torta de Arroz",
+      "title_en": "Rice Cake",
+      "description_es": "Torta salada de arroz con sopa de cebolla y queso",
+      "description_en": "Savory rice cake with onion soup and cheese",
+      "ingredients_es": [
+        "2 tazas arroz cocido en caldo de gallina",
+        "4 huevos",
+        "1 sobre sopa de cebolla",
+        "¼ taza queso rallado",
+        "3 tazas leche"
+      ],
+      "ingredients_en": [
+        "2 cups rice cooked in chicken broth",
+        "4 eggs",
+        "1 package onion soup mix",
+        "¼ cup grated cheese",
+        "3 cups milk"
+      ],
+      "steps_es": [
+        "Preparar una salsa con el sobre de sopa de cebolla y las tres tazas de leche",
+        "En un tazón, mezclar el arroz con la salsa preparada",
+        "Agregar los huevos batidos y el queso rallado",
+        "Engrasar el molde y verter la preparación",
+        "Hornear a 350°F durante 30 minutos",
+        "Servir bien caliente"
+      ],
+      "steps_en": [
+        "Make a sauce with the onion soup package and three cups of milk",
+        "In a bowl, mix the rice with the prepared sauce",
+        "Add beaten eggs and grated cheese",
+        "Grease the mold and pour the mixture",
+        "Bake at 350°F for 30 minutes",
+        "Serve hot"
+      ],
+      "category": "lunch",
+      "difficulty": "easy",
+      "servings": 6,
+      "prep_time_minutes": 45,
+      "tags": ["arroz", "torta", "queso", "salado"]
+    },
+    {
+      "title_es": "Torta de Arroz con Espinaca",
+      "title_en": "Rice and Spinach Cake",
+      "description_es": "Torta de arroz con espinaca, perejil y queso parmesano",
+      "description_en": "Rice cake with spinach, parsley and parmesan cheese",
+      "ingredients_es": [
+        "2 tazas arroz preparado en caldo de gallina",
+        "1½ taza espinaca picada",
+        "½ taza perejil picado",
+        "2 huevos batidos",
+        "½ taza cebolla cabezona picada",
+        "½ taza queso parmesano",
+        "4 cdas crema de leche",
+        "¼ taza mantequilla derretida"
+      ],
+      "ingredients_en": [
+        "2 cups rice prepared in chicken broth",
+        "1½ cup chopped spinach",
+        "½ cup chopped parsley",
+        "2 beaten eggs",
+        "½ cup chopped white onion",
+        "½ cup parmesan cheese",
+        "4 tbsp heavy cream",
+        "¼ cup melted butter"
+      ],
+      "steps_es": [
+        "Se mezclan todos los ingredientes",
+        "Se vierte en un molde engrasado",
+        "Se mete al horno a 350°F por 45 minutos",
+        "O hasta que el cuchillo salga limpio",
+        "Servir caliente o a temperatura ambiente"
+      ],
+      "steps_en": [
+        "Mix all ingredients together",
+        "Pour into a greased mold",
+        "Bake at 350°F for 45 minutes",
+        "Or until knife comes out clean",
+        "Serve hot or at room temperature"
+      ],
+      "category": "lunch",
+      "difficulty": "easy",
+      "servings": 6,
+      "prep_time_minutes": 60,
+      "tags": ["arroz", "espinaca", "torta", "verduras"]
+    },
+    {
+      "title_es": "Torta de Banana",
+      "title_en": "Banana Cake",
+      "description_es": "Torta húmeda de banana con queso campesino y galletas",
+      "description_en": "Moist banana cake with fresh cheese and biscuits",
+      "ingredients_es": [
+        "½ taza queso campesino rallado",
+        "½ taza leche condensada",
+        "½ taza galletas molidas",
+        "3 huevos",
+        "1 pizca canela",
+        "Mantequilla para el molde",
+        "Uvas pasas",
+        "4 bananos bien maduros"
+      ],
+      "ingredients_en": [
+        "½ cup grated fresh cheese",
+        "½ cup condensed milk",
+        "½ cup crushed biscuits",
+        "3 eggs",
+        "1 pinch cinnamon",
+        "Butter for the mold",
+        "Raisins",
+        "4 well-ripened bananas"
+      ],
+      "steps_es": [
+        "Se maja el banano y se agregan los huevos batidos",
+        "Se mezclan bien todos los ingredientes",
+        "Se agrega la leche condensada, el queso y las pasas",
+        "Se engrasa y enharina un molde con la miga de las galletas",
+        "Se vierte la preparación en el molde",
+        "Se hornea a 350°F hasta que el cuchillo salga seco"
+      ],
+      "steps_en": [
+        "Mash the bananas and add beaten eggs",
+        "Mix all ingredients well",
+        "Add condensed milk, cheese and raisins",
+        "Grease and flour a mold using crushed biscuits",
+        "Pour the batter into the mold",
+        "Bake at 350°F until knife comes out clean"
+      ],
+      "category": "dessert",
+      "difficulty": "easy",
+      "servings": 8,
+      "prep_time_minutes": 45,
+      "tags": ["banana", "torta", "postre", "queso"]
+    },
+    {
+      "title_es": "Torta de Café",
+      "title_en": "Coffee Cake",
+      "description_es": "Torta de capas con café, mantequilla, naranja y coco",
+      "description_en": "Layered cake with coffee, butter, orange and coconut",
+      "ingredients_es": [
+        "1 lb azúcar pulverizada",
+        "1 taza café",
+        "1 lb mantequilla",
+        "½ taza jugo de naranja",
+        "1 paquete galletas dulces",
+        "½ taza coco rallado"
+      ],
+      "ingredients_en": [
+        "1 lb powdered sugar",
+        "1 cup coffee",
+        "1 lb butter",
+        "½ cup orange juice",
+        "1 package sweet biscuits",
+        "½ cup shredded coconut"
+      ],
+      "steps_es": [
+        "Se bate con batidora la mantequilla con el azúcar hasta que esté cremoso",
+        "Se le agrega una taza de café y media de naranja",
+        "En una bandeja se van poniendo galletas remojadas en café",
+        "Luego una capa del batido y luego coco rallado",
+        "Se sigue sucesivamente hasta terminar en batido con coco",
+        "Refrigerar hasta que cuaje"
+      ],
+      "steps_en": [
+        "Beat butter with sugar until creamy",
+        "Add one cup of coffee and half cup of orange juice",
+        "In a tray, place biscuits soaked in coffee",
+        "Then a layer of the batter and then shredded coconut",
+        "Continue alternately until finished with batter topped with coconut",
+        "Refrigerate until set"
+      ],
+      "category": "dessert",
+      "difficulty": "medium",
+      "servings": 10,
+      "prep_time_minutes": 270,
+      "tags": ["café", "torta", "naranja", "coco"]
+    },
+    {
+      "title_es": "Torta de Mazorca",
+      "title_en": "Corn Cake",
+      "description_es": "Torta dulce de mazorca con cuajada y huevo",
+      "description_en": "Sweet corn cake with fresh cheese and egg",
+      "ingredients_es": [
+        "2 tarros mazorca",
+        "4 cdas mantequilla",
+        "½ lb cuajada o queso campesino",
+        "2 huevos",
+        "1 cdita maicena",
+        "4 cdas azúcar",
+        "Un poquito de leche"
+      ],
+      "ingredients_en": [
+        "2 cans corn",
+        "4 tbsp butter",
+        "½ lb fresh cheese or ricotta",
+        "2 eggs",
+        "1 tsp cornstarch",
+        "4 tbsp sugar",
+        "A little milk"
+      ],
+      "steps_es": [
+        "Se muele bien las mazorcas",
+        "Se le echa mantequilla, cuajada o queso campesino rallado",
+        "Se agregan los huevos, el azúcar y una cucharadita de maicena disuelta en un poquito de leche",
+        "Se bate bien todo",
+        "Se mete al horno a 350°F hasta que dore"
+      ],
+      "steps_en": [
+        "Grind the corn well",
+        "Add butter, fresh cheese or ricotta",
+        "Add eggs, sugar and one teaspoon of cornstarch dissolved in a little milk",
+        "Beat everything well",
+        "Bake at 350°F until golden"
+      ],
+      "category": "dessert",
+      "difficulty": "easy",
+      "servings": 8,
+      "prep_time_minutes": 60,
+      "tags": ["mazorca", "torta", "postre", "queso"]
+    },
+    {
+      "title_es": "Torta de Menudo",
+      "title_en": "Tripe Cake",
+      "description_es": "Torta salada de menudo con jamón, chorizo y garbanzos",
+      "description_en": "Savory tripe cake with ham, chorizo and chickpeas",
+      "ingredients_es": [
+        "1½ lb menudo",
+        "¼ lb garbanzos",
+        "½ lb jamón ahumado",
+        "1 chorizo",
+        "2 cebollas cabezona rallada",
+        "2 tomates",
+        "1 tarro pequeño de pasta de tomate",
+        "Alcaparras",
+        "2 huevos duros",
+        "2 huevos crudos",
+        "2 cdas harina de trigo",
+        "Perejil picado",
+        "3 zanahorias",
+        "Queso parmesano",
+        "Laurel y orégano"
+      ],
+      "ingredients_en": [
+        "1½ lb tripe",
+        "¼ lb chickpeas",
+        "½ lb smoked ham",
+        "1 chorizo",
+        "2 white onions grated",
+        "2 tomatoes",
+        "1 small can tomato paste",
+        "Capers",
+        "2 hard-boiled eggs",
+        "2 raw eggs",
+        "2 tbsp wheat flour",
+        "Chopped parsley",
+        "3 carrots",
+        "Parmesan cheese",
+        "Bay leaf and oregano"
+      ],
+      "steps_es": [
+        "Se cocina el menudo con la zanahoria, laurel y orégano",
+        "Se dora el jamón picado y el chorizo picadito",
+        "Se le agrega la cebolla picada y el tomate",
+        "Se aliña con pimienta, orégano, sal, alcaparras y pasta de tomate",
+        "Se agregan los garbanzos y se deja conservar",
+        "Se deja enfriar y se le agregan los huevos batidos como para perico",
+        "Se echa en un molde engrasado",
+        "Se adorna con tajadas de huevo duro y queso parmesano",
+        "Se mete al horno a 350°F por media hora"
+      ],
+      "steps_en": [
+        "Cook tripe with carrot, bay leaf and oregano",
+        "Fry chopped smoked ham and chorizo",
+        "Add chopped onion and tomato",
+        "Season with pepper, oregano, salt, capers and tomato paste",
+        "Add chickpeas and let simmer",
+        "Let cool and add scrambled eggs",
+        "Pour into a greased mold",
+        "Garnish with hard-boiled egg slices and parmesan cheese",
+        "Bake at 350°F for 30 minutes"
+      ],
+      "category": "dinner",
+      "difficulty": "hard",
+      "servings": 8,
+      "prep_time_minutes": 135,
+      "tags": ["menudo", "torta", "salado", "carne"]
+    },
+    {
+      "title_es": "Torta de Plátano",
+      "title_en": "Plantain Cake",
+      "description_es": "Torta dulce de plátano con huevo y vainilla",
+      "description_en": "Sweet plantain cake with egg and vanilla",
+      "ingredients_es": [
+        "3 plátanos bien maduros y medianos",
+        "2 huevos",
+        "½ taza azúcar",
+        "Esencia de vainilla",
+        "¼ lb mantequilla"
+      ],
+      "ingredients_en": [
+        "3 well-ripened medium plantains",
+        "2 eggs",
+        "½ cup sugar",
+        "Vanilla extract",
+        "¼ lb butter"
+      ],
+      "steps_es": [
+        "Se licua todo bien",
+        "Se echa en un molde engrasado",
+        "Se mete al horno a 350°F por media hora",
+        "O hasta que el cuchillo salga limpio"
+      ],
+      "steps_en": [
+        "Blend everything well",
+        "Pour into a greased mold",
+        "Bake at 350°F for 30 minutes",
+        "Or until knife comes out clean"
+      ],
+      "category": "dessert",
+      "difficulty": "easy",
+      "servings": 6,
+      "prep_time_minutes": 50,
+      "tags": ["plátano", "torta", "postre", "dulce"]
+    },
+    {
+      "title_es": "Torta de Queso",
+      "title_en": "Cheesecake",
+      "description_es": "Clásica torta de queso crema con limón y vainilla",
+      "description_en": "Classic cream cheese cake with lemon and vanilla",
+      "ingredients_es": [
+        "2 bolsas queso crema",
+        "1 taza azúcar",
+        "1 taza yogurt con fresas",
+        "6 huevos",
+        "½ lb harina de trigo",
+        "1 cdita polvo royal",
+        "1 cdita esencia de vainilla",
+        "2 limones",
+        "2 cdas mantequilla",
+        "Ralladura de limón"
+      ],
+      "ingredients_en": [
+        "2 packages cream cheese",
+        "1 cup sugar",
+        "1 cup strawberry yogurt",
+        "6 eggs",
+        "½ lb wheat flour",
+        "1 tsp baking powder",
+        "1 tsp vanilla extract",
+        "2 lemons",
+        "2 tbsp butter",
+        "Lemon zest"
+      ],
+      "steps_es": [
+        "Se crema el queso con el azúcar",
+        "Se le ponen los huevos batidos como para perico",
+        "Se agrega la vainilla, el polvo royal, la harina y el yogurt",
+        "Se añaden dos cucharaditas de ralladura de limón y mantequilla derretida",
+        "Se bate todo muy bien",
+        "Se pone en un molde forrado con papel parafinado",
+        "Hornear a 350°F por una hora"
+      ],
+      "steps_en": [
+        "Cream the cheese with sugar",
+        "Add beaten eggs",
+        "Add vanilla, baking powder, flour and yogurt",
+        "Add two teaspoons of lemon zest and melted butter",
+        "Beat everything very well",
+        "Place in a mold lined with parchment paper",
+        "Bake at 350°F for one hour"
+      ],
+      "category": "dessert",
+      "difficulty": "medium",
+      "servings": 10,
+      "prep_time_minutes": 100,
+      "tags": ["queso", "torta", "postre", "yogurt"]
+    },
+    {
+      "title_es": "Torta de Queso Mariana",
+      "title_en": "Mariana Cheesecake",
+      "description_es": "Suave torta de queso con ralladura de limón, naranja o vainilla",
+      "description_en": "Soft cheesecake with lemon, orange zest or vanilla",
+      "ingredients_es": [
+        "1 lb queso crema",
+        "4 huevos",
+        "2 cdas harina de trigo",
+        "1 taza azúcar",
+        "Ralladura de limón o naranja o vainilla",
+        "Pizca de sal",
+        "½ cdita polvo royal"
+      ],
+      "ingredients_en": [
+        "1 lb cream cheese",
+        "4 eggs",
+        "2 tbsp wheat flour",
+        "1 cup sugar",
+        "Lemon or orange zest or vanilla",
+        "Pinch of salt",
+        "½ tsp baking powder"
+      ],
+      "steps_es": [
+        "Se pasa el queso por el prensapuré y se pone en la batidora",
+        "Se agrega la azúcar, las yemas de huevo, la harina y la ralladura elegida",
+        "Se mezcla todo bien",
+        "Se baten las claras a punto de nieve",
+        "Se agregan las claras suavemente a la mezcla",
+        "Se mete al horno a 350°F hasta que el cuchillo salga limpio"
+      ],
+      "steps_en": [
+        "Pass the cheese through a ricer and put in the mixer",
+        "Add sugar, egg yolks, flour and chosen zest",
+        "Mix everything well",
+        "Beat egg whites to stiff peaks",
+        "Fold the egg whites gently into the mixture",
+        "Bake at 350°F until knife comes out clean"
+      ],
+      "category": "dessert",
+      "difficulty": "medium",
+      "servings": 8,
+      "prep_time_minutes": 80,
+      "tags": ["queso", "torta", "postre", "cheesecake"]
+    },
+    {
+      "title_es": "Timbal de Verduras",
+      "title_en": "Vegetable Timbal",
+      "description_es": "Timbal de verduras orientales con salsas teriyaki y soya",
+      "description_en": "Oriental vegetable timbal with teriyaki and soy sauces",
+      "ingredients_es": [
+        "1 frasco aceite de ajonjolí",
+        "1 pimentón cortado en julianas",
+        "1 zanahoria",
+        "1 calabacín",
+        "1 berenjena",
+        "½ lb champiñones",
+        "½ taza salsa teriyaki",
+        "½ taza salsa soya",
+        "½ lb raíces chinas",
+        "Jengibre",
+        "½ taza ajonjolí",
+        "1 cebolla cabezona picada"
+      ],
+      "ingredients_en": [
+        "1 jar sesame oil",
+        "1 bell pepper cut in julienne",
+        "1 carrot",
+        "1 zucchini",
+        "1 eggplant",
+        "½ lb mushrooms",
+        "½ cup teriyaki sauce",
+        "½ cup soy sauce",
+        "½ lb Chinese roots",
+        "Ginger",
+        "½ cup sesame seeds",
+        "1 white onion chopped"
+      ],
+      "steps_es": [
+        "En un Wok, se pone aceite a calentar",
+        "Se le echa el jengibre picadito",
+        "Se добавляют el pimentón, la cebolla, la zanahoria en julianas",
+        "Se agrega el calabacín cortado en julianas",
+        "Se añade la berenjena desangrada por una hora",
+        "Se incorporan los champiñones y las raíces chinas",
+        "Se le agregan las salsas teriyaki y soya",
+        "Se revuelve bien y se deja conservar tapado",
+        "Se recibe con ajonjolí previamente frito"
+      ],
+      "steps_en": [
+        "In a wok, heat the oil",
+        "Add minced ginger",
+        "Add bell pepper, onion and carrot julienne",
+        "Add zucchini cut in julienne",
+        "Add eggplant that has been drained for one hour",
+        "Add mushrooms and Chinese roots",
+        "Add teriyaki and soy sauces",
+        "Stir well and let simmer covered",
+        "Serve with toasted sesame seeds"
+      ],
+      "category": "dinner",
+      "difficulty": "medium",
+      "servings": 4,
+      "prep_time_minutes": 40,
+      "tags": ["verduras", "timbal", "oriental", "saludable"]
     }
   ]
 }
