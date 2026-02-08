@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npm install:*)",
       "Bash(npx tsc:*)",
-      "Bash(dir node_modulesreact-native-url-polyfill /b)"
+      "Bash(dir node_modulesreact-native-url-polyfill /b)",
+      "Bash(node -e:*)"
     ]
   }
 }

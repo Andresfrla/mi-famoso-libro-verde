@@ -163,7 +163,15 @@
     "aboutTitle": "About This Application",
     "description1": "This application is a digital modernization of Grandma Clarita's famous 'Green Book,' which contained the family's most cherished and traditional recipes.",
     "description2": "Clarita would lend her precious book to her daughters Jeannette, María Clara, Mónica, Pilar, and Helga, who learned and enjoyed these delicious recipes. The last version in PDF format was distributed as copies to various family members, and now this application brings those same recipes into the digital age.",
-    "description3": "Developed with modern technologies like Expo and React Native, this application allows the entire family to access, share, and preserve Grandma Clarita's recipes easily and accessibly from any mobile device. Additionally, users can upload their own recipes and share them with others, and in the Explore section you will find users' favorite recipes."
+    "description3": "Developed with modern technologies like Expo and React Native, this application allows the entire family to access, share, and preserve Grandma Clarita's recipes easily and accessibly from any mobile device. Additionally, users can upload their own recipes and share them with others, and in the Explore section you will find users' favorite recipes.",
+    "libroVerdeTitle": "Grandma's Famous Green Book",
+    "libroVerdeText1": "They say that in life you must plant a tree, have a child, and write a book!",
+    "libroVerdeText2": "Well, I believe that this maxim, Grandma has fulfilled it to the letter and with honors!",
+    "libroVerdeText3": "How many times have all of us and other family members witnessed the arguments over 'Where Is My Green Book, Who Took It,' then we had to search through several houses to find it and fortunately we always did.",
+    "libroVerdeText4": "In 2003, I suppose fearing that someone would take it away forever and leave us without it, Grandma had the brilliant idea to give each of us a copy, so we could have it and surely - although she never said it - so she wouldn't go crazy with all of us asking every day for her delicious recipes.",
+    "libroVerdeText5": "And as always, she got to work and transferred to the computer all the recipes she had been writing in her own handwriting throughout her life.",
+    "libroVerdeText6": "Like today, God has given us the joy of being gathered here again, among 'hearths and tablecloths,' it seemed like a fantastic opportunity for all of us who have enjoyed these meals over all these years, to have just like us, this precious book of recipes.",
+    "libroVerdeText7": "THE FAMOUS GREEN BOOK OF GRANDMA, YOU NOW HAVE IT!!!"
   },
   "privacy": {
     "lastUpdated": "Last updated",

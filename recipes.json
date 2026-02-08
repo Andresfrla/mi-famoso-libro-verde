@@ -245,7 +245,7 @@
       "difficulty": "easy",
       "servings": 4,
       "prep_time_minutes": 35,
-        "tags": ["arroz", "plátano", "tocineta", "tradicional"]
+      "tags": ["arroz", "plátano", "tocineta", "tradicional"]
     },
     {
       "title_es": "Croquetas de Arroz",
@@ -504,7 +504,7 @@
       "difficulty": "medium",
       "servings": 4,
       "prep_time_minutes": 45,
-        "tags": ["arroz", "pollo", "curry", "champiñones", "especial"]
+      "tags": ["arroz", "pollo", "curry", "champiñones", "especial"]
     },
     {
       "title_es": "Pastel de Pollo",
@@ -601,12 +601,8 @@
       "title_en": "Duck à l'Orange",
       "description_es": "Pato tierno en salsa demiglasse y salsa de naranja",
       "description_en": "Tender duck in demiglasse and orange sauce",
-      "ingredients_es": [
-        "1 pato congelado por 8 días"
-      ],
-      "ingredients_en": [
-        "1 duck frozen for 8 days"
-      ],
+      "ingredients_es": ["1 pato congelado por 8 días"],
+      "ingredients_en": ["1 duck frozen for 8 days"],
       "steps_es": [
         "Se descongela el pato y se adoba un día antes de cocinar",
         "Se pone a cocer en un caldo con bouquet garni y sal",
@@ -2112,16 +2108,8 @@
       "title_en": "Smoked Pork Chops",
       "description_es": "Chuletas ahumadas con coca-cola y uvas pasas",
       "description_en": "Smoked pork chops with coca-cola and raisins",
-      "ingredients_es": [
-        "Chuletas ahumadas",
-        "Coca-cola",
-        "Uvas pasas"
-      ],
-      "ingredients_en": [
-        "Smoked pork chops",
-        "Coca-cola",
-        "Raisins"
-      ],
+      "ingredients_es": ["Chuletas ahumadas", "Coca-cola", "Uvas pasas"],
+      "ingredients_en": ["Smoked pork chops", "Coca-cola", "Raisins"],
       "steps_es": [
         "Se fritan las chuletas",
         "Se les agrega coca-cola y uvas pasas",
@@ -2527,57 +2515,6 @@
       "servings": 3,
       "prep_time_minutes": 30,
       "tags": ["res", "filet mignon", "americano", "brandy"]
-    },
-    {
-      "title_es": "Filet Mignon (Gringo)",
-      "title_en": "Filet Mignon (American)",
-      "description_es": "Filetes de lomito en salsa con brandy y crema",
-      "description_en": "Tenderloin fillets in sauce with brandy and cream",
-      "ingredients_es": [
-        "2 cdas salsa de tomate",
-        "3 cdas mostaza",
-        "4 cdas salsa worcestershire",
-        "2 cdas páprika",
-        "Mantequilla",
-        "3 cdas aceite de oliva",
-        "6 filetes lomito de res",
-        "⅓ taza brandy",
-        "¼ taza Instacream",
-        "Sal y pimienta al gusto"
-      ],
-      "ingredients_en": [
-        "2 tbsp tomato sauce",
-        "3 tbsp mustard",
-        "4 tbsp worcestershire sauce",
-        "2 tbsp paprika",
-        "Butter",
-        "3 tbsp olive oil",
-        "6 beef tenderloin fillets",
-        "⅓ cup brandy",
-        "¼ cup Instacream",
-        "Salt and pepper to taste"
-      ],
-      "steps_es": [
-        "Combine la salsa de tomate, mostaza, salsa Worcester, páprika",
-        "Derrita la mantequilla con el aceite, añádele la carne y sofríala por uno o dos minutos por cada lado",
-        "Cuando se haya dorado, saque la carne, añada el Brandy",
-        "Raspe el jugo de la carne y añádaselo al combinado de la salsa de tomate que se hizo anteriormente",
-        "Añádale el instacream, la sal y la pimienta",
-        "Cocínela a fuego medio hasta que esté bien cocida, sírvala bien caliente"
-      ],
-      "steps_en": [
-        "Combine tomato sauce, mustard, worcestershire sauce, paprika",
-        "Melt butter with oil, add meat and sauté for one or two minutes per side",
-        "When browned, remove meat, add Brandy",
-        "Scrape the meat juices and add to the previously made tomato sauce mixture",
-        "Add instacream, salt and pepper",
-        "Cook over medium heat until well done, serve very hot"
-      ],
-      "category": "dinner",
-      "difficulty": "medium",
-      "servings": 3,
-      "prep_time_minutes": 35,
-      "tags": ["res", "filet mignon", "gringo", "brandy"]
     },
     {
       "title_es": "Goulash a la Húngara",
@@ -3346,9 +3283,7 @@
       "steps_es": [
         "Se revuelve todo y se mete al horno poniéndole por encima pasta de tomate"
       ],
-      "steps_en": [
-        "Mix everything and bake, topping with tomato paste"
-      ],
+      "steps_en": ["Mix everything and bake, topping with tomato paste"],
       "category": "dinner",
       "difficulty": "easy",
       "servings": 6,
@@ -3497,12 +3432,8 @@
         "1 large can condensed milk",
         "Gin"
       ],
-      "steps_es": [
-        "Se bate todo bien y se sirve"
-      ],
-      "steps_en": [
-        "Mix everything well and serve"
-      ],
+      "steps_es": ["Se bate todo bien y se sirve"],
+      "steps_en": ["Mix everything well and serve"],
       "category": "dessert",
       "difficulty": "easy",
       "servings": 6,
@@ -4078,14 +4009,8 @@
         "2 tbsp oil",
         "Pepper and vinegar"
       ],
-      "steps_es": [
-        "Se revuelve todo bien",
-        "Se sirve fría"
-      ],
-      "steps_en": [
-        "Mix everything well",
-        "Serve cold"
-      ],
+      "steps_es": ["Se revuelve todo bien", "Se sirve fría"],
+      "steps_en": ["Mix everything well", "Serve cold"],
       "category": "lunch",
       "difficulty": "easy",
       "servings": 4,
@@ -4504,12 +4429,8 @@
       "title_en": "Vol-au-vent",
       "description_es": "Hojaldres rellenos de atún con mayonesa",
       "description_en": "Puff pastries filled with tuna and mayonnaise",
-      "ingredients_es": [
-        "Masa de hojaldre"
-      ],
-      "ingredients_en": [
-        "Puff pastry dough"
-      ],
+      "ingredients_es": ["Masa de hojaldre"],
+      "ingredients_en": ["Puff pastry dough"],
       "steps_es": [
         "Se extiende la masa de hojaldre con cortadores para volován",
         "Tres ruedas: una entera y dos perforadas se pegan con huevo",
@@ -5237,9 +5158,7 @@
       "steps_es": [
         "Se pone todo esto en el pan untado de mantequilla y se mete al horno"
       ],
-      "steps_en": [
-        "Put all this on bread spread with butter and bake"
-      ],
+      "steps_en": ["Put all this on bread spread with butter and bake"],
       "category": "snack",
       "difficulty": "easy",
       "servings": 4,
@@ -7292,12 +7211,7 @@
       "title_en": "Fig Preserve",
       "description_es": "Brevas caramelizadas con especias",
       "description_en": "Caramelized figs with spices",
-      "ingredients_es": [
-        "6 lb brevas",
-        "3 panelas",
-        "Canela y clavos",
-        "Agua"
-      ],
+      "ingredients_es": ["6 lb brevas", "3 panelas", "Canela y clavos", "Agua"],
       "ingredients_en": [
         "6 lb figs",
         "3 panelas",
