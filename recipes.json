@@ -8702,55 +8702,6 @@
       "tags": ["souffle", "arroz", "queso", "huevo"]
     },
     {
-      "title_es": "Souflé de Atún",
-      "title_en": "Tuna Soufflé",
-      "description_es": "Soufflé de atún con pimentón, cebolla y miga de pan",
-      "description_en": "Tuna soufflé with bell pepper, onion and breadcrumbs",
-      "ingredients_es": [
-        "5 latas atún",
-        "1 frasco alcaparras",
-        "4 pimentones rojos",
-        "4 cebollas cabezonas",
-        "2 tazas miga de pan",
-        "1 taza leche",
-        "¼ lb mantequilla",
-        "10 cdas salsa de tomate",
-        "4 huevos"
-      ],
-      "ingredients_en": [
-        "5 cans tuna",
-        "1 jar capers",
-        "4 red bell peppers",
-        "4 white onions",
-        "2 cups breadcrumbs",
-        "1 cup milk",
-        "¼ lb butter",
-        "10 tbsp tomato sauce",
-        "4 eggs"
-      ],
-      "steps_es": [
-        "Se fríe en mantequilla el pimentón y la cebolla picados",
-        "Se dren el atún y se deshilacha",
-        "Se mezclan todos los ingredientes con las claras batidas a punto de nieve",
-        "Se vierte en una souflera o molde enmantequillado",
-        "Se puede hacer al baño de maría o al horno a 350°F",
-        "Hornear hasta que dore y sube"
-      ],
-      "steps_en": [
-        "Fry chopped bell pepper and onion in butter",
-        "Drain and flake the tuna",
-        "Mix all ingredients with beaten egg whites",
-        "Pour into a soufflé dish or buttered mold",
-        "Can be made in bain-marie or in oven at 350°F",
-        "Bake until golden and risen"
-      ],
-      "category": "dinner",
-      "difficulty": "medium",
-      "servings": 8,
-      "prep_time_minutes": 45,
-      "tags": ["souffle", "atun", "pescado", "mariscos"]
-    },
-    {
       "title_es": "Souflé de Espinaca",
       "title_en": "Spinach Soufflé",
       "description_es": "Soufflé cremoso de espinacas con queso crema, queso suizo y jamón",
