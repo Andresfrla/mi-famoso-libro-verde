@@ -105,10 +105,12 @@ export function RecipeCard({
           {hasImage && !hasError ? (
             <>
               <Image
+                key={`recipe-image-${recipe.id}`}
                 source={{ uri: recipe.image_url || undefined }}
                 style={styles.image}
                 contentFit="cover"
                 transition={500}
+                recyclingKey={recipe.image_url}
                 onLoadStart={() => setIsLoading(true)}
                 onLoadEnd={() => setIsLoading(false)}
                 onError={() => {
