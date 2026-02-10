@@ -11,7 +11,6 @@ import {
   Pressable,
   useColorScheme,
 } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { Category } from '../types';
 import { CATEGORIES, Colors, Spacing, FontSizes, FontWeights } from '../lib/constants';
@@ -37,13 +36,12 @@ export function CategoryFilter({ selected, onSelect }: CategoryFilterProps) {
       >
         {CATEGORIES.map((category) => {
           const isSelected = selected === category.value;
-          const isFilterButton = category.value === 'all';
 
           return (
             <Pressable
               key={category.value}
               style={[
-                isFilterButton ? styles.filterPill : styles.pill,
+                styles.pill,
                 {
                   backgroundColor: isSelected ? colors.primary : colors.surface,
                   borderColor: isSelected ? colors.primary : colors.border,
@@ -51,25 +49,17 @@ export function CategoryFilter({ selected, onSelect }: CategoryFilterProps) {
               ]}
               onPress={() => onSelect(category.value)}
             >
-              {isFilterButton ? (
-                <Ionicons
-                  name="options-outline"
-                  size={20}
-                  color={isSelected ? '#1E293B' : colors.textSecondary}
-                />
-              ) : (
-                <Text
-                  style={[
-                    styles.pillText,
-                    {
-                      color: isSelected ? '#1E293B' : colors.textSecondary,
-                      fontWeight: isSelected ? FontWeights.bold : FontWeights.medium,
-                    },
-                  ]}
-                >
-                  {t(category.labelKey)}
-                </Text>
-              )}
+              <Text
+                style={[
+                  styles.pillText,
+                  {
+                    color: isSelected ? '#1E293B' : colors.textSecondary,
+                    fontWeight: isSelected ? FontWeights.bold : FontWeights.medium,
+                  },
+                ]}
+              >
+                {t(category.labelKey)}
+              </Text>
             </Pressable>
           );
         })}
@@ -89,15 +79,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.md,
     alignItems: 'center',
     gap: Spacing.sm,
-  },
-  filterPill: {
-    width: PILL_HEIGHT,
-    height: PILL_HEIGHT,
-    borderRadius: PILL_HEIGHT / 2,
-    marginRight: Spacing.sm,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 1,
   },
   pill: {
     height: PILL_HEIGHT,

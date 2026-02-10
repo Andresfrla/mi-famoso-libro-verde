@@ -3,6 +3,8 @@
 // =====================================================
 
 export { RecipeCard } from './RecipeCard';
+export { RecipeCardSkeleton, RecipeCardSkeletonGrid } from './RecipeCardSkeleton';
+export { SkeletonImage, ImageSkeletonPlaceholder } from './SkeletonImage';
 export { SearchBar } from './SearchBar';
 export { CategoryFilter } from './CategoryFilter';
 export { LanguageToggle } from './LanguageToggle';

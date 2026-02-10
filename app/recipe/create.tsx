@@ -2,7 +2,7 @@
 // Create Recipe Screen
 // =====================================================
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import {
   View,
   Text,
@@ -14,6 +14,8 @@ import {
   Alert,
   KeyboardAvoidingView,
   Platform,
+  Image,
+  ActivityIndicator,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
@@ -24,6 +26,12 @@ import { createRecipe } from '@/src/services';
 import { useAuth, useLanguage } from '@/src/contexts';
 import { RecipeFormData, Language, Difficulty, Category } from '@/src/types';
 import { Colors, Spacing, FontSizes, FontWeights, BorderRadius, CATEGORIES, DIFFICULTIES, DEFAULTS } from '@/src/lib/constants';
+import { 
+  requestImagePermissions, 
+  takePhoto, 
+  pickImageFromLibrary, 
+  uploadImageToStorage 
+} from '@/src/utils/imagePicker';
 
 type EditingLanguage = 'es' | 'en';
 
@@ -38,6 +46,13 @@ export default function CreateRecipeScreen() {
 
   const [editingLang, setEditingLang] = useState<EditingLanguage>(language);
   const [saving, setSaving] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [uploadingImage, setUploadingImage] = useState(false);
+
+  // Request permissions on mount
+  useEffect(() => {
+    requestImagePermissions();
+  }, []);
 
   // Form state
   const [formData, setFormData] = useState<RecipeFormData>({
@@ -60,6 +75,40 @@ export default function CreateRecipeScreen() {
   const handleClose = useCallback(() => {
     router.back();
   }, [router]);
+
+  const handleImagePicker = useCallback(async () => {
+    Alert.alert(
+      'Seleccionar foto',
+      '¿Cómo quieres agregar la foto?',
+      [
+        {
+          text: 'Cámara',
+          onPress: async () => {
+            const hasPermission = await requestImagePermissions();
+            if (!hasPermission) return;
+            
+            const uri = await takePhoto();
+            if (uri) {
+              setSelectedImage(uri);
+            }
+          },
+        },
+        {
+          text: 'Galería',
+          onPress: async () => {
+            const hasPermission = await requestImagePermissions();
+            if (!hasPermission) return;
+            
+            const uri = await pickImageFromLibrary();
+            if (uri) {
+              setSelectedImage(uri);
+            }
+          },
+        },
+        { text: 'Cancelar', style: 'cancel' },
+      ]
+    );
+  }, []);
 
   const updateField = useCallback(
     <K extends keyof RecipeFormData>(key: K, value: RecipeFormData[K]) => {
@@ -159,10 +208,29 @@ export default function CreateRecipeScreen() {
     if (!validate()) return;
 
     setSaving(true);
+    let imageUrl = formData.image_url;
+
+    // Upload image if selected
+    if (selectedImage) {
+      setUploadingImage(true);
+      const { url, error: uploadError } = await uploadImageToStorage(selectedImage);
+      setUploadingImage(false);
+      
+      if (uploadError) {
+        setSaving(false);
+        Alert.alert('Error', 'No se pudo subir la imagen. ¿Deseas continuar sin imagen?');
+        return;
+      }
+      
+      if (url) {
+        imageUrl = url;
+      }
+    }
 
     // Clean up empty ingredients and steps
     const cleanedData: RecipeFormData = {
       ...formData,
+      image_url: imageUrl,
       ingredients_es: formData.ingredients_es.filter((i) => i.trim()),
       ingredients_en: formData.ingredients_en.filter((i) => i.trim()),
       steps_es: formData.steps_es.filter((s) => s.trim()),
@@ -181,7 +249,7 @@ export default function CreateRecipeScreen() {
     Alert.alert(t('common.confirm'), t('recipeForm.saveSuccess'), [
       { text: 'OK', onPress: () => router.back() },
     ]);
-  }, [formData, user?.id, validate, t, router]);
+  }, [formData, user?.id, validate, t, router, selectedImage]);
 
   const currentTitle = editingLang === 'es' ? formData.title_es : formData.title_en;
   const currentDescription = editingLang === 'es' ? formData.description_es : formData.description_en;
@@ -214,12 +282,37 @@ export default function CreateRecipeScreen() {
           contentContainerStyle={styles.scrollContent}
           showsVerticalScrollIndicator={false}
         >
-          {/* Image Picker Placeholder */}
-          <Pressable style={[styles.imagePicker, { backgroundColor: colors.surfaceSecondary }]}>
-            <Ionicons name="camera-outline" size={32} color={colors.textMuted} />
-            <Text style={[styles.imagePickerText, { color: colors.textMuted }]}>
-              {t('recipeForm.changePhoto')}
-            </Text>
+          {/* Image Picker */}
+          <Pressable 
+            style={[styles.imagePicker, { backgroundColor: colors.surfaceSecondary }]}
+            onPress={handleImagePicker}
+            disabled={uploadingImage}
+          >
+            {selectedImage ? (
+              <Image source={{ uri: selectedImage }} style={styles.selectedImage} />
+            ) : formData.image_url ? (
+              <Image source={{ uri: formData.image_url }} style={styles.selectedImage} />
+            ) : (
+              <>
+                <Ionicons name="camera-outline" size={32} color={colors.textMuted} />
+                <Text style={[styles.imagePickerText, { color: colors.textMuted }]}>
+                  {t('recipeForm.addPhoto') || 'Agregar foto'}
+                </Text>
+              </>
+            )}
+            
+            {uploadingImage && (
+              <View style={styles.uploadingOverlay}>
+                <ActivityIndicator size="large" color={colors.primary} />
+              </View>
+            )}
+            
+            {selectedImage && !uploadingImage && (
+              <View style={styles.changePhotoOverlay}>
+                <Ionicons name="camera" size={24} color="#fff" />
+                <Text style={styles.changePhotoText}>Cambiar foto</Text>
+              </View>
+            )}
           </Pressable>
 
           {/* Language Toggle */}
@@ -462,6 +555,35 @@ const styles = StyleSheet.create({
     marginTop: Spacing.sm,
     fontSize: FontSizes.md,
     fontWeight: FontWeights.medium,
+  },
+  selectedImage: {
+    width: '100%',
+    height: '100%',
+    borderRadius: BorderRadius.xl,
+  },
+  uploadingOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: BorderRadius.xl,
+  },
+  changePhotoOverlay: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    paddingVertical: Spacing.sm,
+    alignItems: 'center',
+    borderBottomLeftRadius: BorderRadius.xl,
+    borderBottomRightRadius: BorderRadius.xl,
+  },
+  changePhotoText: {
+    color: '#fff',
+    fontSize: FontSizes.sm,
+    fontWeight: FontWeights.medium,
+    marginTop: 2,
   },
   section: {
     marginBottom: Spacing.lg,

@@ -300,18 +300,31 @@ export default function RecipeDetailScreen() {
             <Text style={styles.headerTitle}>
               {t('recipe.title')}
             </Text>
-            <Pressable
-              style={[styles.headerButton, { backgroundColor: 'rgba(255,255,255,0.9)' }]}
-              onPress={handleEdit}
-            >
-              <Ionicons name="globe-outline" size={24} color="#11181C" />
-            </Pressable>
+            <View style={styles.headerRightPlaceholder} />
           </View>
 
           {/* Category Tag */}
           <View style={[styles.categoryTag, { backgroundColor: colors.primary }]}>
             <Text style={styles.categoryTagText}>{t(categoryKey)}</Text>
           </View>
+          
+          {/* Edit/Delete Buttons - Only for owner */}
+          {recipe.user_id === user?.id && (
+            <View style={styles.imageActionButtons}>
+              <Pressable
+                style={[styles.imageActionButton, { backgroundColor: 'rgba(255,255,255,0.95)' }]}
+                onPress={handleEdit}
+              >
+                <Ionicons name="create-outline" size={22} color="#11181C" />
+              </Pressable>
+              <Pressable
+                style={[styles.imageActionButton, { backgroundColor: 'rgba(255,255,255,0.95)' }]}
+                onPress={handleDelete}
+              >
+                <Ionicons name="trash-outline" size={22} color="#E11D48" />
+              </Pressable>
+            </View>
+          )}
         </ImageBackground>
 
         {/* Content */}
@@ -467,19 +480,6 @@ export default function RecipeDetailScreen() {
                 </View>
               ))}
             </View>
-          )}
-
-          {/* Delete Button (only for owner) */}
-          {recipe.user_id === user?.id && (
-            <Pressable
-              style={[styles.deleteButton, { borderColor: colors.error }]}
-              onPress={handleDelete}
-            >
-              <Ionicons name="trash-outline" size={20} color={colors.error} />
-              <Text style={[styles.deleteButtonText, { color: colors.error }]}>
-                {t('common.delete')}
-              </Text>
-            </Pressable>
           )}
         </View>
       </ScrollView>
@@ -686,6 +686,28 @@ const styles = StyleSheet.create({
     textShadowColor: 'rgba(0,0,0,0.5)',
     textShadowOffset: { width: 0, height: 1 },
     textShadowRadius: 3,
+  },
+  headerRightPlaceholder: {
+    width: 40,
+  },
+  imageActionButtons: {
+    position: 'absolute',
+    bottom: Spacing.md,
+    right: Spacing.md,
+    flexDirection: 'row',
+    gap: Spacing.sm,
+  },
+  imageActionButton: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   categoryTag: {
     alignSelf: 'flex-start',

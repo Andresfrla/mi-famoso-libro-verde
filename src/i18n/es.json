@@ -20,7 +20,8 @@
     "close": "Cerrar",
     "language": "Idioma",
     "english": "Inglés",
-    "spanish": "Español"
+    "spanish": "Español",
+    "imageNotAvailable": "Imagen no disponible"
   },
   "navigation": {
     "home": "Inicio",
@@ -78,6 +79,7 @@
     "difficultyLabel": "Dificultad",
     "categoryLabel": "Categoría",
     "imageLabel": "Foto de Portada",
+    "addPhoto": "Agregar foto",
     "changePhoto": "Cambiar Foto de Portada",
     "ingredientsSection": "Ingredientes",
     "addIngredient": "Agregar Ingrediente",

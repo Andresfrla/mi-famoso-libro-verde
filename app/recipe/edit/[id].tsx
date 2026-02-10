@@ -14,6 +14,8 @@ import {
   Alert,
   KeyboardAvoidingView,
   Platform,
+  Image,
+  ActivityIndicator,
 } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
@@ -25,6 +27,12 @@ import { getRecipeById, updateRecipe } from '@/src/services';
 import { useAuth, useLanguage } from '@/src/contexts';
 import { Recipe, RecipeFormData } from '@/src/types';
 import { Colors, Spacing, FontSizes, FontWeights, BorderRadius } from '@/src/lib/constants';
+import { 
+  requestImagePermissions, 
+  takePhoto, 
+  pickImageFromLibrary, 
+  uploadImageToStorage 
+} from '@/src/utils/imagePicker';
 
 type EditingLanguage = 'es' | 'en';
 
@@ -41,6 +49,8 @@ export default function EditRecipeScreen() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [editingLang, setEditingLang] = useState<EditingLanguage>(language);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [uploadingImage, setUploadingImage] = useState(false);
 
   const [formData, setFormData] = useState<RecipeFormData | null>(null);
 
@@ -76,6 +86,40 @@ export default function EditRecipeScreen() {
   const handleClose = useCallback(() => {
     router.back();
   }, [router]);
+
+  const handleImagePicker = useCallback(async () => {
+    Alert.alert(
+      'Cambiar foto',
+      '¿Cómo quieres cambiar la foto?',
+      [
+        {
+          text: 'Cámara',
+          onPress: async () => {
+            const hasPermission = await requestImagePermissions();
+            if (!hasPermission) return;
+            
+            const uri = await takePhoto();
+            if (uri) {
+              setSelectedImage(uri);
+            }
+          },
+        },
+        {
+          text: 'Galería',
+          onPress: async () => {
+            const hasPermission = await requestImagePermissions();
+            if (!hasPermission) return;
+            
+            const uri = await pickImageFromLibrary();
+            if (uri) {
+              setSelectedImage(uri);
+            }
+          },
+        },
+        { text: 'Cancelar', style: 'cancel' },
+      ]
+    );
+  }, []);
 
   const updateField = useCallback(
     <K extends keyof RecipeFormData>(key: K, value: RecipeFormData[K]) => {
@@ -165,9 +209,28 @@ export default function EditRecipeScreen() {
     if (!validate() || !formData || !id) return;
 
     setSaving(true);
+    let imageUrl = formData.image_url;
+
+    // Upload new image if selected
+    if (selectedImage) {
+      setUploadingImage(true);
+      const { url, error: uploadError } = await uploadImageToStorage(selectedImage);
+      setUploadingImage(false);
+      
+      if (uploadError) {
+        setSaving(false);
+        Alert.alert('Error', 'No se pudo subir la nueva imagen');
+        return;
+      }
+      
+      if (url) {
+        imageUrl = url;
+      }
+    }
 
     const cleanedData: Partial<RecipeFormData> = {
       ...formData,
+      image_url: imageUrl,
       ingredients_es: formData.ingredients_es.filter((i) => i.trim()),
       ingredients_en: formData.ingredients_en.filter((i) => i.trim()),
       steps_es: formData.steps_es.filter((s) => s.trim()),
@@ -186,7 +249,7 @@ export default function EditRecipeScreen() {
     Alert.alert(t('common.confirm'), t('recipeForm.saveSuccess'), [
       { text: 'OK', onPress: () => router.back() },
     ]);
-  }, [formData, id, validate, t, router]);
+  }, [formData, id, validate, t, router, selectedImage]);
 
   if (loading || !formData) {
     return <LoadingState />;
@@ -223,6 +286,39 @@ export default function EditRecipeScreen() {
           contentContainerStyle={styles.scrollContent}
           showsVerticalScrollIndicator={false}
         >
+          {/* Image Picker */}
+          <Pressable 
+            style={[styles.imagePicker, { backgroundColor: colors.surfaceSecondary }]}
+            onPress={handleImagePicker}
+            disabled={uploadingImage}
+          >
+            {selectedImage ? (
+              <Image source={{ uri: selectedImage }} style={styles.selectedImage} />
+            ) : formData?.image_url ? (
+              <Image source={{ uri: formData.image_url }} style={styles.selectedImage} />
+            ) : (
+              <>
+                <Ionicons name="camera-outline" size={32} color={colors.textMuted} />
+                <Text style={[styles.imagePickerText, { color: colors.textMuted }]}>
+                  Cambiar foto
+                </Text>
+              </>
+            )}
+            
+            {uploadingImage && (
+              <View style={styles.uploadingOverlay}>
+                <ActivityIndicator size="large" color={colors.primary} />
+              </View>
+            )}
+            
+            {(selectedImage || formData?.image_url) && !uploadingImage && (
+              <View style={styles.changePhotoOverlay}>
+                <Ionicons name="camera" size={24} color="#fff" />
+                <Text style={styles.changePhotoText}>Cambiar foto</Text>
+              </View>
+            )}
+          </Pressable>
+
           {/* Language Toggle */}
           <View style={styles.section}>
             <Text style={[styles.sectionLabel, { color: colors.text }]}>
@@ -431,6 +527,48 @@ const styles = StyleSheet.create({
   scrollContent: {
     padding: Spacing.md,
     paddingBottom: 120,
+  },
+  imagePicker: {
+    height: 180,
+    borderRadius: BorderRadius.xl,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: Spacing.lg,
+    overflow: 'hidden',
+  },
+  selectedImage: {
+    width: '100%',
+    height: '100%',
+    borderRadius: BorderRadius.xl,
+  },
+  imagePickerText: {
+    marginTop: Spacing.sm,
+    fontSize: FontSizes.md,
+    fontWeight: FontWeights.medium,
+  },
+  uploadingOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: BorderRadius.xl,
+  },
+  changePhotoOverlay: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    paddingVertical: Spacing.sm,
+    alignItems: 'center',
+    borderBottomLeftRadius: BorderRadius.xl,
+    borderBottomRightRadius: BorderRadius.xl,
+  },
+  changePhotoText: {
+    color: '#fff',
+    fontSize: FontSizes.sm,
+    fontWeight: FontWeights.medium,
+    marginTop: 2,
   },
   section: {
     marginBottom: Spacing.lg,
