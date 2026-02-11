@@ -11,8 +11,8 @@ const path = require('path');
 
 const IMAGES_DIR = 'C:\\Users\\LENOVO\\Desktop\\recipies';
 
-const SUPABASE_URL = process.env.EXPO_PUBLIC_SUPABASE_URL || 'https://sloshvbfhlttgmaqgnvy.supabase.co';
-const SUPABASE_ANON_KEY = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_jkMk51oqt2N9m2z-MMmUbQ_H3-ujkTx';
+const SUPABASE_URL = process.env.EXPO_PUBLIC_SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 const BUCKET_NAME = 'recipe-images';

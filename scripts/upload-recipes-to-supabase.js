@@ -19,12 +19,12 @@ const RECIPES_FILE = path.join(__dirname, '..', 'recipes.json');
 // Configuración de Supabase
 // IMPORTANTE: Para crear buckets necesitas la SERVICE ROLE KEY, no la anon key
 // La Service Role Key está en: Supabase Dashboard → Project Settings → API → service_role key
-const SUPABASE_URL = process.env.EXPO_PUBLIC_SUPABASE_URL || 'https://sloshvbfhlttgmaqgnvy.supabase.co';
+const SUPABASE_URL = process.env.EXPO_PUBLIC_SUPABASE_URL;
 
 // Intenta usar la SERVICE ROLE KEY primero (para operaciones admin como crear buckets)
 // Si no existe, usa la ANON KEY (para operaciones normales)
 const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const SUPABASE_ANON_KEY = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_jkMk51oqt2N9m2z-MMmUbQ_H3-ujkTx';
+const SUPABASE_ANON_KEY = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
 
 // Usar service key si está disponible, sino usar anon key
 // NOTA: Para evitar problemas de RLS, usa la SERVICE ROLE KEY

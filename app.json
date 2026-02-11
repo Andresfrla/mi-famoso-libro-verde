@@ -2,7 +2,7 @@
   "expo": {
     "name": "Mi Famoso Libro Verde",
     "slug": "mi-libro-verde",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/images/logo-app.png",
     "scheme": "milibroverde",
@@ -50,8 +50,7 @@
           "photosPermission": "La aplicación necesita acceso a tus fotos para subir imágenes de recetas.",
           "cameraPermission": "La aplicación necesita acceso a la cámara para tomar fotos de recetas."
         }
-      ],
-      "react-native-google-mobile-ads"
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
