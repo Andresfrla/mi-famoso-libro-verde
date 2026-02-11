@@ -21,7 +21,10 @@
       },
       "package": "com.milibroverde.app",
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "output": "static",
@@ -56,8 +59,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": "your-project-id"
-      }
+        "projectId": "6ce9bfb9-40c9-48f3-933d-2734cb80df25"
+      },
+      "router": {}
     }
   }
 }
