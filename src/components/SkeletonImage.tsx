@@ -1,17 +1,10 @@
 // =====================================================
-// Skeleton Image Component with Vertical Shimmer Effect
+// Skeleton Image Component (sin animaciones)
 // =====================================================
 
-import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, useColorScheme } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, useColorScheme, ActivityIndicator } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withRepeat,
-  withTiming,
-  interpolate,
-} from 'react-native-reanimated';
 import { Image, ImageSource } from 'expo-image';
 import { Colors, BorderRadius, FontSizes } from '../lib/constants';
 
@@ -33,32 +26,8 @@ export function SkeletonImage({
   const { t } = useTranslation();
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme === 'dark' ? 'dark' : 'light'];
-  const shimmerPosition = useSharedValue(0);
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    shimmerPosition.value = withRepeat(
-      withTiming(1, { duration: 1500 }),
-      -1,
-      false
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const shimmerStyle = useAnimatedStyle(() => {
-    return {
-      transform: [
-        {
-          translateY: interpolate(
-            shimmerPosition.value,
-            [0, 1],
-            [-200, 200]
-          ),
-        },
-      ],
-    };
-  });
 
   // Verificar si hay una URL válida de imagen
   const hasValidSource = source && 
@@ -93,16 +62,10 @@ export function SkeletonImage({
         cachePolicy="memory-disk"
       />
       
-      {/* Shimmer overlay - shows while loading */}
+      {/* Simple loading indicator */}
       {isLoading && (
-        <View style={[styles.shimmerContainer, { borderRadius }]}>
-          <Animated.View
-            style={[
-              styles.shimmer,
-              { backgroundColor: colors.surfaceSecondary },
-              shimmerStyle,
-            ]}
-          />
+        <View style={[styles.loadingContainer, { borderRadius, backgroundColor: colors.surfaceSecondary }]}>
+          <ActivityIndicator color={colors.primary} />
         </View>
       )}
     </View>
@@ -119,30 +82,6 @@ export function ImageSkeletonPlaceholder({
 }) {
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme === 'dark' ? 'dark' : 'light'];
-  const shimmerPosition = useSharedValue(0);
-
-  useEffect(() => {
-    shimmerPosition.value = withRepeat(
-      withTiming(1, { duration: 1500 }),
-      -1,
-      false
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const shimmerStyle = useAnimatedStyle(() => {
-    return {
-      transform: [
-        {
-          translateY: interpolate(
-            shimmerPosition.value,
-            [0, 1],
-            [-200, 200]
-          ),
-        },
-      ],
-    };
-  });
 
   return (
     <View
@@ -152,15 +91,7 @@ export function ImageSkeletonPlaceholder({
         { backgroundColor: colors.surfaceSecondary, borderRadius },
       ]}
     >
-      <Animated.View
-        style={[
-          styles.shimmer,
-          {
-            backgroundColor: colorScheme === 'dark' ? '#2D4A2D' : '#E8F5E9',
-          },
-          shimmerStyle,
-        ]}
-      />
+      <ActivityIndicator color={colors.primary} />
     </View>
   );
 }
@@ -172,17 +103,15 @@ const styles = StyleSheet.create({
   image: {
     ...StyleSheet.absoluteFillObject,
   },
-  shimmerContainer: {
+  loadingContainer: {
     ...StyleSheet.absoluteFillObject,
-    overflow: 'hidden',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   skeletonContainer: {
     overflow: 'hidden',
-  },
-  shimmer: {
-    width: '100%',
-    height: '100%',
-    opacity: 0.5,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   placeholderContainer: {
     flex: 1,

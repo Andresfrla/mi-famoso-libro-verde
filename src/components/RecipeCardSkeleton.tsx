@@ -1,16 +1,9 @@
 // =====================================================
-// Recipe Card Skeleton Component with Vertical Shimmer
+// Recipe Card Skeleton Component (sin animaciones)
 // =====================================================
 
-import React, { useEffect } from 'react';
-import { View, StyleSheet, useColorScheme } from 'react-native';
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withRepeat,
-  withTiming,
-  interpolate,
-} from 'react-native-reanimated';
+import React from 'react';
+import { View, StyleSheet, useColorScheme, ActivityIndicator } from 'react-native';
 import { BorderRadius, Spacing, FontSizes } from '../lib/constants';
 
 interface RecipeCardSkeletonProps {
@@ -19,85 +12,29 @@ interface RecipeCardSkeletonProps {
 
 export function RecipeCardSkeleton({ style }: RecipeCardSkeletonProps) {
   const colorScheme = useColorScheme();
-  const shimmerPosition = useSharedValue(0);
-
-  useEffect(() => {
-    shimmerPosition.value = withRepeat(
-      withTiming(1, { duration: 1500 }),
-      -1,
-      false
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const shimmerStyle = useAnimatedStyle(() => ({
-    transform: [{
-      translateY: interpolate(shimmerPosition.value, [0, 1], [-200, 200]),
-    }],
-  }));
-
   const baseColor = colorScheme === 'dark' ? '#1E3A1E' : '#F1F5F1';
-  const shimmerColor = colorScheme === 'dark' ? '#2D4A2D' : '#E8F5E9';
 
   return (
     <View style={[styles.container, style]}>
       {/* Image skeleton */}
       <View style={[styles.imageContainer, { backgroundColor: baseColor }]}>
-        <Animated.View
-          style={[
-            StyleSheet.absoluteFillObject,
-            { backgroundColor: shimmerColor, opacity: 0.5 },
-            shimmerStyle,
-          ]}
-        />
+        <ActivityIndicator color="#22C55E" />
       </View>
 
       {/* Content skeleton */}
       <View style={styles.content}>
         {/* Title skeleton */}
-        <View style={[styles.titleSkeleton, { backgroundColor: baseColor }]}>
-          <Animated.View
-            style={[
-              StyleSheet.absoluteFillObject,
-              { backgroundColor: shimmerColor, opacity: 0.5 },
-              shimmerStyle,
-            ]}
-          />
-        </View>
+        <View style={[styles.titleSkeleton, { backgroundColor: baseColor }]} />
         
         {/* Tags skeleton */}
         <View style={styles.tagsContainer}>
-          <View style={[styles.tagSkeleton, { backgroundColor: baseColor }]}>
-            <Animated.View
-              style={[
-                StyleSheet.absoluteFillObject,
-                { backgroundColor: shimmerColor, opacity: 0.5 },
-                shimmerStyle,
-              ]}
-            />
-          </View>
-          <View style={[styles.tagSkeleton, { backgroundColor: baseColor }]}>
-            <Animated.View
-              style={[
-                StyleSheet.absoluteFillObject,
-                { backgroundColor: shimmerColor, opacity: 0.5 },
-                shimmerStyle,
-              ]}
-            />
-          </View>
+          <View style={[styles.tagSkeleton, { backgroundColor: baseColor }]} />
+          <View style={[styles.tagSkeleton, { backgroundColor: baseColor }]} />
         </View>
       </View>
 
       {/* Favorite button skeleton */}
-      <View style={[styles.favoriteButtonSkeleton, { backgroundColor: baseColor }]}>
-        <Animated.View
-          style={[
-            StyleSheet.absoluteFillObject,
-            { backgroundColor: shimmerColor, opacity: 0.5 },
-            shimmerStyle,
-          ]}
-        />
-      </View>
+      <View style={[styles.favoriteButtonSkeleton, { backgroundColor: baseColor }]} />
     </View>
   );
 }
@@ -134,6 +71,8 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     borderRadius: BorderRadius.xl,
     overflow: 'hidden',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   content: {
     paddingHorizontal: Spacing.xs,
@@ -143,7 +82,6 @@ const styles = StyleSheet.create({
     height: FontSizes.lg,
     borderRadius: BorderRadius.sm,
     marginBottom: Spacing.xs,
-    overflow: 'hidden',
   },
   tagsContainer: {
     flexDirection: 'row',
@@ -154,7 +92,6 @@ const styles = StyleSheet.create({
     width: 60,
     height: 18,
     borderRadius: BorderRadius.sm,
-    overflow: 'hidden',
   },
   favoriteButtonSkeleton: {
     position: 'absolute',
@@ -163,6 +100,5 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     borderRadius: 16,
-    overflow: 'hidden',
   },
 });

@@ -2,17 +2,18 @@
   "expo": {
     "name": "Mi Famoso Libro Verde",
     "slug": "mi-libro-verde",
-    "version": "1.0.1",
+    "version": "1.0.4",
     "orientation": "portrait",
     "icon": "./assets/images/logo-app.png",
     "scheme": "milibroverde",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.milibroverde.app"
     },
     "android": {
+      "versionCode": 100005,
       "adaptiveIcon": {
         "backgroundColor": "#22C55E",
         "foregroundImage": "./assets/images/logo-app.png",

@@ -4,15 +4,48 @@
 
 import { useEffect } from 'react';
 import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useAuth } from '@/src/contexts';
 import { Colors } from '@/src/lib/constants';
+import { supabase } from '@/src/lib/supabase';
 
 export default function AuthCallback() {
   const router = useRouter();
+  const params = useLocalSearchParams();
   const { user } = useAuth();
 
   useEffect(() => {
+    // Handle magic link authentication
+    const handleAuthCallback = async () => {
+      try {
+        // Check if this is a password reset
+        if (params.type === 'recovery') {
+          // Redirect to update password screen
+          router.replace('/update-password');
+          return;
+        }
+
+        // If we have a code in the URL, exchange it for a session
+        if (params.code) {
+          const { error } = await supabase.auth.exchangeCodeForSession(params.code as string);
+          if (error) {
+            console.error('Error exchanging code for session:', error);
+          }
+        }
+      } catch (err) {
+        console.error('Error in auth callback:', err);
+      }
+    };
+
+    handleAuthCallback();
+  }, [params, router]);
+
+  useEffect(() => {
+    // If this is a recovery, we already redirected above
+    if (params.type === 'recovery') {
+      return;
+    }
+
     // If user is authenticated, redirect to home
     if (user) {
       router.replace('/(tabs)');
@@ -22,7 +55,7 @@ export default function AuthCallback() {
         router.replace('/auth');
       }, 2000);
     }
-  }, [user, router]);
+  }, [user, router, params.type]);
 
   return (
     <View style={styles.container}>

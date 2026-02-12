@@ -5,6 +5,7 @@
 import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
 import { Session, User as SupabaseUser } from '@supabase/supabase-js';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
+import * as Linking from 'expo-linking';
 
 interface AuthContextType {
   user: SupabaseUser | null;
@@ -14,12 +15,18 @@ interface AuthContextType {
   signIn: (email: string, password: string) => Promise<{ error: string | null }>;
   signUp: (email: string, password: string) => Promise<{ error: string | null }>;
   signInWithMagicLink: (email: string) => Promise<{ error: string | null }>;
+  resetPassword: (email: string) => Promise<{ error: string | null }>;
   signOut: () => Promise<void>;
   updatePassword: (newPassword: string) => Promise<{ error: string | null }>;
   deleteAccount: () => Promise<{ error: string | null }>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
+
+// Generate callback URL dynamically based on environment
+const getRedirectUrl = () => {
+  return Linking.createURL('auth/callback');
+};
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<SupabaseUser | null>(null);
@@ -74,7 +81,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       email,
       password,
       options: {
-        emailRedirectTo: 'milibroverde://auth/callback',
+        emailRedirectTo: getRedirectUrl(),
       },
     });
 
@@ -89,8 +96,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const { error } = await supabase.auth.signInWithOtp({
       email,
       options: {
-        emailRedirectTo: 'milibroverde://auth/callback',
+        emailRedirectTo: getRedirectUrl(),
       },
+    });
+
+    return { error: error?.message ?? null };
+  }, [isConfigured]);
+
+  const resetPassword = useCallback(async (email: string) => {
+    if (!isConfigured) {
+      return { error: 'Supabase is not configured' };
+    }
+
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: getRedirectUrl(),
     });
 
     return { error: error?.message ?? null };
@@ -131,6 +150,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     signIn,
     signUp,
     signInWithMagicLink,
+    resetPassword,
     signOut,
     updatePassword,
     deleteAccount,

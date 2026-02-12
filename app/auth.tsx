@@ -23,7 +23,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useAuth } from '@/src/contexts';
 import { Colors, Spacing, FontSizes, FontWeights, BorderRadius } from '@/src/lib/constants';
 
-type AuthMode = 'login' | 'signup' | 'magic';
+type AuthMode = 'login' | 'signup' | 'magic' | 'forgot';
 
 export default function AuthScreen() {
   const { t } = useTranslation();
@@ -31,7 +31,7 @@ export default function AuthScreen() {
   const insets = useSafeAreaInsets();
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme === 'dark' ? 'dark' : 'light'];
-  const { signIn, signUp, signInWithMagicLink, isConfigured } = useAuth();
+  const { signIn, signUp, signInWithMagicLink, resetPassword, isConfigured } = useAuth();
 
   const [mode, setMode] = useState<AuthMode>('login');
   const [email, setEmail] = useState('');
@@ -50,7 +50,7 @@ export default function AuthScreen() {
       return;
     }
 
-    if (mode !== 'magic' && !password.trim()) {
+    if (mode !== 'magic' && mode !== 'forgot' && !password.trim()) {
       Alert.alert(t('common.error'), t('auth.passwordRequired'));
       return;
     }
@@ -68,6 +68,8 @@ export default function AuthScreen() {
       result = await signIn(email, password);
     } else if (mode === 'signup') {
       result = await signUp(email, password);
+    } else if (mode === 'forgot') {
+      result = await resetPassword(email);
     } else {
       result = await signInWithMagicLink(email);
     }
@@ -81,6 +83,9 @@ export default function AuthScreen() {
 
     if (mode === 'magic') {
       Alert.alert(t('common.confirm'), t('auth.magicLinkSent'));
+    } else if (mode === 'forgot') {
+      Alert.alert(t('common.confirm'), t('auth.resetPasswordEmailSent'));
+      setMode('login');
     } else {
       Alert.alert(
         t('common.confirm'),
@@ -150,7 +155,7 @@ export default function AuthScreen() {
           </Text>
 
           <Text style={[styles.subtitle, { color: colors.textSecondary }]}>
-            {mode === 'login' ? t('auth.login') : mode === 'signup' ? t('auth.signup') : t('auth.magicLink')}
+            {mode === 'login' ? t('auth.login') : mode === 'signup' ? t('auth.signup') : mode === 'forgot' ? t('auth.forgotPassword') : t('auth.magicLink')}
           </Text>
 
           {/* Mode Tabs */}
@@ -212,7 +217,7 @@ export default function AuthScreen() {
             </View>
 
             {/* Password */}
-            {mode !== 'magic' && (
+            {mode !== 'magic' && mode !== 'forgot' && (
               <View style={styles.field}>
                 <Text style={[styles.fieldLabel, { color: colors.textSecondary }]}>
                   {t('auth.password')}
@@ -258,6 +263,24 @@ export default function AuthScreen() {
               </View>
             )}
 
+            {/* Forgot Password Link */}
+            {mode === 'login' && (
+              <Pressable style={styles.forgotPasswordButton} onPress={() => setMode('forgot')}>
+                <Text style={[styles.forgotPasswordText, { color: colors.primary }]}>
+                  {t('auth.forgotPassword')}
+                </Text>
+              </Pressable>
+            )}
+
+            {/* Back to Login Link */}
+            {mode === 'forgot' && (
+              <Pressable style={styles.backToLoginButton} onPress={() => setMode('login')}>
+                <Text style={[styles.backToLoginText, { color: colors.textSecondary }]}>
+                  {t('auth.backToLogin')}
+                </Text>
+              </Pressable>
+            )}
+
             {/* Submit Button */}
             <Pressable
               style={[styles.submitButton, { backgroundColor: colors.primary }]}
@@ -271,6 +294,8 @@ export default function AuthScreen() {
                   ? t('auth.login')
                   : mode === 'signup'
                   ? t('auth.signup')
+                  : mode === 'forgot'
+                  ? t('auth.sendResetEmail')
                   : t('auth.magicLink')}
               </Text>
             </Pressable>
@@ -423,6 +448,24 @@ const styles = StyleSheet.create({
   magicLinkText: {
     fontSize: FontSizes.md,
     fontWeight: FontWeights.semibold,
+  },
+  forgotPasswordButton: {
+    alignSelf: 'flex-end',
+    padding: Spacing.sm,
+    marginBottom: Spacing.md,
+  },
+  forgotPasswordText: {
+    fontSize: FontSizes.sm,
+    fontWeight: FontWeights.semibold,
+  },
+  backToLoginButton: {
+    alignSelf: 'center',
+    padding: Spacing.sm,
+    marginBottom: Spacing.md,
+  },
+  backToLoginText: {
+    fontSize: FontSizes.md,
+    fontWeight: FontWeights.medium,
   },
   switchMode: {
     flexDirection: 'row',

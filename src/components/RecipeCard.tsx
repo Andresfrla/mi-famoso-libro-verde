@@ -1,5 +1,5 @@
 // =====================================================
-// Recipe Card Component with Skeleton Loading
+// Recipe Card Component (sin animaciones)
 // =====================================================
 
 import React, { useState } from 'react';
@@ -10,17 +10,11 @@ import {
   Pressable,
   TouchableOpacity,
   useColorScheme,
+  ActivityIndicator,
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { Ionicons } from '@expo/vector-icons';
 import { Image } from 'expo-image';
-import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withRepeat,
-  withTiming,
-  interpolate,
-} from 'react-native-reanimated';
 import { Recipe } from '../types';
 import { useLanguage } from '../contexts';
 import { Colors, BorderRadius, Spacing, FontSizes, FontWeights } from '../lib/constants';
@@ -31,47 +25,6 @@ interface RecipeCardProps {
   onPress: () => void;
   onFavoritePress: () => void;
   showFavoriteCount?: boolean;
-}
-
-// Shimmer component for loading state
-function ShimmerOverlay({ isVisible, borderRadius }: { isVisible: boolean; borderRadius: number }) {
-  const shimmerPosition = useSharedValue(0);
-  const colorScheme = useColorScheme();
-  
-  React.useEffect(() => {
-    if (isVisible) {
-      shimmerPosition.value = withRepeat(
-        withTiming(1, { duration: 1500 }),
-        -1,
-        false
-      );
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isVisible]);
-
-  const shimmerStyle = useAnimatedStyle(() => ({
-    transform: [{
-      translateY: interpolate(shimmerPosition.value, [0, 1], [-200, 200]),
-    }],
-  }));
-
-  if (!isVisible) return null;
-
-  return (
-    <View style={[StyleSheet.absoluteFillObject, { borderRadius, overflow: 'hidden' }]}>
-      <Animated.View
-        style={[
-          {
-            width: '100%',
-            height: '100%',
-            backgroundColor: colorScheme === 'dark' ? '#2D4A2D' : '#E8F5E9',
-            opacity: 0.5,
-          },
-          shimmerStyle,
-        ]}
-      />
-    </View>
-  );
 }
 
 export function RecipeCard({
@@ -120,8 +73,12 @@ export function RecipeCard({
                 cachePolicy="memory-disk"
               />
               
-              {/* Shimmer overlay while loading */}
-              <ShimmerOverlay isVisible={isLoading} borderRadius={BorderRadius.xl} />
+              {/* Loading indicator */}
+              {isLoading && (
+                <View style={styles.loadingOverlay}>
+                  <ActivityIndicator color={colors.primary} />
+                </View>
+              )}
             </>
           ) : (
             <View style={styles.placeholderContainer}>
@@ -212,6 +169,12 @@ const styles = StyleSheet.create({
   image: {
     ...StyleSheet.absoluteFillObject,
     borderRadius: BorderRadius.xl,
+  },
+  loadingOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.1)',
   },
   placeholderContainer: {
     flex: 1,
