@@ -24,8 +24,8 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Generate callback URL dynamically based on environment
-const getRedirectUrl = () => {
-  return Linking.createURL('auth/callback');
+const getRedirectUrl = (type: 'callback' | 'reset-password' | 'magic-link' = 'callback') => {
+  return Linking.createURL(`auth/${type}`);
 };
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
@@ -88,32 +88,32 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return { error: error?.message ?? null };
   }, [isConfigured]);
 
-  const signInWithMagicLink = useCallback(async (email: string) => {
-    if (!isConfigured) {
-      return { error: 'Supabase is not configured' };
-    }
+   const signInWithMagicLink = useCallback(async (email: string) => {
+     if (!isConfigured) {
+       return { error: 'Supabase is not configured' };
+     }
+ 
+     const { error } = await supabase.auth.signInWithOtp({
+       email,
+       options: {
+         emailRedirectTo: getRedirectUrl('magic-link'),
+       },
+     });
+ 
+     return { error: error?.message ?? null };
+   }, [isConfigured]);
 
-    const { error } = await supabase.auth.signInWithOtp({
-      email,
-      options: {
-        emailRedirectTo: getRedirectUrl(),
-      },
-    });
-
-    return { error: error?.message ?? null };
-  }, [isConfigured]);
-
-  const resetPassword = useCallback(async (email: string) => {
-    if (!isConfigured) {
-      return { error: 'Supabase is not configured' };
-    }
-
-    const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: getRedirectUrl(),
-    });
-
-    return { error: error?.message ?? null };
-  }, [isConfigured]);
+   const resetPassword = useCallback(async (email: string) => {
+     if (!isConfigured) {
+       return { error: 'Supabase is not configured' };
+     }
+ 
+     const { error } = await supabase.auth.resetPasswordForEmail(email, {
+       redirectTo: getRedirectUrl('reset-password'),
+     });
+ 
+     return { error: error?.message ?? null };
+   }, [isConfigured]);
 
   const signOut = useCallback(async () => {
     if (!isConfigured) return;

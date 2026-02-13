@@ -25,6 +25,13 @@ export default function AuthCallback() {
           return;
         }
 
+        // Check if this is a magic link (OTP)
+        if (params.type === 'magiclink' || params.type === 'magic-link') {
+          // Magic link already authenticates the user, just redirect
+          router.replace('/(tabs)');
+          return;
+        }
+
         // If we have a code in the URL, exchange it for a session
         if (params.code) {
           const { error } = await supabase.auth.exchangeCodeForSession(params.code as string);

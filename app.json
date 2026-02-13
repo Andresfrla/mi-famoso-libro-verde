@@ -2,7 +2,7 @@
   "expo": {
     "name": "Mi Famoso Libro Verde",
     "slug": "mi-libro-verde",
-    "version": "1.0.4",
+    "version": "1.1.2",
     "orientation": "portrait",
     "icon": "./assets/images/logo-app.png",
     "scheme": "milibroverde",
@@ -23,9 +23,7 @@
       "package": "com.milibroverde.app",
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "permissions": [
-        "android.permission.RECORD_AUDIO"
-      ]
+      "permissions": ["android.permission.RECORD_AUDIO"]
     },
     "web": {
       "output": "static",
@@ -36,7 +34,7 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/logo-app.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#F6F8F6",

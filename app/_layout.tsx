@@ -102,6 +102,13 @@ export default function RootLayout() {
                     presentation: 'card',
                   }}
                 />
+                <Stack.Screen
+                  name="update-password"
+                  options={{
+                    headerShown: false,
+                    presentation: 'modal',
+                  }}
+                />
               </Stack>
               <StatusBar style="auto" />
             </ThemeProvider>
