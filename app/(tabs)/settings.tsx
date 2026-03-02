@@ -64,7 +64,7 @@ export default function SettingsScreen() {
   }, [t, signOut]);
 
   const handleLogin = useCallback(() => {
-    router.push('/auth');
+    router.push('/login');
   }, [router]);
 
   const handleProfileSettings = useCallback(() => {

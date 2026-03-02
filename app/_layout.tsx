@@ -75,7 +75,7 @@ export default function RootLayout() {
                   }}
                 />
                 <Stack.Screen
-                  name="auth"
+                  name="login"
                   options={{
                     headerShown: false,
                     presentation: 'modal',
@@ -104,6 +104,13 @@ export default function RootLayout() {
                 />
                 <Stack.Screen
                   name="update-password"
+                  options={{
+                    headerShown: false,
+                    presentation: 'modal',
+                  }}
+                />
+                <Stack.Screen
+                  name="auth"
                   options={{
                     headerShown: false,
                     presentation: 'modal',

@@ -29,7 +29,7 @@ export default function UpdatePasswordScreen() {
   const insets = useSafeAreaInsets();
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme === 'dark' ? 'dark' : 'light'];
-  const { updatePassword, user } = useAuth();
+  const { updatePassword, user, clearPasswordReset } = useAuth();
 
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -54,6 +54,17 @@ export default function UpdatePasswordScreen() {
 
     setLoading(true);
 
+    console.log('Updating password, user:', user);
+
+    if (!user) {
+      Alert.alert(
+        'Error', 
+        'No se pudo verificar tu sesión. Por favor, cierra la app e intenta desde el enlace del correo nuevamente.',
+        [{ text: 'OK' }]
+      );
+      return;
+    }
+
     const { error } = await updatePassword(password);
 
     setLoading(false);
@@ -63,12 +74,14 @@ export default function UpdatePasswordScreen() {
       return;
     }
 
+    await clearPasswordReset();
+
     Alert.alert(
       t('common.success'),
       t('auth.passwordUpdated'),
       [{ text: 'OK', onPress: () => router.replace('/(tabs)') }]
     );
-  }, [password, confirmPassword, updatePassword, t, router]);
+  }, [password, confirmPassword, updatePassword, t, router, clearPasswordReset, user]);
 
   return (
     <KeyboardAvoidingView
@@ -78,7 +91,10 @@ export default function UpdatePasswordScreen() {
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {/* Header */}
         <View style={[styles.header, { paddingTop: insets.top }]}>
-          <Pressable onPress={() => router.back()} style={styles.backButton}>
+          <Pressable onPress={async () => {
+            await clearPasswordReset();
+            router.back();
+          }} style={styles.backButton}>
             <Ionicons name="arrow-back" size={24} color={colors.text} />
           </Pressable>
         </View>

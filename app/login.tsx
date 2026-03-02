@@ -2,7 +2,7 @@
 // Auth Screen (Login / Sign Up)
 // =====================================================
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import {
   View,
   Text,
@@ -19,6 +19,7 @@ import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import * as Linking from 'expo-linking';
 
 import { useAuth } from '@/src/contexts';
 import { Colors, Spacing, FontSizes, FontWeights, BorderRadius } from '@/src/lib/constants';
@@ -31,7 +32,7 @@ export default function AuthScreen() {
   const insets = useSafeAreaInsets();
   const colorScheme = useColorScheme();
   const colors = Colors[colorScheme === 'dark' ? 'dark' : 'light'];
-  const { signIn, signUp, signInWithMagicLink, resetPassword, isConfigured } = useAuth();
+  const { signIn, signUp, signInWithMagicLink, resetPassword, isConfigured, pendingPasswordReset, clearPasswordReset } = useAuth();
 
   const [mode, setMode] = useState<AuthMode>('login');
   const [email, setEmail] = useState('');
@@ -39,6 +40,45 @@ export default function AuthScreen() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+
+  // Handle password reset - check multiple times
+  useEffect(() => {
+    let mounted = true;
+    
+    const checkUrl = async () => {
+      try {
+        const url = await Linking.getInitialURL();
+        console.log('Checking URL:', url);
+        
+        if (url && url.includes('token') && (url.includes('recovery') || url.includes('type=recovery'))) {
+          console.log('Recovery detected in URL!');
+          if (mounted) {
+            router.replace('/update-password');
+          }
+        }
+      } catch (e) {
+        console.log('Error:', e);
+      }
+    };
+
+    // Check immediately and multiple times
+    checkUrl();
+    const intervals = [500, 1500, 3000, 5000].map(t => setTimeout(checkUrl, t));
+    
+    return () => {
+      mounted = false;
+      intervals.forEach(clearTimeout);
+    };
+  }, [router]);
+
+  // Also listen to pendingPasswordReset from context
+  useEffect(() => {
+    if (pendingPasswordReset) {
+      console.log('Pending reset detected, redirecting...');
+      clearPasswordReset();
+      router.replace('/update-password');
+    }
+  }, [pendingPasswordReset, clearPasswordReset, router]);
 
   const handleClose = useCallback(() => {
     router.back();

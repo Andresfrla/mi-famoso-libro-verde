@@ -5,9 +5,8 @@
     "version": "1.1.2",
     "orientation": "portrait",
     "icon": "./assets/images/logo-app.png",
-    "scheme": "milibroverde",
+    "scheme": ["milibroverde", "exp"],
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": false,
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.milibroverde.app"
