@@ -4,7 +4,14 @@
       "Bash(npm install:*)",
       "Bash(npx tsc:*)",
       "Bash(dir node_modulesreact-native-url-polyfill /b)",
-      "Bash(node -e:*)"
+      "Bash(node -e:*)",
+      "Bash(git remote:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git status:*)",
+      "Bash(git push:*)",
+      "Bash(gh workflow:*)",
+      "Bash(cp:*)"
     ]
   }
 }
