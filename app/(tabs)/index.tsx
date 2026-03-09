@@ -24,6 +24,7 @@ import {
   LoadingState,
   FAB,
   LanguageToggle,
+  AdBanner,
 } from '@/src/components';
 import { getRecipesWithUserFirst } from '@/src/services';
 import { useAuth, useFavorites } from '@/src/contexts';
@@ -46,7 +47,6 @@ export default function HomeScreen() {
   const [debouncedSearchQuery, setDebouncedSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<Category>('all');
 
-  // Debounce search query to avoid loading on every keystroke
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedSearchQuery(searchQuery);
@@ -116,7 +116,7 @@ export default function HomeScreen() {
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       {/* Header */}
-      <View style={[styles.header, { paddingTop: insets.top + Spacing.sm }]}>
+      <View style={styles.header}>
         <View style={styles.headerRow}>
           <View style={[styles.logoContainer, { backgroundColor: `${colors.primary}15` }]}>
             <Ionicons name="book" size={24} color={colors.primary} />
@@ -167,6 +167,7 @@ export default function HomeScreen() {
               colors={[colors.primary]}
             />
           }
+          ListFooterComponent={<AdBanner />}
         />
       )}
 

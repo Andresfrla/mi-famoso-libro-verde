@@ -13,3 +13,4 @@ export { LoadingState } from './LoadingState';
 export { FavoriteCard } from './FavoriteCard';
 export { FAB } from './FAB';
 export { SettingsItem } from './SettingsItem';
+export { AdBanner } from './AdBanner';

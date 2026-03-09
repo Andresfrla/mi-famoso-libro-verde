@@ -1,0 +1,44 @@
+import { useEffect, useState } from 'react';
+import { View, StyleSheet, Platform } from 'react-native';
+import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
+
+const BANNER_AD_UNIT_ID = __DEV__ 
+  ? TestIds.BANNER 
+  : 'ca-app-pub-3352654721923109/2453641316';
+
+export function AdBanner() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    if (Platform.OS === 'android' || Platform.OS === 'ios') {
+      import('react-native-google-mobile-ads')
+        .then((googleMobileAds) => {
+          googleMobileAds.default().initialize().then(() => setIsLoaded(true));
+        })
+        .catch(() => {});
+    }
+  }, []);
+
+  if (!isLoaded || (Platform.OS === 'web')) {
+    return null;
+  }
+
+  return (
+    <View style={styles.container}>
+      <BannerAd
+        unitId={BANNER_AD_UNIT_ID}
+        size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+        requestOptions={{
+          requestNonPersonalizedAdsOnly: true,
+        }}
+      />
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    marginVertical: 8,
+  },
+});
