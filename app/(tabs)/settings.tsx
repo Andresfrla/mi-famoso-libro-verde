@@ -15,6 +15,7 @@ import {
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 
 import { SettingsItem } from '@/src/components';
@@ -76,9 +77,9 @@ export default function SettingsScreen() {
   }, [user, isConfigured, router, handleLogin]);
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
+    <SafeAreaView style={[styles.container, { backgroundColor: colors.background, paddingTop: insets.top, paddingBottom: insets.bottom }]}>
       {/* Header */}
-      <View style={[styles.header, { paddingTop: insets.top + Spacing.sm }]}>
+      <View style={[styles.header]}>
         <Pressable onPress={() => router.back()} style={styles.backButton}>
           <Ionicons name="chevron-back" size={24} color={colors.text} />
         </Pressable>
@@ -240,7 +241,7 @@ export default function SettingsScreen() {
           {t('settings.version')} 2.4.1 (102)
         </Text>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 

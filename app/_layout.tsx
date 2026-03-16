@@ -5,6 +5,7 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { useColorScheme } from '@/hooks/use-color-scheme';
 import { AuthProvider, LanguageProvider, MeasurementProvider, FavoritesProvider } from '@/src/contexts';
@@ -45,12 +46,13 @@ export default function RootLayout() {
   const theme = colorScheme === 'dark' ? GreenDarkTheme : GreenLightTheme;
 
   return (
-    <AuthProvider>
-      <FavoritesProvider>
-        <LanguageProvider>
-          <MeasurementProvider>
-            <ThemeProvider value={theme}>
-              <Stack>
+    <SafeAreaProvider>
+      <AuthProvider>
+        <FavoritesProvider>
+          <LanguageProvider>
+            <MeasurementProvider>
+              <ThemeProvider value={theme}>
+                <Stack>
                 <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
                 <Stack.Screen
                   name="recipe/[id]"
@@ -122,5 +124,6 @@ export default function RootLayout() {
         </LanguageProvider>
       </FavoritesProvider>
     </AuthProvider>
+    </SafeAreaProvider>
   );
 }

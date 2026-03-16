@@ -15,6 +15,7 @@ import {
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import {
   RecipeCard,
@@ -122,9 +123,9 @@ export default function ExploreScreen() {
   }
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
+    <SafeAreaView style={[styles.container, { backgroundColor: colors.background, paddingTop: insets.top, paddingBottom: insets.bottom }]}>
       {/* Header */}
-      <View style={[styles.header, { paddingTop: insets.top + Spacing.sm }]}>
+      <View style={[styles.header]}>
         <Text style={[styles.title, { color: colors.text }]}>
           {t('navigation.explore')}
         </Text>
@@ -198,7 +199,7 @@ export default function ExploreScreen() {
           }
         />
       )}
-    </View>
+    </SafeAreaView>
   );
 }
 

@@ -14,6 +14,7 @@ import {
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 
 import {
@@ -114,7 +115,7 @@ export default function HomeScreen() {
   }
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
+    <SafeAreaView style={[styles.container, { backgroundColor: colors.background, paddingTop: insets.top, paddingBottom: insets.bottom }]}>
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.headerRow}>
@@ -173,7 +174,7 @@ export default function HomeScreen() {
 
       {/* FAB */}
       <FAB icon="add" onPress={handleAddRecipe} />
-    </View>
+    </SafeAreaView>
   );
 }
 

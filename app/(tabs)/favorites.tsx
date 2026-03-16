@@ -16,6 +16,7 @@ import {
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 
 import { FavoriteCard, EmptyState, LoadingState, LanguageToggle } from '@/src/components';
@@ -82,9 +83,9 @@ export default function FavoritesScreen() {
   }
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
+    <SafeAreaView style={[styles.container, { backgroundColor: colors.background, paddingTop: insets.top, paddingBottom: insets.bottom }]}>
       {/* Header */}
-      <View style={[styles.header, { paddingTop: insets.top + Spacing.sm }]}>
+      <View style={[styles.header]}>
         <View style={styles.headerRow}>
           <Pressable onPress={() => router.back()} style={styles.backButton}>
             <Ionicons name="close" size={24} color={colors.text} />
@@ -122,7 +123,7 @@ export default function FavoritesScreen() {
           }
         />
       )}
-    </View>
+    </SafeAreaView>
   );
 }
 
