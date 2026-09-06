@@ -4,8 +4,6 @@ import { Dimensions, Platform, StyleSheet, Text, View } from "react-native";
 
 const { width } = Dimensions.get("window");
 
-const TEST_BANNER_ID = "ca-app-pub-3940256099942544/6300978111";
-
 type GoogleMobileAdsModule = typeof import("react-native-google-mobile-ads");
 
 function canUseNativeModules() {
@@ -26,7 +24,11 @@ function loadGoogleMobileAdsModule(): GoogleMobileAdsModule | null {
 }
 
 export function AdBanner() {
-  const googleMobileAds = useMemo(loadGoogleMobileAdsModule, []);
+  const productionBannerUnitId = process.env.EXPO_PUBLIC_ADMOB_BANNER_UNIT_ID;
+  const googleMobileAds = useMemo(
+    () => (productionBannerUnitId ? loadGoogleMobileAdsModule() : null),
+    [productionBannerUnitId]
+  );
   const [isLoaded, setIsLoaded] = useState(false);
   const [initError, setInitError] = useState<string | null>(null);
 
@@ -36,18 +38,32 @@ export function AdBanner() {
     const moduleAny = googleMobileAds as any;
     const mobileAds = moduleAny.default ?? moduleAny;
 
-    mobileAds()
-      .initialize()
-      .catch((error: unknown) => {
-        setInitError(error instanceof Error ? error.message : String(error));
-      });
+    try {
+      mobileAds()
+        .initialize()
+        .catch((error: unknown) => {
+          setInitError(error instanceof Error ? error.message : String(error));
+        });
+    } catch (error: unknown) {
+      setInitError(error instanceof Error ? error.message : String(error));
+    }
   }, [googleMobileAds]);
+
+  if (!productionBannerUnitId) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.placeholder}>
+          Anuncios desactivados (falta EXPO_PUBLIC_ADMOB_BANNER_UNIT_ID).
+        </Text>
+      </View>
+    );
+  }
 
   if (!googleMobileAds) {
     return (
       <View style={styles.container}>
         <Text style={styles.placeholder}>
-          Anuncios no disponibles (requiere Development Build / Standalone).
+          Anuncios no disponibles (requiere build nativo con el m\u00f3dulo instalado).
         </Text>
       </View>
     );
@@ -60,8 +76,8 @@ export function AdBanner() {
   return (
     <View style={styles.container}>
       <BannerAd
-        unitId={TEST_BANNER_ID}
-        size={BannerAdSize.ADAPTIVE_BANNER}
+        unitId={productionBannerUnitId}
+        size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER ?? BannerAdSize.ADAPTIVE_BANNER}
         onAdLoaded={() => setIsLoaded(true)}
         onAdFailedToLoad={() => setIsLoaded(false)}
         requestOptions={{

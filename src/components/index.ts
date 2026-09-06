@@ -14,3 +14,4 @@ export { FavoriteCard } from './FavoriteCard';
 export { FAB } from './FAB';
 export { SettingsItem } from './SettingsItem';
 export { AdBanner } from './AdBanner';
+export { ErrorBoundary } from './ErrorBoundary';

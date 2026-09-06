@@ -26,6 +26,7 @@ import {
   FAB,
   LanguageToggle,
   AdBanner,
+  ErrorBoundary,
 } from '@/src/components';
 import { getRecipesWithUserFirst } from '@/src/services';
 import { useAuth, useFavorites } from '@/src/contexts';
@@ -168,7 +169,11 @@ export default function HomeScreen() {
               colors={[colors.primary]}
             />
           }
-          ListFooterComponent={<AdBanner />}
+          ListFooterComponent={
+            <ErrorBoundary fallback={null}>
+              <AdBanner />
+            </ErrorBoundary>
+          }
         />
       )}
 
